@@ -1,0 +1,20 @@
+# Dependencies and build output
+node_modules/
+client/build/
+server/dist/
+*.zip
+
+# Secrets: never commit these
+.env
+.env.local
+*.pem
+*.sql
+
+# Videos are uploaded straight to the server, not kept in git
+server/src/uploads/uploadedVideos/
+server/src/uploads/convertedVideos/
+
+# Logs and OS files
+npm-debug.log*
+.DS_Store
+Thumbs.db

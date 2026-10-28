@@ -1,0 +1,30 @@
+.formInput {
+    background-color: transparent;
+    color: white !important;
+    border: none;
+    border-bottom: 1px solid #808080; 
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    font-family: inherit; 
+    font-size: 1rem; 
+    font-weight: 400;
+}
+
+.formInput:-webkit-autofill,
+.formInput:-webkit-autofill:hover,
+.formInput:-webkit-autofill:focus,
+.formInput:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px var(--clr-black) inset !important;
+    -webkit-text-fill-color: white !important;
+    font-family: inherit !important;  
+    font-size: 1rem !important;  
+    font-weight: 400 !important;
+    transition: background-color 5000s ease-in-out 0s;
+    border-bottom: 1px solid #808080;  
+}
+
+.formInput:focus {
+    border-bottom: 1px solid var(--clr-brand-blue); 
+    outline: none;
+}

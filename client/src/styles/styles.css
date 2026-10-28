@@ -1,0 +1,52 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  h2 {
+    font-size: clamp(1.625rem, 1.3609rem + 1.1268vw, 2.375rem);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: #373d45;
+  }
+  
+  /* Custom colors */
+  :root {
+    --clr-brand-blue: rgb(0, 132, 176);
+    --clr-brand-blue-hover: #023445;
+    --clr-med-blue: #08447d;
+    --clr-dark-blue: #08447d;
+    --clr-light-blue: #9bb8d6;
+    --clr-dark-gray: #1a181b;
+    --clr-alert-green: #BED754;
+    --clr-error-red: #850000;
+    --clr-black: #000000;
+    --clr-modernPurp-btn: #8C57E7;
+    --clr-bg-darkgray: #181f2c;
+
+    font-family: Popins, sans-serif;
+
+  }
+  
+  body {
+    /* font-family: var(--font-family); */
+    font-size: 1.2rem;
+    line-height: 1.5;
+    /* background-color: #F9F9F9;  */
+    background: #FBFBFC;
+    color: #333333;
+  }
+  /* .slick-dots li button:before {
+    font-size: 32px !important;
+    color: rgba(0, 0, 0, 0.5) !important; 
+    border: 2px solid black !important; 
+    border-radius: 50%; 
+  }
+  
+  .slick-dots li.slick-active button:before {
+    color: var(--clr-brand-blue) !important; 
+    border-color: var(--clr-brand-blue) !important; 
+  } */
