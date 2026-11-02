@@ -4,3 +4,6 @@
 *.webp binary
 *.mp4 binary
 *.webm binary
+# Files used on the Linux server keep LF line endings, even when archived from Windows
+*.sh text eol=lf
+deploy/** text eol=lf

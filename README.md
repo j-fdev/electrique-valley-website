@@ -24,6 +24,7 @@ Bilingual (French / English) website for **Électrique Valley**, a Quebec dealer
 ```
 client/   React website (static build served by nginx)
 server/   Express API: email, newsletter and video endpoints
+deploy/   Server setup: nginx and pm2 configs, setup script, migration guide
 ```
 
 ### API endpoints
@@ -62,6 +63,8 @@ cd server && npm run build && npm start   # compiled API in server/dist (run wit
 ```
 
 Videos are not stored in git: they are uploaded to `server/src/uploads/convertedVideos` on the server.
+
+Production runs on an Ubuntu server (nginx + pm2 + MySQL). The `deploy/` folder holds the nginx config, the pm2 config, a server setup script and the step-by-step migration guide: see [deploy/MIGRATION.md](deploy/MIGRATION.md).
 
 ## Author
 

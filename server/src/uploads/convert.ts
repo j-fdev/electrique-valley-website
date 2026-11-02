@@ -64,6 +64,13 @@ async function convertAllVideos(): Promise<void> {
 
                 console.log(`Found ${videoFiles.length} video files to convert`);
 
+                // Nothing to convert: finish now, otherwise the promise never resolves
+                // and the API never starts listening.
+                if (videoFiles.length === 0) {
+                    resolve();
+                    return;
+                }
+
                 let completedCount = 0;
 
                 videoFiles.forEach(file => {
