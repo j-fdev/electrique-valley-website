@@ -8,6 +8,7 @@ import { useWindowSize } from './../../hooks/useWindowSize';
 
 // Styles
 import NavbarStyles from './../../styles/navbar.style';
+import './../../styles/home.modern.css';
 
 // Api
 // import { btn_Logout } from './../../api/api';
@@ -141,37 +142,37 @@ const Navbar: React.FC = () => {
                                     {/* Invisible bridge for hover continuity */}
                                     <div style={{ position: 'fixed', left: 0, width: '100vw', top: '50px', height: '15px', zIndex: 1999, backgroundColor: 'transparent' }} onMouseEnter={() => setIsSeriesOpen(true)} onMouseLeave={() => setIsSeriesOpen(false)}></div>
                                     <div className="dropdown-content" style={{ ...navStyles.dropdown_content, display: isSeriesOpen ? 'flex' : 'none', position: 'fixed', left: 0, width: '100vw', top: '50px' }} onMouseEnter={() => setIsSeriesOpen(true)} onMouseLeave={() => setIsSeriesOpen(false)}>
-                                        <div style={navStyles.dropdownItem}>
+                                        <div className="ev-nav-item" style={navStyles.dropdownItem}>
                                             <Link to="/evolutionSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
                                                 <img src="/img/d-max/XT4/Evolution4L-color-BLACK-SAPPHIRE.png" alt="Evolution Series" style={navStyles.dropdownImage} />
                                                 <p style={navStyles.dropdownText}>{T.dMax_serie[L]}</p>
                                             </Link>
                                         </div>
-                                        <div style={navStyles.dropdownItem}>
+                                        <div className="ev-nav-item" style={navStyles.dropdownItem}>
                                             <Link to="/luxorSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
                                                 <img src="/img/luxor/luxor_2+2L/LUXOR_2+2L-MEDITERRANEAN-BLUE.png" alt="Luxor Series" style={navStyles.dropdownImage} />
                                                 <p style={navStyles.dropdownText}>{T.luxor_serie[L]}</p>
                                             </Link>
                                         </div>
-                                        <div style={navStyles.dropdownItem}>
+                                        <div className="ev-nav-item" style={navStyles.dropdownItem}>
                                             <Link to="/classicSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
                                                 <img src="/img/classic/classic_2+2/sky-BLUE.png" alt="Classic Series" style={navStyles.dropdownImage} />
                                                 <p style={navStyles.dropdownText}>{T.classic_serie[L]}</p>
                                             </Link>
                                         </div>
-                                        <div style={{...navStyles.dropdownItem, marginTop: '14px'}}>
+                                        <div className="ev-nav-item" style={{...navStyles.dropdownItem, marginTop: '14px'}}>
                                             <Link to="/diabloSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
                                                 <img src="/img/diablo/diablo_4_img_no_bg.png" alt="Diablo Series" style={{...navStyles.dropdownImage, width: '110px'}} />
                                                 <p style={navStyles.dropdownText}>{T.diablo_serie[L]}</p>
                                             </Link>
                                         </div>
-                                        <div style={navStyles.dropdownItem}>
+                                        <div className="ev-nav-item" style={navStyles.dropdownItem}>
                                             <Link to="/thorSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
                                                 <img src="/img/thor/Thor-GREEN.png" alt="Thor Series" style={navStyles.dropdownImage} />
                                                 <p style={navStyles.dropdownText}>{T.thor_serie[L]}</p>
                                             </Link>
                                         </div>
-                                         <div style={navStyles.dropdownItem}>
+                                         <div className="ev-nav-item" style={navStyles.dropdownItem}>
                                             <Link to="/eliteSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
                                                 <img src="/img/elite/Elite_4/Elite_4_blue_nobg.png" alt="Elite Series" style={navStyles.dropdownImage} />
                                                 <p style={navStyles.dropdownText}>{T.elite_serie[L]}</p>
@@ -196,6 +197,9 @@ const Navbar: React.FC = () => {
                                     </Link>
                                     <Link to="/thorSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
                                         {T.thor_serie[L]}
+                                    </Link>
+                                    <Link to="/eliteSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
+                                        {T.elite_serie[L]}
                                     </Link>
                                 </div>
                             )}

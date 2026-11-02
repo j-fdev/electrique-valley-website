@@ -31,7 +31,7 @@ import { i_videoCapsule } from '../interfaces/interfaces';
 // Styles
 import HomeStyles from '../styles/home.style';
 import MainStyle from '../styles/main.styles';
-import CartStyles  from "../styles/cards.style";
+import '../styles/home.modern.css';
 
 // Translations
 import { translations } from '../translations/trans.home';
@@ -173,7 +173,6 @@ const Home: React.FC = () => {
     }, [isMobile]);
 
     if (!languageContext) return null;
-    const hSStyles = CartStyles();
 
     return (
         <div style={{ overflowX: 'hidden' }}>
@@ -196,7 +195,7 @@ const Home: React.FC = () => {
             <div>
                 <div style={{ width:'90%', marginInline: 'auto' }}>               
                     <div style={{ paddingTop: '15px'}}>
-                        <h2 style={{ ...homeStyles.ourSeriesTitle, top: isMobile ? '0' : 'auto' }}>{T.title_our_series[L]}</h2>
+                        <h2 className="ev-section-title" style={{ ...homeStyles.ourSeriesTitle, top: isMobile ? '0' : 'auto' }}>{T.title_our_series[L]}</h2>
                     </div>
                         <HorizontalScroll models={cartModels} />
                     <div ref={horizontalScrollRef} />
@@ -206,7 +205,7 @@ const Home: React.FC = () => {
             <div style={mainStyle.section}>
                 <div style={mainStyle.container}>     
                     <div style={homeStyles.aboutWrapper}>
-                        <img style={homeStyles.aboutBrandLogo} src="/img/main/ElectriqueValley-logo-nobg.png?v=${version}" alt="Electrique Valley Logo" />
+                        <img style={homeStyles.aboutBrandLogo} src={`/img/main/ElectriqueValley-logo-nobg.png?v=${version}`} alt="Electrique Valley Logo" />
                         <div style={homeStyles.aboutContent}>
                             <hr style={{ border: 'none', borderTop: '2px solid var(--clr-brand-blue)', width: isMobile ? '100%' : '70%', height: '20px' }} />
                             <h2 ref={aboutHeader}>{T.about_title[L]}</h2>
@@ -226,11 +225,10 @@ const Home: React.FC = () => {
                         <h2 style={{ ...mainStyle.title, marginTop: isMobile ? '0' : '2rem' }}>{T.title_paint2[L]}</h2>
                     </div>
                     <p style={{ ...mainStyle.paragraph, maxWidth: '100ch', textAlign: "center", marginInline: "auto" }}>{T.p_paint[L]}</p>
-                    <div style={homeStyles.paintColorsContainer}>
-                        <img style={homeStyles.paintColorImage} src="/img/home/color1.jpg?v=${version}" alt="" />
-                        <img style={homeStyles.paintColorImage} src="/img/home/color2.jpg?v=${version}" alt="" />
-                        <img style={homeStyles.paintColorImage} src="/img/home/color3.jpg?v=${version}" alt="" />
-                        <img style={homeStyles.paintColorImage} src="/img/home/color4.jpg?v=${version}" alt="" />
+                    <div className="ev-swatches">
+                        {[1, 2, 3, 4].map((n) => (
+                            <img key={n} className="ev-swatch" src={`/img/home/color${n}.jpg?v=${version}`} alt="" loading="lazy" />
+                        ))}
                     </div>
                 </div>
             </div>
@@ -239,13 +237,11 @@ const Home: React.FC = () => {
                 <div style={homeStyles.bgImage}>
                     <div style={homeStyles.bgImageOverlay}></div>
                     <div style={{ ...mainStyle.container, zIndex: 2, color: 'white', alignItems: 'center', justifyContent: 'center', display: 'flex', flexDirection: 'column', width: '100%' }}>
-                        <h2 style={{ ...mainStyle.title, marginTop: isMobile ? '1rem' : '2rem', color: 'white' }}>{T.title_features[L]}</h2>
-                        <div style={homeStyles.featuresCardsDivs}>
+                        <h2 className="ev-section-title" style={{ ...mainStyle.title, marginTop: isMobile ? '1rem' : '2rem', color: 'white' }}>{T.title_features[L]}</h2>
+                        <div className="ev-features-grid">
                             <FeaturesCards icon={svgIcon1} title={T.card1_title_features[L]} description={T.card1_description_features[L]} />
                             <FeaturesCards icon={svgIcon2} title={T.card2_title_features[L]} description={T.card2_description_features[L]} />
                             <FeaturesCards icon={svgIcon3} title={T.card3_title_features[L]} description={T.card3_description_features[L]} />
-                        </div>
-                        <div style={{ ...homeStyles.featuresCardsDivs, marginBottom: isMobile ? '2rem' : '4rem' }}>
                             <FeaturesCards icon={svgIcon4} title={T.card4_title_features[L]} description={T.card4_description_features[L]} />
                             <FeaturesCards icon={svgIcon5} title={T.card5_title_features[L]} description={T.card5_description_features[L]} />
                             <FeaturesCards icon={svgIcon6} title={T.card6_title_features[L]} description={T.card6_description_features[L]} />
@@ -274,19 +270,16 @@ const Home: React.FC = () => {
             {/* Lithium battery section */}
     
             <div style={mainStyle.section}>
-                <div style={homeStyles.lithiumBatteryWrapper}>
-                    <div style={homeStyles.lithiumBatteryContent}>
-                        <h2 style={{...mainStyle.title, color: '#df8035', fontSize: isMobile ? '3rem' : '5rem', fontWeight: '900', marginTop: isMobile ? '2rem' : '0', lineHeight: '1'}}>{T.title_lithium_battery[L]}</h2>
-                        <div style={{  display: 'flex', width: '13.75rem', height: '3rem', justifyContent: 'center', alignItems: 'center', marginLeft: '5px', color: 'var(--clr-black)', backgroundColor: 'white'}}><span style={{ fontSize: '2.5rem', fontWeight: '800'}}>{T.title_lithium_battery_span[L]}</span></div>
-                        {/* <p style={mainStyle.paragraph}>{T.p_lithium_battery[L]}</p> */}
-                        <div style={{ marginInline: isMobile ? 'auto' : '0'}}>
-                            <ul style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: isMobile ? '0.5rem' : '2rem', marginTop: isMobile ? '20px' : '10px', marginLeft: isMobile ? '0' : '20px' }}>
-                                <li>{T.li1_lithium_battery[L]}</li>
-                                <li>{T.li2_lithium_battery[L]}</li>
-                            </ul>
-                        </div>
+                <div className="ev-battery">
+                    <div className="ev-battery__content">
+                        <h2 className="ev-battery__title">{T.title_lithium_battery[L]}</h2>
+                        <span className="ev-battery__badge">{T.title_lithium_battery_span[L]}</span>
+                        <ul className="ev-battery__list">
+                            <li>{T.li1_lithium_battery[L]}</li>
+                            <li>{T.li2_lithium_battery[L]}</li>
+                        </ul>
                     </div>
-                    <img style={homeStyles.lithiumBatteryImage} src="/img/home/lithium_battery_110ah.webp?v=${version}" alt="Lithium Battery" />
+                    <img className="ev-battery__img" src={`/img/home/lithium_battery_110ah.webp?v=${version}`} alt="Lithium Battery" loading="lazy" />
                 </div>
             </div>
             
@@ -300,17 +293,17 @@ const Home: React.FC = () => {
             {/* Video Showcase section */}
             <div style={mainStyle.section}>
                 <div style={{...mainStyle.container, textAlign: 'center'}}>    
-                    <h2 style={mainStyle.title}>{T.h2_videoShowcase[L]}</h2>
-                    <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem', margin: '2rem 0' }}>
+                    <h2 className="ev-section-title" style={mainStyle.title}>{T.h2_videoShowcase[L]}</h2>
+                    <div className="ev-videos">
                         {videoCapsules.slice(0, 3).map((video, index) => (
-                            <div key={index} style={{ flex: '1 1 300px', maxWidth: '400px', textAlign: 'center' }}>
-                                <div style={{ position: 'relative', height: '300px', overflow: 'hidden', background: '#000', borderRadius: '5px'}}>
-                                    <video controls style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} onError={(e) => console.error('Video error:', e.currentTarget.error)}>                    
+                            <div key={index} className="ev-video">
+                                <div className="ev-video__frame">
+                                    <video controls preload="metadata" onError={(e) => console.error('Video error:', e.currentTarget.error)}>
                                     <source src={video.videoUrl} type="video/webm" />
                                     Your browser does not support the video tag.
                                     </video>
                                 </div>
-                                <h3 style={{ color: 'black', marginTop: '10px' }}>{video.title[L]}</h3>
+                                <h3 className="ev-video__title">{video.title[L]}</h3>
                             </div>
                         ))}
                     </div>

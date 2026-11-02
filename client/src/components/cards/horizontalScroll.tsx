@@ -1,16 +1,13 @@
 // Modules
 import { useRef, useEffect, useState, useContext } from "react";
-
-// Components
-import Button from "../../components/button/mainButton";
+import { Link } from "react-router-dom";
 
 // Gsap
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // Styles
-import CardStyles  from "../../styles/cards.style";
-import MainStyles from "../../styles/main.styles";
+import '../../styles/home.modern.css';
 
 // Translations
 import { translations } from '../../translations/trans.horizontalScroll';
@@ -24,13 +21,10 @@ gsap.registerPlugin(ScrollTrigger);
 const HorizontalScroll: React.FC<{ models: i_modelCardProps[]}> = ({ models  }) => {
     const containerRef = useRef<HTMLDivElement | null>(null);
     const sectionRef = useRef<HTMLDivElement | null>(null);
-    const hSStyles = CardStyles();
-    const mainStyles = MainStyles();
-    const T = translations.horizontalScroll; 
+    const T = translations.horizontalScroll;
     const languageContext = useContext(LanguageContext);
     const L = languageContext ? languageContext.language : 'en';
-    const [isHovered, setIsHovered] = useState(false);
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [, setWindowWidth] = useState(window.innerWidth);
 
     useEffect(() => {
         const handleResize = () => setWindowWidth(window.innerWidth);
@@ -93,68 +87,40 @@ const HorizontalScroll: React.FC<{ models: i_modelCardProps[]}> = ({ models  }) 
     }, [containerRef.current?.offsetWidth]); // Update when container width changes
 
     return (
-         <div ref={containerRef} style={hSStyles.horizonContainer}>
-            <div ref={sectionRef} style={hSStyles.horizonScrollSection}>
+        <div ref={containerRef} style={{ position: 'relative' }}>
+            <div ref={sectionRef} className="ev-series-track">
                 {models.map((model, index) => (
-                    <div 
-                        key={index} 
-                        style={{...hSStyles.horizonCard, margin: 'auto'}}
-                        onMouseEnter={() => setIsHovered(true)} 
-                        onMouseLeave={() => setIsHovered(false)}
-                    >
-                        <div style={hSStyles.horizontalBgBlue}>
-                            <h3 style={hSStyles.horizozntalTitle}>{model.title}</h3>
-                            <img 
-                                src={model.image} 
-                                alt={model.title} 
-                                style={{
-                                    position: 'absolute', 
-                                    top: window.innerWidth <= 768 ? "0" : '60px',
-                                    right: window.innerWidth <= 768 ? '0' : '15px',
-                                    width: window.innerWidth <= 768 ? "150px" : '250px',
-                                    height: 'auto'
-                                }} 
-                            />
+                    <article key={index} className="ev-series-card" style={{ marginInline: 'auto' }}>
+                        <div className="ev-series-card__media">
+                            <h3 className="ev-series-card__title">{model.title}</h3>
+                            <img className="ev-series-card__img" src={model.image} alt={model.title} loading="lazy" />
                         </div>
-                        <hr style={hSStyles.horizozntalHr} />
-                        <div>
-                            <ul style={{ listStyle: 'none'}}>
-                                <li style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px'}}>
-                                    <div><span style={hSStyles.spanStyle}>{model.t1}</span></div>
-                                    <div><h4 style={hSStyles.h4Title}>{model.p1}</h4></div>
-                                </li>
-                                <div style={{ width: window.innerWidth <= 768 ? '300px' : '280px', height: window.innerWidth <= 768 ? '140px' : '130px', marginTop: '20px', backgroundColor: '#f3f3f3'}}>
-                                    <li style={{ borderBottom: 'solid 1px black', textAlign: 'center'}}>
-                                        <span style={hSStyles.spanStyle}>{model.t2}</span>
-                                        <h4 style={hSStyles.h4Title}>{model.p2}</h4>
-                                    </li>
-                                    <div style={{ display: 'flex', justifyContent: 'space-between', padding: '5px'}}>
-                                        <li style={{ position: 'relative', width: '50%', textAlign: 'center'}}>
-                                            <span style={{
-                                                position: 'absolute',
-                                                right: 0,
-                                                top: '20%',
-                                                height: '60%',
-                                                width: '1px',
-                                                backgroundColor: 'black'
-                                            }} />
-                                            <span style={hSStyles.spanStyle}>{model.t3}</span>
-                                            <h4 style={hSStyles.h4Title}>{model.p3}</h4>
-                                        </li>
-                                        <li style={{ width: '50%', textAlign: 'center'}}>
-                                            <span style={hSStyles.spanStyle}>{model.t4}</span>
-                                            <h4 style={hSStyles.h4Title}>{model.p4}</h4>
-                                        </li>
-                                    </div>
+
+                        <div className="ev-series-card__body">
+                            <div className="ev-spec-hero">
+                                <span className="ev-spec__label">{model.t1}</span>
+                                <span className="ev-spec__value">{model.p1}</span>
+                            </div>
+                            <div className="ev-spec-grid">
+                                <div className="ev-spec ev-spec--wide">
+                                    <span className="ev-spec__label">{model.t2}</span>
+                                    <span className="ev-spec__value">{model.p2}</span>
                                 </div>
-                            </ul>
+                                <div className="ev-spec">
+                                    <span className="ev-spec__label">{model.t3}</span>
+                                    <span className="ev-spec__value">{model.p3}</span>
+                                </div>
+                                <div className="ev-spec">
+                                    <span className="ev-spec__label">{model.t4}</span>
+                                    <span className="ev-spec__value">{model.p4}</span>
+                                </div>
+                            </div>
+                            <Link to={model.link || '/'} className="ev-series-card__cta">
+                                {T.btn_learn_more[L]}
+                                <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+                            </Link>
                         </div>
-                        <Button 
-                            customStyle={{ width: '90%'}} 
-                            onClick={() => model.link && (window.location.href = model.link)} 
-                            children={T.btn_learn_more[L]} 
-                        />
-                    </div>
+                    </article>
                 ))}
             </div>
         </div>

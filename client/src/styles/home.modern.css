@@ -1,0 +1,293 @@
+/* =====================================================================
+   Home page — modern look (cards, features, swatches, battery, videos)
+   Every class starts with "ev-" so nothing else on the site is affected.
+   ===================================================================== */
+
+:root {
+  --ev-radius: 20px;
+  --ev-radius-sm: 12px;
+  --ev-shadow: 0 10px 30px rgba(8, 28, 48, 0.08), 0 2px 6px rgba(8, 28, 48, 0.06);
+  --ev-shadow-hover: 0 24px 50px rgba(8, 28, 48, 0.16), 0 6px 14px rgba(8, 28, 48, 0.08);
+  --ev-gradient: linear-gradient(135deg, #0084b0 0%, #08447d 55%, #023445 100%);
+  --ev-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---------- Section titles ---------- */
+.ev-section-title {
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.ev-section-title::after {
+  content: '';
+  display: block;
+  width: 64px;
+  height: 4px;
+  margin: 14px auto 0;
+  border-radius: 999px;
+  background: var(--ev-gradient);
+}
+
+/* ---------- Series cards (horizontal scroll) ---------- */
+.ev-series-track {
+  display: flex;
+  align-items: stretch;
+  gap: 28px;
+  padding: 24px 6px 40px;
+}
+@media (max-width: 768px) {
+  .ev-series-track { gap: 18px; padding-top: 12px; }
+}
+
+.ev-series-card {
+  position: relative;
+  flex-shrink: 0;
+  width: 310px;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: var(--ev-radius);
+  box-shadow: var(--ev-shadow);
+  border: 1px solid rgba(8, 68, 125, 0.08);
+  overflow: hidden;
+  transition: transform 0.45s var(--ev-ease), box-shadow 0.45s var(--ev-ease);
+}
+.ev-series-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--ev-shadow-hover);
+}
+@media (max-width: 768px) {
+  .ev-series-card { width: 290px; }
+}
+
+.ev-series-card__media {
+  position: relative;
+  height: 230px;
+  background: var(--ev-gradient);
+  overflow: hidden;
+}
+/* soft light behind the cart */
+.ev-series-card__media::before {
+  content: '';
+  position: absolute;
+  inset: auto -20% -55% -20%;
+  height: 80%;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 70%);
+}
+.ev-series-card__title {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 20px 22px 0;
+  color: #fff;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+.ev-series-card__img {
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  width: 82%;
+  height: auto;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 16px 18px rgba(0, 0, 0, 0.35));
+  transition: transform 0.6s var(--ev-ease);
+}
+.ev-series-card:hover .ev-series-card__img {
+  transform: translateX(-50%) scale(1.06);
+}
+
+.ev-series-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 20px 22px;
+  flex: 1;
+}
+.ev-spec-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eef1f4;
+}
+.ev-spec-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.ev-spec {
+  background: #f4f7fa;
+  border-radius: var(--ev-radius-sm);
+  padding: 10px 12px;
+}
+.ev-spec--wide { grid-column: 1 / -1; }
+.ev-spec__label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6a747c;
+}
+.ev-spec__value {
+  display: block;
+  margin-top: 2px;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #1d2733;
+}
+.ev-spec-hero .ev-spec__value { font-size: 1.15rem; color: #08447d; }
+
+.ev-series-card__cta {
+  margin-top: auto;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 13px 18px;
+  border: 0;
+  border-radius: 999px;
+  background: #0084b0;
+  color: #fff;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s ease, gap 0.3s var(--ev-ease);
+}
+.ev-series-card__cta:hover { background: #08447d; gap: 14px; }
+.ev-series-card__cta svg { width: 16px; height: 16px; fill: currentColor; }
+
+/* ---------- Features (glass cards over the photo) ---------- */
+.ev-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  width: min(1200px, 92%);
+  margin: 2.5rem auto 4rem;
+}
+@media (max-width: 1024px) { .ev-features-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px)  { .ev-features-grid { grid-template-columns: 1fr; margin-bottom: 2rem; } }
+
+.ev-feature {
+  padding: 30px 28px;
+  border-radius: var(--ev-radius);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: rgba(255, 255, 255, 0.82);
+  text-align: left;
+  transition: transform 0.45s var(--ev-ease), background 0.45s ease, border-color 0.45s ease;
+}
+.ev-feature:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(0, 132, 176, 0.7);
+}
+.ev-feature__icon {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  background: var(--ev-gradient);
+  box-shadow: 0 10px 24px rgba(0, 132, 176, 0.35);
+}
+.ev-feature__icon svg { width: 36px !important; height: 36px !important; fill: #fff; }
+.ev-feature__title { margin: 20px 0 8px; color: #fff; font-size: 1.2rem; font-weight: 700; }
+.ev-feature__text { margin: 0; font-size: 1rem; line-height: 1.6; }
+
+/* ---------- Paint swatches ---------- */
+.ev-swatches {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 2rem;
+}
+.ev-swatch {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: var(--ev-radius-sm);
+  box-shadow: var(--ev-shadow);
+  transition: transform 0.4s var(--ev-ease), box-shadow 0.4s var(--ev-ease);
+}
+.ev-swatch:hover { transform: translateY(-6px) scale(1.04); box-shadow: var(--ev-shadow-hover); }
+@media (max-width: 640px) { .ev-swatch { width: 42%; height: 80px; } }
+
+/* ---------- Lithium battery ---------- */
+.ev-battery {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  width: min(1200px, 92%);
+  margin: 0 auto;
+  padding: 3rem 4rem;
+  border-radius: 28px;
+  background: radial-gradient(circle at 80% 50%, rgba(223, 128, 53, 0.25) 0%, rgba(223, 128, 53, 0) 45%), #0d1117;
+  color: #fff;
+  overflow: hidden;
+}
+.ev-battery__content { display: flex; flex-direction: column; gap: 14px; }
+.ev-battery__title { margin: 0; color: #df8035; font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 900; line-height: 1; letter-spacing: -0.02em; }
+.ev-battery__badge {
+  align-self: flex-start;
+  padding: 6px 18px;
+  border-radius: 10px;
+  background: #fff;
+  color: #000;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 800;
+}
+.ev-battery__list { display: flex; flex-wrap: wrap; gap: 10px; margin: 6px 0 0; padding: 0; list-style: none; }
+.ev-battery__list li {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 1rem;
+}
+.ev-battery__img { width: 300px; max-width: 70%; height: auto; filter: drop-shadow(0 20px 40px rgba(223, 128, 53, 0.35)); }
+@media (max-width: 768px) {
+  .ev-battery { flex-direction: column; gap: 2rem; padding: 2.5rem 1.5rem; text-align: center; }
+  .ev-battery__badge { align-self: center; }
+  .ev-battery__list { justify-content: center; }
+}
+
+/* ---------- Video cards ---------- */
+.ev-videos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  margin: 2.5rem 0;
+  text-align: left;
+}
+.ev-video {
+  border-radius: var(--ev-radius);
+  overflow: hidden;
+  background: #fff;
+  box-shadow: var(--ev-shadow);
+  transition: transform 0.45s var(--ev-ease), box-shadow 0.45s var(--ev-ease);
+}
+.ev-video:hover { transform: translateY(-6px); box-shadow: var(--ev-shadow-hover); }
+.ev-video__frame { position: relative; aspect-ratio: 16 / 9; background: #000; }
+.ev-video__frame video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.ev-video__title { margin: 0; padding: 16px 20px 20px; font-size: 1.1rem; font-weight: 700; color: #1d2733; }
+
+/* ---------- Navbar "Our series" menu ---------- */
+.ev-nav-item { transition: background 0.3s ease, transform 0.35s var(--ev-ease); }
+.ev-nav-item:hover { background: rgba(255, 255, 255, 0.07); transform: translateY(-3px); }
+.ev-nav-item img { transition: transform 0.45s var(--ev-ease); }
+.ev-nav-item:hover img { transform: scale(1.06); }
+
+@media (prefers-reduced-motion: reduce) {
+  .ev-series-card, .ev-series-card__img, .ev-feature, .ev-swatch, .ev-video, .ev-nav-item, .ev-nav-item img { transition: none; }
+}
