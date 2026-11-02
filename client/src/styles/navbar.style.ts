@@ -13,11 +13,9 @@ const NavbarStyles = (isMenuOpen: boolean) => {
         display: 'flex',
         justifyContent: 'space-between',
         width: '100%',
-        height: '65px',
-        backgroundColor: (window.scrollY <= 50) ? 'rgba(0, 0, 0, 0.2)' : "black",
-        backdropFilter: 'blur(0.5px)', // Add blur effect
-        WebkitBackdropFilter: 'blur(0.5px)', // For Safari support
+        height: '72px',
         position: 'fixed',
+        transition: 'background 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease',
         top: '0',
         left: '0',
         zIndex: '1001',
@@ -30,7 +28,7 @@ const NavbarStyles = (isMenuOpen: boolean) => {
         left: '0',
         width: '100%',
         height: '100vh',
-        background: 'rgba(0, 0, 0, 0.9)', 
+        background: 'rgba(10, 26, 43, 0.97)', 
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -59,8 +57,8 @@ const NavbarStyles = (isMenuOpen: boolean) => {
 
     const logoImg: CSSProperties = {
         marginLeft: isMobile ? '20px' : '60px',
-        height: isMobile ? '40px' : '70px',
-        marginTop: '10px'
+        height: isMobile ? '40px' : '56px',
+        marginTop: '0'
     };
 
     const menuLogoImg: CSSProperties = {    
@@ -71,8 +69,8 @@ const NavbarStyles = (isMenuOpen: boolean) => {
         display: isMobile ? 'none' : 'flex', 
         alignItems: 'center',
         height: '100%',
-        marginRight: '60px',
-        fontStyle: 'italic',
+        marginRight: '48px',
+        gap: '4px',
         flexDirection: 'row', 
     };
 
@@ -87,10 +85,11 @@ const NavbarStyles = (isMenuOpen: boolean) => {
 
     const linkStyle: CSSProperties = {
         color: '#fff',
-        fontSize: '18px',
+        fontFamily: 'var(--ev-font-head)',
+        fontSize: isMobile ? '20px' : '15px',
+        letterSpacing: '0.06em',
         textDecoration: 'none',
-        borderLeft: isMobile ? 'none' : '1px solid #fff', 
-        padding: '0 20px',
+        padding: '0 16px',
         display: 'flex',
         alignItems: 'center',
         height: '40px',
@@ -111,7 +110,7 @@ const NavbarStyles = (isMenuOpen: boolean) => {
         flexWrap: 'wrap', 
         gap: '30px',
         padding: '45px 30px 30px 30px', // Added 15px top padding for transparent area
-        borderRadius: '0px 0px 12px 12px',
+        borderRadius: '0px 0px 24px 24px',
         border: '1px solid rgba(255, 255, 255, 0.15)',
         borderTop: 'none',
         // Create transparent top section with backdrop blur only on content area
@@ -119,8 +118,8 @@ const NavbarStyles = (isMenuOpen: boolean) => {
             linear-gradient(to bottom, 
                 transparent 0%, 
                 transparent 15px, 
-                rgba(0, 0, 0, 0.9) 15px, 
-                rgba(0, 0, 0, 0.9) 100%
+                rgba(10, 26, 43, 0.94) 15px, 
+                rgba(10, 26, 43, 0.94) 100%
             )
         `,
         backdropFilter: 'blur(15px)',
@@ -167,13 +166,15 @@ const NavbarStyles = (isMenuOpen: boolean) => {
     const dropbtn: CSSProperties = {
         backgroundColor: 'transparent',
         color: 'white',
-        padding: '0 20px',
+        padding: '0 16px',
         textDecoration: 'none',
         border: 'none',
         cursor: 'pointer',
-        fontFamily: 'Arial, sans-serif',
+        fontFamily: 'var(--ev-font-head)',
         fontWeight: '500',
-        fontSize: '18px',
+        fontSize: isMobile ? '20px' : '15px',
+        letterSpacing: '0.06em',
+        gap: '6px',
         display: 'flex',
         alignItems: 'center',
         height: '40px',
@@ -186,8 +187,8 @@ const NavbarStyles = (isMenuOpen: boolean) => {
         padding: '12px 16px',
         textDecoration: 'none',
         textAlign: 'left',
-        borderBottom: '1px solid #ccc',
-        fontFamily: 'Arial, sans-serif',
+        borderBottom: isMobile ? 'none' : '1px solid rgba(255, 255, 255, 0.08)',
+        fontFamily: 'var(--ev-font-head)',
         fontWeight: '500',
         fontSize: '16px',
     };
@@ -201,7 +202,7 @@ const NavbarStyles = (isMenuOpen: boolean) => {
         fontSize: '30px',
         cursor: 'pointer',
         position: 'absolute',
-        top: '10px',
+        top: '14px',
         right: '20px',
     };
 

@@ -1,7 +1,5 @@
 // Modules
-import { useContext, useRef, useEffect, useState } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useContext, useEffect, useState } from 'react';
 import version from '../config/version';
 
 // Config
@@ -31,29 +29,20 @@ import { i_videoCapsule } from '../interfaces/interfaces';
 // Styles
 import HomeStyles from '../styles/home.style';
 import MainStyle from '../styles/main.styles';
-import '../styles/home.modern.css';
 
 // Translations
 import { translations } from '../translations/trans.home';
 import { LanguageContext } from '../translations/languageSelection';
 import { Link } from 'react-router-dom';
 
-// Register the ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
-
 const Home: React.FC = () => {
     const isMobile = useWindowSize();
     const homeStyles = HomeStyles();
     const mainStyle = MainStyle();
-    const aboutHeader = useRef<HTMLHeadingElement>(null);
-    const seriesTitleRef = useRef<HTMLHeadingElement>(null);
-    const horizontalScrollRef = useRef<HTMLDivElement>(null);
 	const T = translations.home; 
     const languageContext = useContext(LanguageContext);
     const L = languageContext ? languageContext.language : 'en';
 
-    const [isHovered, setIsHovered] = useState(false);
-    const [isButtonHovered, setIsButtonHovered] = useState(false);
     const [videoCapsules, setVideoCapsules] = useState<i_videoCapsule[]>([]);
     const [error, setError] = useState<string | null>(null);
     const [isLoading, setIsLoading] = useState(true);
@@ -141,104 +130,75 @@ const Home: React.FC = () => {
             getVideoCapsules();
         }, []);
    
-    // GSAP animation with ScrollTrigger
-    useEffect(() => {
-        if (aboutHeader.current) {
-            gsap.fromTo(aboutHeader.current, 
-                { y: 80, opacity: 0 },
-                { 
-                    y: 0, 
-                    opacity: 1, 
-                    duration: 1, 
-                    ease: 'power3.out',
-                    scrollTrigger: {
-                        trigger: aboutHeader.current,
-                        start: 'bottom 90%', 
-                        toggleActions: 'play none none none' 
-                    }
-                } 
-            );
-        }
-
-        if (seriesTitleRef.current && !isMobile) {
-            ScrollTrigger.create({
-                trigger: seriesTitleRef.current,
-                start: 'top 10%',
-                endTrigger: horizontalScrollRef.current, 
-                end: 'bottom-=600px 20%',
-                pin: true,
-                pinSpacing: false,          
-            });
-        }
-    }, [isMobile]);
+    // Small labels shown above the section titles
+    const EB = {
+        series: { en: 'Our lineup', fr: 'Nos modèles' },
+        about: { en: 'Who we are', fr: 'Qui sommes-nous' },
+        paint: { en: 'Finish', fr: 'Finition' },
+        features: { en: 'Why choose us', fr: 'Pourquoi nous choisir' },
+        warranty: { en: 'Peace of mind', fr: 'Tranquillité d’esprit' },
+        videos: { en: 'Watch', fr: 'À voir' },
+    };
 
     if (!languageContext) return null;
 
     return (
         <div style={{ overflowX: 'hidden' }}>
-            <div style={homeStyles.heroWrapper}>
-                <div style={homeStyles.homeHeroTitle}>
-                    {/* <h2 style={{ whiteSpace: 'nowrap', color: 'white' }}>{T.h2_hero[L]}</h2>
-                    <h3 style={{ ...homeStyles.homeH3, color: 'white'}}>{T.h3_hero[L]}</h3> */}
-                    <div style={{ marginTop: '20px' }}>
-                    {/* <Link to="/contact?source=becomeDealer">
-                        <Button customStyle={{ marginRight: isMobile ? '0' : '10px' }}>{T.btn_become_dealer[L]}</Button>
-                    </Link>
-                    <Link to="/contact?source=findDealer">
-                        <Button>{T.btn_find_dealer[L]}</Button>
-                    </Link>   */}
-                    </div>
-                </div>
+            {/* Hero */}
+            <div className="ev-hero" style={homeStyles.heroWrapper}>
                 <HeroSlider images={heroSliderImages} />
+                <div className="ev-hero__fade" />
             </div>
+
             {/* Series section */}
-            <div>
-                <div style={{ width:'90%', marginInline: 'auto' }}>               
-                    <div style={{ paddingTop: '15px'}}>
-                        <h2 className="ev-section-title" style={{ ...homeStyles.ourSeriesTitle, top: isMobile ? '0' : 'auto' }}>{T.title_our_series[L]}</h2>
-                    </div>
-                        <HorizontalScroll models={cartModels} />
-                    <div ref={horizontalScrollRef} />
+            <section className="ev-section" style={{ paddingTop: isMobile ? '2rem' : '3rem' }}>
+                <div className="ev-container">
+                    <HorizontalScroll
+                        models={cartModels}
+                        eyebrow={EB.series[L]}
+                        title={T.title_our_series[L]}
+                    />
                 </div>
-            </div>
+            </section>
+
             {/* About section */}
-            <div style={mainStyle.section}>
-                <div style={mainStyle.container}>     
-                    <div style={homeStyles.aboutWrapper}>
-                        <img style={homeStyles.aboutBrandLogo} src={`/img/main/ElectriqueValley-logo-nobg.png?v=${version}`} alt="Electrique Valley Logo" />
-                        <div style={homeStyles.aboutContent}>
-                            <hr style={{ border: 'none', borderTop: '2px solid var(--clr-brand-blue)', width: isMobile ? '100%' : '70%', height: '20px' }} />
-                            <h2 ref={aboutHeader}>{T.about_title[L]}</h2>
-                            <p style={{ maxWidth: '65ch' }}>
-							{T.p_about[L]}
-                            </p>
-                        </div>
+            <section className="ev-section" style={{ paddingTop: 0 }}>
+                <div className="ev-container ev-about">
+                    <img className="ev-about__logo ev-reveal ev-reveal--zoom" src={`/img/main/ElectriqueValley-logo-nobg.png?v=${version}`} alt="Électrique Valley" />
+                    <div className="ev-reveal ev-reveal--right">
+                        <span className="ev-eyebrow">{EB.about[L]}</span>
+                        <h2 className="ev-section-title ev-section-title--left">{T.about_title[L]}</h2>
+                        <p style={{ marginTop: '1.5rem' }}>{T.p_about[L]}</p>
                     </div>
                 </div>
-            </div>
-            <hr style={mainStyle.specHrLight}/>
+            </section>
+
             {/* Paint section */}
-            <div style={mainStyle.section}>
-                <div style={mainStyle.container}>            
-                    <div style={{ ...mainStyle.flex, justifyContent: 'center', flexWrap: 'wrap' }}>
-                        <h2 style={mainStyle.title}>{T.title_paint1[L]}&nbsp;</h2>
-                        <h2 style={{ ...mainStyle.title, marginTop: isMobile ? '0' : '2rem' }}>{T.title_paint2[L]}</h2>
+            <section className="ev-section" style={{ background: '#fff' }}>
+                <div className="ev-container" style={{ textAlign: 'center' }}>
+                    <div className="ev-reveal">
+                        <span className="ev-eyebrow">{EB.paint[L]}</span>
+                        <h2 className="ev-section-title">{T.title_paint1[L]} {T.title_paint2[L]}</h2>
+                        <p style={{ maxWidth: '90ch', margin: '1.5rem auto 0', color: 'var(--ev-muted)', fontSize: '0.95rem' }}>{T.p_paint[L]}</p>
                     </div>
-                    <p style={{ ...mainStyle.paragraph, maxWidth: '100ch', textAlign: "center", marginInline: "auto" }}>{T.p_paint[L]}</p>
-                    <div className="ev-swatches">
+                    <div className="ev-swatches ev-stagger">
                         {[1, 2, 3, 4].map((n) => (
                             <img key={n} className="ev-swatch" src={`/img/home/color${n}.jpg?v=${version}`} alt="" loading="lazy" />
                         ))}
                     </div>
                 </div>
-            </div>
+            </section>
+
             {/* Features section */}
-            <div style={ homeStyles.featuresContainer}>
+            <div style={homeStyles.featuresContainer}>
                 <div style={homeStyles.bgImage}>
-                    <div style={homeStyles.bgImageOverlay}></div>
-                    <div style={{ ...mainStyle.container, zIndex: 2, color: 'white', alignItems: 'center', justifyContent: 'center', display: 'flex', flexDirection: 'column', width: '100%' }}>
-                        <h2 className="ev-section-title" style={{ ...mainStyle.title, marginTop: isMobile ? '1rem' : '2rem', color: 'white' }}>{T.title_features[L]}</h2>
-                        <div className="ev-features-grid">
+                    <div style={{ ...homeStyles.bgImageOverlay, background: 'linear-gradient(180deg, rgba(10, 26, 43, 0.88) 0%, rgba(10, 26, 43, 0.72) 50%, rgba(10, 26, 43, 0.9) 100%)' }}></div>
+                    <div style={{ position: 'relative', zIndex: 2, width: '100%', textAlign: 'center' }}>
+                        <div className="ev-reveal">
+                            <span className="ev-eyebrow ev-eyebrow--light">{EB.features[L]}</span>
+                            <h2 className="ev-section-title" style={{ color: 'white' }}>{T.title_features[L]}</h2>
+                        </div>
+                        <div className="ev-features-grid ev-stagger">
                             <FeaturesCards icon={svgIcon1} title={T.card1_title_features[L]} description={T.card1_description_features[L]} />
                             <FeaturesCards icon={svgIcon2} title={T.card2_title_features[L]} description={T.card2_description_features[L]} />
                             <FeaturesCards icon={svgIcon3} title={T.card3_title_features[L]} description={T.card3_description_features[L]} />
@@ -249,28 +209,25 @@ const Home: React.FC = () => {
                     </div>
                 </div>
             </div>
+
             {/* Warranty section */}
-            <div style={mainStyle.section}>
-                <div style={mainStyle.container}>              
-                    <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: '80px' }}>
-                        <div style={{ flex: 1 }}>
-                            <h2 style={{...mainStyle.title, textAlign: 'left' }}>{T.title_warranty[L]}</h2>
-                            <h4 style={{...mainStyle.subtitle, color: 'var(--clr-med-blue)'}}>{T.subtitle_warranty[L]}</h4>
-                            <p style={mainStyle.paragraph}>{T.p_warranty[L]}</p>
-                        </div>
-                        <div style={{ flex: 1.5 }}>
-                            <WarrantySlider images={warrantySliderImages} />
-                        </div>
+            <section className="ev-section">
+                <div className="ev-container ev-split">
+                    <div className="ev-reveal ev-reveal--left">
+                        <span className="ev-eyebrow">{EB.warranty[L]}</span>
+                        <h2 className="ev-section-title ev-section-title--left">{T.title_warranty[L]}</h2>
+                        <h3 style={{ marginTop: '1.5rem', fontSize: '1.3rem', color: 'var(--ev-blue-dark)' }}>{T.subtitle_warranty[L]}</h3>
+                        <p style={{ marginTop: '1rem', lineHeight: 1.75, color: 'var(--ev-muted)', maxWidth: '60ch' }}>{T.p_warranty[L]}</p>
+                    </div>
+                    <div className="ev-media-frame ev-reveal ev-reveal--right">
+                        <WarrantySlider images={warrantySliderImages} />
                     </div>
                 </div>
-            </div>
-            {/* Carplay section */}
-            {/* <CarPlaySection /> */}
+            </section>
 
             {/* Lithium battery section */}
-    
-            <div style={mainStyle.section}>
-                <div className="ev-battery">
+            <section className="ev-section" style={{ paddingTop: 0 }}>
+                <div className="ev-battery ev-reveal ev-reveal--zoom">
                     <div className="ev-battery__content">
                         <h2 className="ev-battery__title">{T.title_lithium_battery[L]}</h2>
                         <span className="ev-battery__badge">{T.title_lithium_battery_span[L]}</span>
@@ -281,20 +238,19 @@ const Home: React.FC = () => {
                     </div>
                     <img className="ev-battery__img" src={`/img/home/lithium_battery_110ah.webp?v=${version}`} alt="Lithium Battery" loading="lazy" />
                 </div>
-            </div>
-            
+            </section>
 
-            {/* Financing section */}
-     
             {/* Become a Dealer section */}
             <BecomeDealer />
-            <hr style={mainStyle.specHrLight}/>
-            
+
             {/* Video Showcase section */}
-            <div style={mainStyle.section}>
-                <div style={{...mainStyle.container, textAlign: 'center'}}>    
-                    <h2 className="ev-section-title" style={mainStyle.title}>{T.h2_videoShowcase[L]}</h2>
-                    <div className="ev-videos">
+            <section className="ev-section" style={{ background: '#fff' }}>
+                <div className="ev-container" style={{ textAlign: 'center' }}>
+                    <div className="ev-reveal">
+                        <span className="ev-eyebrow">{EB.videos[L]}</span>
+                        <h2 className="ev-section-title">{T.h2_videoShowcase[L]}</h2>
+                    </div>
+                    <div className="ev-videos ev-stagger">
                         {videoCapsules.slice(0, 3).map((video, index) => (
                             <div key={index} className="ev-video">
                                 <div className="ev-video__frame">
@@ -307,19 +263,16 @@ const Home: React.FC = () => {
                             </div>
                         ))}
                     </div>
-                    <Link to="/videoShowcase">
-                        <Button customStyle={ {transform: isButtonHovered ? 'translateY(-5px)' : 'none' }} onHoverChange={setIsButtonHovered} >
-                            {T.btn_videoShowcase[L]}      
-                        </Button>
+                    <Link to="/videoShowcase" className="ev-btn">
+                        {T.btn_videoShowcase[L]}
+                        <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
                     </Link>
                 </div>
-            </div>
+            </section>
 
-            <hr style={mainStyle.specHrLight}/>
             {/* Test ride section */}
             <TestRideSection />
 
-            
             {/* SignUp section */}
             <SignupSection />
         </div>

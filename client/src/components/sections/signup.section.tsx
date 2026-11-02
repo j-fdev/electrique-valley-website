@@ -6,10 +6,8 @@
 import React, { useContext } from 'react';
 
 // Styles
-import MainStyle from '../../styles/main.styles';
 
 // Components
-import Button from '../button/mainButton';
 
 // Hooks
 import { useWindowSize } from '../../hooks/useWindowSize';
@@ -21,7 +19,6 @@ import NewsletterModal from '../modal/newsletter.modal';
 
 const SignupSection: React.FC = () => {
     const isMobile = useWindowSize();
-    const mainStyle = MainStyle();
 
     const T = translations.home; 
     const languageContext = useContext(LanguageContext);
@@ -47,20 +44,15 @@ const SignupSection: React.FC = () => {
     };
 
     return (
-        <>
-            <div style={mainStyle.subscribeUpBgImg}>
-                <div style={mainStyle.container}>
-                    <div style={ mainStyle.subscribeDiv }>
-                        <h2 style={{...mainStyle.title, color: 'white' }}>{T.title_signup[L]}</h2>
-                        <Button onClick={() => handleSignup()} customStyle={ mainStyle.subscribeButton}>{T.btn_signup[L]}</Button>
-                        <p style={{...mainStyle.paragraph, marginInline: 'auto' }}>{T.p_sighup[L]}</p>
-                    </div>
-                    <div style={ { position: 'relative'}}>
-                        {isOpenModal && <NewsletterModal {...modalProps} />}
-                    </div>
-                </div>
+        <section className="ev-newsletter" style={{ backgroundImage: 'url(/img/home/camping-night-scaled.jpg)' }}>
+            <div className="ev-newsletter__card ev-reveal ev-reveal--zoom">
+                <span className="ev-eyebrow ev-eyebrow--light">Newsletter</span>
+                <h2>{T.title_signup[L]}</h2>
+                <button className="ev-btn" onClick={() => handleSignup()}>{T.btn_signup[L]}</button>
+                <p>{T.p_sighup[L]}</p>
             </div>
-        </>
+            {isOpenModal && <NewsletterModal {...modalProps} />}
+        </section>
     );
 }
 

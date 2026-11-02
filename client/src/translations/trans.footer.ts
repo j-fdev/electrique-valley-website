@@ -40,6 +40,10 @@ export const translations = {
             en: "Luxor Series",
             fr: "Série Luxor",
         },
+        link_elite_series: {
+            en: "Elite Series",
+            fr: "Série Élite",
+        },
         link_ressources: {
             en: "Resources",
             fr: "Ressources",

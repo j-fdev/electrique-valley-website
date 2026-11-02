@@ -1,78 +1,50 @@
 // Modules
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import version from '../../config/version';
-
-// Styles
-import MainStyle from '../../styles/main.styles';
-
-// Components
-import Button from '../../components/button/mainButton';
-
-// Hooks
-import { useWindowSize } from '../../hooks/useWindowSize';
 
 // Translations
 import { translations } from '../../translations/trans.home';
 import { LanguageContext } from '../../translations/languageSelection';
 
-const TestRideSection: React.FC = () => {
-    const isMobile = useWindowSize();
-    const mainStyle = MainStyle();
-    const location = useLocation();
-    const [cartImage, setCartImage] = useState(`/img/luxor/luxor_2+2L/LUXOR_2+2L-SKY-BLUE.png?v=${version}`);
-    const [cartStyle, setCartStyle] = useState({...mainStyle.testRideImageLuxor, width: isMobile ? '400px' : '800px', height: 'auto', right: isMobile ? '200px' : '150px', top: '0px' });
+// Cart shown in front of the photo, depending on the page
+const cartByPage: [string, string][] = [
+    ['luxorSeries', '/img/luxor/luxor_2+2L/LUXOR_2+2L-SKY-BLUE.png'],
+    ['thorSeries', '/img/thor/Thor-GREEN.png'],
+    ['diabloSeries', '/img/diablo/diablo2.png'],
+    ['classicSeries', '/img/classic/classic_2+2/sky-BLUE.png'],
+    ['evolutionSeries', '/img/d-max/XT4/Evolution4L-color-PORTIMAO-BLUE.png'],
+    ['eliteSeries', '/img/elite/Elite_4/Elite_4L_black_nobg.png'],
+];
 
-    const T = translations.home; 
+const TestRideSection: React.FC = () => {
+    const { pathname } = useLocation();
+    const T = translations.home;
     const languageContext = useContext(LanguageContext);
     const L = languageContext ? languageContext.language : 'en';
 
-    useEffect(() => {
-        if (location.pathname.includes('luxorSeries')) {
-            setCartImage(`/img/luxor/luxor_2+2L/LUXOR_2+2L-SKY-BLUE.png?v=${version}`); 
-            setCartStyle({...mainStyle.testRideImageLuxor, width: isMobile ? '400px' : '800px', height: 'auto', right: isMobile ? '200px' : '150px', top: '0px' });     
-        } else if (location.pathname.includes('thorSeries')) {
-            setCartImage(`/img/thor/Thor-GREEN.png?v=${version}`);
-            setCartStyle( {...mainStyle.testRideImageLuxor, width: isMobile ? '300px' : '700px', height: 'auto', right: isMobile ? '100px' : '150px', top: '50px' });
-        } else if (location.pathname.includes('diabloSeries')) {
-            setCartImage(`/img/diablo/diablo2.png?v=${version}`);
-            // setCartStyle( {...mainStyle.testRideImageLuxor, width: isMobile ? '200px' : '400px', height: 'auto', right: isMobile ? '0' : '300px', top: isMobile ? '20px' : '50px' });
-        } else if (location.pathname.includes('classicSeries')) {
-            setCartImage(`/img/classic/classic_2+2/sky-BLUE.png?v=${version}`);
-            setCartStyle( {...mainStyle.testRideImageLuxor, width: isMobile ? '300px' : '700px', height: 'auto', right: isMobile ? '100px' : '150px', top: '50px' });
-        } else if (location.pathname.includes('evolutionSeries')) {
-            setCartImage(`/img/d-max/XT4/Evolution4L-color-PORTIMAO-BLUE.png?v=${version}`);
-            setCartStyle( {...mainStyle.testRideImageLuxor, width: isMobile ? '300px' : '700px', height: 'auto', right: isMobile ? '100px' : '150px', top: '50px' });
-        } else if (location.pathname.includes('eliteSeries')) {
-            setCartImage(`/img/elite/Elite_4/Elite_4L_black_nobg.png?v=${version}`);
-            setCartStyle( {...mainStyle.testRideImageLuxor, width: isMobile ? '300px' : '1000px', height: 'auto', right: isMobile ? '100px' : '100px', top: '0px' });
-        }
-    }, [location.pathname]);
+    const match = cartByPage.find(([page]) => pathname.includes(page));
+    const cartImage = `${match ? match[1] : cartByPage[0][1]}?v=${version}`;
 
     return (
-        <div style={mainStyle.section}>
-            <div style={mainStyle.testRideContainer}>
-                <div style={mainStyle.testRideContent}>
-                    <h2 style={{...mainStyle.title, textAlign: isMobile ? 'center' : 'left' }}>{T.title_test_ride[L]}</h2>
-                    <p style={mainStyle.paragraph}>{T.p_test_ride[L]}</p>
-                    <Link to="/contact">
-                        <Button customStyle={{...mainStyle.blackBtn, alignSelf: isMobile ? 'center' : 'flex-start' }}>
+        <section className="ev-section">
+            <div className="ev-container ev-testride">
+                <div className="ev-reveal ev-reveal--left">
+                    <span className="ev-eyebrow">{L === 'en' ? 'Try it yourself' : 'Essayez-le'}</span>
+                    <h2 className="ev-section-title ev-section-title--left">{T.title_test_ride[L]}</h2>
+                    <p>{T.p_test_ride[L]}</p>
+                    <Link to="/contact" className="ev-btn ev-btn--dark">
                         {T.btn_test_ride[L]}
-                        </Button>
+                        <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
                     </Link>
                 </div>
-                <div style={{ paddingTop: isMobile ? '10px' : '100px' }}>
-                    <div>
-                        <img style={mainStyle.testRideImageCamping} src={`/img/main/camping.jpg?v=${version}`} alt="camping image" />
-                    </div>
-                    <div style={{ flex: 1.5 }}>
-                        <img style={cartStyle} src={cartImage} alt="Cart Image" />
-                    </div>
+                <div className="ev-testride__visual ev-reveal ev-reveal--right">
+                    <img className="ev-testride__photo" src={`/img/main/camping.jpg?v=${version}`} alt="" loading="lazy" />
+                    <img className="ev-testride__cart" src={cartImage} alt="" loading="lazy" />
                 </div>
-            </div> 
-        </div>
+            </div>
+        </section>
     );
-}
+};
 
 export default TestRideSection;
-

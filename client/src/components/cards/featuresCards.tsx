@@ -2,7 +2,6 @@
 import { i_featuresCards_props } from "../../interfaces/interfaces";
 
 // Styles
-import '../../styles/home.modern.css';
 
 const FeaturesCards: React.FC<i_featuresCards_props> = ({icon, title, description}) => {
     return (

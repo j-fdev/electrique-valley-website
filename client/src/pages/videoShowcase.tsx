@@ -70,7 +70,7 @@ const VideoShowcasePage = () => {
     
     if (isLoading) {
         return (
-            <div style={{ padding: '20px', backgroundColor: '#000', color: 'white', textAlign: 'center' }}>
+            <div className="ev-page-hero">
                 Loading videos...
             </div>
         );
@@ -78,7 +78,7 @@ const VideoShowcasePage = () => {
 
     if (error) {
         return (
-            <div style={{ padding: '20px', backgroundColor: '#000', color: 'red', textAlign: 'center' }}>
+            <div className="ev-page-hero" style={{ color: '#ff8a8a' }}>
                 {error}
             </div>
         );
@@ -86,14 +86,14 @@ const VideoShowcasePage = () => {
 
     return (
         <>
-        <section style={{ ...mainStyles.section }}>
-            <div style={{ ...mainStyles.container, textAlign: 'center' }}>
-                <h1 style={{ ...cartsModelsStyles.headerTitle, padding: '15px 0' }}>{T.h1_videoShowcase[L]}</h1>
-                <div style={{ marginTop: '100px', display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+            <section className="ev-page-hero">
+                <div className="ev-container"><h1>{T.h1_videoShowcase[L]}</h1></div>
+            </section>
+            <section className="ev-section" style={{ paddingTop: 'clamp(2.5rem, 6vw, 4rem)' }}>
+                <div className="ev-container">
                     <VideoShowcase videoCapsules={videoCapsules} />
                 </div>
-            </div>
-        </section>
+            </section>
         </>
     );
 }

@@ -5,6 +5,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 //Components
 import Navbar from './components/navigation/navbar';
 import ScrollToTop from './components/utilities/scrollToTop';
+import FloatingCta from './components/utilities/floatingCta';
+import { useScrollReveal } from './hooks/useScrollReveal';
 
 // Translations
 import { LanguageProvider } from './translations/languageSelection';
@@ -43,7 +45,10 @@ const App = () => {
 };
 
 const AppRoutes = () => {
+  useScrollReveal();
   return (
+    <>
+    <FloatingCta />
     <Routes>
       <Route path="/" element={<><Home /><Footer /></>} />
       {/* <Route path="/login" element={<Login />} /> */}
@@ -58,6 +63,7 @@ const AppRoutes = () => {
       <Route path="/videoShowcase" element={<><VideoShowcase /><Footer /></>} />
       <Route path="/termsAndConditions" element={<><TermsAndConditions /><Footer /></>} />
     </Routes>
+    </>
   )
 }
 

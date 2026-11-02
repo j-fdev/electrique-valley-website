@@ -48,6 +48,10 @@ export const translations = {
 			en: "CONTACT US",
 			fr: "CONTACTEZ-NOUS",
 		},
+		cta_test_ride: {
+			en: "Book a test ride",
+			fr: "Réserver un essai",
+		},
 		login: {
 			en: "LOGIN",
 			fr: "CONNEXION",

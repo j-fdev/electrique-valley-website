@@ -1,6 +1,6 @@
 // Modules
 import React, { useState, useContext, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import version from './../../config/version';
 
 // Hooks
@@ -8,7 +8,6 @@ import { useWindowSize } from './../../hooks/useWindowSize';
 
 // Styles
 import NavbarStyles from './../../styles/navbar.style';
-import './../../styles/home.modern.css';
 
 // Api
 // import { btn_Logout } from './../../api/api';
@@ -23,7 +22,8 @@ interface i_navbar_props {
 }   
 
 const Navbar: React.FC = () => {
-    const [backgroundColor, setBackgroundColor] = useState('transparent');
+    const [isScrolled, setIsScrolled] = useState(window.scrollY > 50);
+    const { pathname } = useLocation();
     const [isSeriesOpen, setIsSeriesOpen] = useState(false);
     const [isResourcesOpen, setIsResourcesOpen] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -69,11 +69,7 @@ const Navbar: React.FC = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 50) {
-                setBackgroundColor('black');
-            } else {
-                setBackgroundColor('transparent');
-            }
+            setIsScrolled(window.scrollY > 50);
         };
 
         const handleClickOutside = (event: MouseEvent | TouchEvent) => {
@@ -101,7 +97,13 @@ const Navbar: React.FC = () => {
 
 
     return (
-        <div style={{ backgroundColor, ...navStyles.navbarStyle }}>
+        <div style={{
+            ...navStyles.navbarStyle,
+            background: isScrolled || isMenuOpen ? 'rgba(10, 26, 43, 0.86)' : 'linear-gradient(180deg, rgba(6, 17, 29, 0.7) 0%, rgba(6, 17, 29, 0) 100%)',
+            backdropFilter: isScrolled ? 'blur(14px)' : 'none',
+            WebkitBackdropFilter: isScrolled ? 'blur(14px)' : 'none',
+            boxShadow: isScrolled ? '0 10px 30px rgba(6, 17, 29, 0.25)' : 'none',
+        }}>
             {/* Logo Section - Left Side */}
             <div style={navStyles.navLogo}>
                 <Link to="/" onClick={handleLinkClick}>
@@ -127,11 +129,11 @@ const Navbar: React.FC = () => {
                 )}
                 {(isMobile && isMenuOpen) || !isMobile ? (
                     <>
-                        <Link to="/" style={isMobile ? navStyles.linkStyle : navStyles.linkStyle} onClick={handleLinkClick}>
+                        <Link to="/" className={`ev-nav-link${pathname === '/' ? ' is-active' : ''}`} style={navStyles.linkStyle} onClick={handleLinkClick}>
                             {T.home[L]}
                         </Link>
                         <div className="dropdown" style={navStyles.dropdownMenu} onMouseEnter={() => { setIsSeriesOpen(true); setIsResourcesOpen(false); }} onMouseLeave={() => setIsSeriesOpen(false)}>
-                            <div className="dropbtn" style={{...navStyles.dropbtn, borderLeft: isMobile ? 'none' : '1px solid #fff'}} onClick={() => { setIsSeriesOpen(!isSeriesOpen); setIsResourcesOpen(false); }}>
+                            <div className={`dropbtn ev-nav-link${pathname.includes('Series') ? ' is-active' : ''}`} style={navStyles.dropbtn} onClick={() => { setIsSeriesOpen(!isSeriesOpen); setIsResourcesOpen(false); }}>
                                 {T.our_series[L]}&nbsp;
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="16" width="16">
                                     <path fill="white" d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
@@ -140,8 +142,8 @@ const Navbar: React.FC = () => {
                             {!isMobile && (
                                 <>
                                     {/* Invisible bridge for hover continuity */}
-                                    <div style={{ position: 'fixed', left: 0, width: '100vw', top: '50px', height: '15px', zIndex: 1999, backgroundColor: 'transparent' }} onMouseEnter={() => setIsSeriesOpen(true)} onMouseLeave={() => setIsSeriesOpen(false)}></div>
-                                    <div className="dropdown-content" style={{ ...navStyles.dropdown_content, display: isSeriesOpen ? 'flex' : 'none', position: 'fixed', left: 0, width: '100vw', top: '50px' }} onMouseEnter={() => setIsSeriesOpen(true)} onMouseLeave={() => setIsSeriesOpen(false)}>
+                                    <div style={{ position: 'fixed', left: 0, width: '100vw', top: '57px', height: '15px', zIndex: 1999, backgroundColor: 'transparent' }} onMouseEnter={() => setIsSeriesOpen(true)} onMouseLeave={() => setIsSeriesOpen(false)}></div>
+                                    <div className="dropdown-content ev-mega" style={{ ...navStyles.dropdown_content, display: isSeriesOpen ? 'flex' : 'none', position: 'fixed', left: 0, width: '100vw', top: '57px', justifyContent: 'center' }} onMouseEnter={() => setIsSeriesOpen(true)} onMouseLeave={() => setIsSeriesOpen(false)}>
                                         <div className="ev-nav-item" style={navStyles.dropdownItem}>
                                             <Link to="/evolutionSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
                                                 <img src="/img/d-max/XT4/Evolution4L-color-BLACK-SAPPHIRE.png" alt="Evolution Series" style={navStyles.dropdownImage} />
@@ -205,22 +207,22 @@ const Navbar: React.FC = () => {
                             )}
                         </div>
                         <div className="dropdown" style={navStyles.dropdownMenu} onMouseEnter={() => { setIsResourcesOpen(true); setIsSeriesOpen(false); }} onMouseLeave={() => setIsResourcesOpen(false)}>
-                            <div className="dropbtn" style={{...navStyles.dropbtn, borderLeft: isMobile ? 'none' : '1px solid #fff'}} onClick={() => { setIsResourcesOpen(!isResourcesOpen); setIsSeriesOpen(false); }}>
+                            <div className={`dropbtn ev-nav-link${pathname === '/videoShowcase' ? ' is-active' : ''}`} style={navStyles.dropbtn} onClick={() => { setIsResourcesOpen(!isResourcesOpen); setIsSeriesOpen(false); }}>
                                 {T.ressources[L]}&nbsp;
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="16" width="16">
                                     <path fill="white" d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
                                 </svg>
                             </div>
-                            <div className="dropdown-content" style={{...navStyles.dropdown_content, display: isResourcesOpen ? 'block' : 'none' }} onMouseEnter={() => setIsResourcesOpen(true)} onMouseLeave={() => setIsResourcesOpen(false)}>
+                            <div className="dropdown-content ev-mega" style={{...navStyles.dropdown_content, display: isResourcesOpen ? 'block' : 'none', minWidth: '240px', padding: '30px 10px 10px', borderRadius: '0 0 18px 18px' }} onMouseEnter={() => setIsResourcesOpen(true)} onMouseLeave={() => setIsResourcesOpen(false)}>
                                 <Link to="/videoShowcase" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
                                     {T.video_showcase[L]}
                                 </Link>
                             </div>
                         </div>
-                        <Link to="/contact" style={{...navStyles.linkStyle, borderRight: isMobile ? 'none' : '1px solid #fff'}} onClick={handleLinkClick}>
+                        <Link to="/contact" className="ev-nav-cta" style={{ ...navStyles.linkStyle, height: 'auto' }} onClick={handleLinkClick}>
                             {T.contact_us[L]}
                         </Link>
-                        <button onClick={toggleLanguage} style={{ marginLeft: "10px", padding: "5px 10px", backgroundColor: "transparent", color: "#FFF", border: "none" }} >
+                        <button className="ev-lang-btn" onClick={toggleLanguage} aria-label="Change language">
                             {language === "en" ? "FR" : "EN"}
                         </button>
                     </>

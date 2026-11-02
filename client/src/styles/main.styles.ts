@@ -12,16 +12,20 @@ const MainStyles = () => {
     const sectionStacked: CSSProperties = { display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '2rem' };
 
     const mainBtn = (isHovered: boolean): CSSProperties => ({
-        fontSize: 'clamp(0.75rem, 0.6620rem + 0.3756vw, 1rem)',
+        fontFamily: 'var(--ev-font-head)',
+        fontSize: 'clamp(0.85rem, 0.78rem + 0.3vw, 1rem)',
+        fontWeight: 600,
+        letterSpacing: '0.02em',
         marginTop: isMobile ? '1rem' : '1.5rem',
-        padding: '10px',
-        backgroundColor: isHovered ? 'var(--clr-brand-blue-hover)' : 'var(--clr-brand-blue)',
-        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+        padding: '13px 28px',
+        backgroundColor: isHovered ? 'var(--ev-blue-dark)' : 'var(--ev-blue)',
+        boxShadow: isHovered ? '0 16px 30px rgba(8, 68, 125, 0.3)' : '0 10px 24px rgba(0, 132, 176, 0.28)',
         color: 'white',
-        borderRadius: '10px',
+        borderRadius: '999px',
         border: 'none',
         cursor: 'pointer',
-        transition: 'background-color 0.3s ease'
+        transform: isHovered ? 'translateY(-2px)' : 'none',
+        transition: 'background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease'
     });
 
     const blackBtn: CSSProperties = ({ backgroundColor: 'black' });

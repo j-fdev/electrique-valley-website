@@ -5,6 +5,7 @@ import App from './App';
 
 //Styles
 import './styles/styles.css';
+import './styles/site.css';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
