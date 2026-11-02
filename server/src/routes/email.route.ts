@@ -1,10 +1,10 @@
 
 
 import express from 'express';
-import { sendEmail, subscribeEmail } from "../controllers/email.controller.js";
-import { validateContact, validateSubscribe } from "../middlewares/validation.middleware.js";
-import { validateLanguage } from '../middlewares/language.validation.middleware.js';
-import { honeypot, rateLimit } from '../middlewares/rate-limit.middleware.js';
+import { sendEmail, subscribeEmail } from "../controllers/email.controller";
+import { validateContact, validateSubscribe } from "../middlewares/validation.middleware";
+import { validateLanguage } from '../middlewares/language.validation.middleware';
+import { honeypot, rateLimit } from '../middlewares/rate-limit.middleware';
 
 const MINUTE = 60 * 1000;
 

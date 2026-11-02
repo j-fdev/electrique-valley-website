@@ -1,8 +1,8 @@
 
 
 import { DataSource } from "typeorm"
-import { Newsletter } from "../entities/subscriber.model.js"
-import { VideoCapsule } from "../entities/video_capsules.model.js"
+import { Newsletter } from "../entities/subscriber.model"
+import { VideoCapsule } from "../entities/video_capsules.model"
 import dotenv from 'dotenv'
 
 dotenv.config()

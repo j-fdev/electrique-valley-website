@@ -1,7 +1,7 @@
 
 
 import { NextFunction, Request, Response } from 'express';
-import { i_contact_form_data } from './../interfaces/interfaces.js';
+import { i_contact_form_data } from './../interfaces/interfaces';
 
 const str_regex = /^[^\\/&\[\]{}<>]*$/;
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

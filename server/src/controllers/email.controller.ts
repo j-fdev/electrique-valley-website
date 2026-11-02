@@ -1,9 +1,9 @@
 import { Request, Response } from 'express';
 import nodemailer from 'nodemailer';
 
-import { Newsletter } from '../entities/subscriber.model.js';
-import { AppDataSource } from '../database/sql.js';
-import { translate, emailTranslations } from '../translation/validation.trans.js'
+import { Newsletter } from '../entities/subscriber.model';
+import { AppDataSource } from '../database/sql';
+import { translate, emailTranslations } from '../translation/validation.trans'
 
 const sendEmail = async (req: Request, res: Response) => {
     try {

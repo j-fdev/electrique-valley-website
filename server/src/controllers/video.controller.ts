@@ -1,10 +1,10 @@
 
 
 import { Request, Response } from 'express';
-import { AppDataSource } from "../database/sql.js";
-import { VideoCapsule } from "../entities/video_capsules.model.js";
+import { AppDataSource } from "../database/sql";
+import { VideoCapsule } from "../entities/video_capsules.model";
 import fs from 'fs';
-import { VIDEO_DIR } from '../config.js';
+import { VIDEO_DIR } from '../config';
 
 interface i_video_capsule {
     id?: number;

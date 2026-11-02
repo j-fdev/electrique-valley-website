@@ -5,11 +5,11 @@ import dotenv from 'dotenv';
 import fs from 'fs';
 import path from 'path';
 
-import { AppDataSource } from "./database/sql.js";
-import emailRouter from './routes/email.route.js';
-import videoRouter from './routes/video.route.js';
-import { convertAllVideos } from './uploads/convert.js';
-import { VIDEO_DIR } from './config.js';
+import { AppDataSource } from "./database/sql";
+import emailRouter from './routes/email.route';
+import videoRouter from './routes/video.route';
+import { convertAllVideos } from './uploads/convert';
+import { VIDEO_DIR } from './config';
 
 dotenv.config();
 
