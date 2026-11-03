@@ -1,6 +1,7 @@
 // Modules
 import { useState, useContext } from 'react';
 import { API_BASE_URL } from '../../config/api.config';
+import { legal } from '../../translations/trans.legal';
 
 // Hooks
 import { useWindowSize } from '../../hooks/useWindowSize';
@@ -40,6 +41,8 @@ const NewsletterModal: React.FC<i_newsletter_modal_props> = (props) => {
 
     const [email, setEmail] = useState("");
     const [website, setWebsite] = useState(""); // spam trap
+    const [consent, setConsent] = useState(false);          // Law 25: separate, unchecked box
+    const [consentError, setConsentError] = useState(false);
     const [emailError, setEmailError] = useState("");
     const [isEmailSubmitted, setIsEmailSubmitted] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
@@ -54,6 +57,10 @@ const NewsletterModal: React.FC<i_newsletter_modal_props> = (props) => {
     };
     
     const handleEmailSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        if (!consent) {
+            setConsentError(true);
+            return;
+        }
         try {
             const [ isValid , msg , field ] = handleSubscribeFields(email, L);
 
@@ -108,7 +115,7 @@ const NewsletterModal: React.FC<i_newsletter_modal_props> = (props) => {
             <div style={{ 
                 position: 'relative',  
                 width: isMobile ? '340px' : '860px', 
-                height: '400px', 
+                minHeight: '400px', 
                 backgroundColor: 'black', 
                 padding: '2rem', 
                 borderRadius: '2px',
@@ -122,6 +129,11 @@ const NewsletterModal: React.FC<i_newsletter_modal_props> = (props) => {
                     <input type="text" name="website" value={website} onChange={(e) => setWebsite(e.target.value)} tabIndex={-1} autoComplete="off" aria-hidden="true"
                         style={{ position: 'absolute', left: '-10000px', width: '1px', height: '1px', overflow: 'hidden' }} />
                     <input style={{...newsletterStyles.newsletterInput, borderColor: error.email ? 'red' : undefined }} type="text" placeholder={T.p_email_placeholder[L]} value={email} onChange={handleEmailChange} />
+                    <label className="ev-consent ev-consent--compact">
+                        <input type="checkbox" checked={consent} onChange={(e) => { setConsent(e.target.checked); setConsentError(false); }} />
+                        <span>{legal.consent.newsletter[L]}</span>
+                    </label>
+                    {consentError && <p className="ev-consent__error" role="alert">{legal.consent.required[L]}</p>}
                     <div style={{minHeight: '25px'}}>
                         {actionConfirmedMsg ? (
                             <div style={{...contactStyles.formRow, color: api_error.type === 'Success' ? 'green' : 'red', justifyContent: 'center'}}>

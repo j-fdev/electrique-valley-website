@@ -10,3 +10,5 @@
 
 // // Extracting language type dynamically
 // export type Language = keyof typeof homeTranslations.hero_h2;
+
+export {};

@@ -1,6 +1,6 @@
 // Modules
 import { useContext, useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 // Styles
 import MainStyle from '../../styles/main.styles';
@@ -13,6 +13,7 @@ import { i_contact_form_props } from '../../interfaces/interfaces';
 
 // Translations
 import { translations } from '../../translations/trans.contact';
+import { legal } from '../../translations/trans.legal';
 import { LanguageContext } from '../../translations/languageSelection';
 import { ClipLoader } from 'react-spinners';
 
@@ -28,6 +29,8 @@ const ContactForm = (props: i_contact_form_props ) => {
 
     const [isNotContactUs, setIsNotContactUs] = useState(false);
     const [formErrVisible, setFormErrVisible] = useState(false);
+    const [consent, setConsent] = useState(false);           // Law 25: unchecked by default
+    const [consentError, setConsentError] = useState(false);
     
     const toggleLanguage = () => {
         const newLanguage = language === "en" ? "fr" : "en";
@@ -152,9 +155,17 @@ const ContactForm = (props: i_contact_form_props ) => {
                     <textarea style={{...contactStyles.formInput, ...formStyles.input(E.message ?? ''), borderColor: E.message ? 'red' : undefined}} name="message" value={F.message} placeholder={props.placeholderMessage} onChange={(e) => handleField(e)} onFocus={() => props.setPlaceholderMessage('')} onBlur={() => F.message === '' && props.setPlaceholderMessage(T.placeHolder_message[language])} required></textarea>
                     <div style={contactStyles.errorDiv}>{E.message !== '' && ( <p style={contactStyles.inputErrors}>{E.message}</p>)}</div>
                 </div>
+                <label className="ev-consent">
+                    <input type="checkbox" checked={consent} onChange={(e) => { setConsent(e.target.checked); setConsentError(false); }} />
+                    <span>
+                        {legal.consent.contactBefore[language]}
+                        <Link to="/privacy">{legal.consent.policyLink[language]}</Link>.
+                    </span>
+                </label>
+                {consentError && <p className="ev-consent__error" role="alert">{legal.consent.required[language]}</p>}
                 <div>
                     <button type='button' style={{ ...contactStyles.formButton, opacity: props.isLoading ? 0.7 : 1, cursor: props.isLoading ? 'not-allowed' : 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }} 
-                        onClick={(e) => !props.isLoading && props.callback(e)} disabled={props.isLoading}>{props.isLoading && <ClipLoader size={20} color="white" />}{T.btn_send[language]}
+                        onClick={(e) => { if (props.isLoading) return; if (!consent) { setConsentError(true); return; } props.callback(e); }} disabled={props.isLoading}>{props.isLoading && <ClipLoader size={20} color="white" />}{T.btn_send[language]}
                     </button>
                 </div>
                 {props.actionConfirmedMsg && 
@@ -166,4 +177,4 @@ const ContactForm = (props: i_contact_form_props ) => {
     )
 };
 
-export default ContactForm;
+export default ContactForm;

@@ -15,26 +15,21 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     const getBrowserLanguage = (): Language => {
         const savedLanguage = localStorage.getItem("language") as Language;
         if (savedLanguage) {
-            console.log("Using saved language:", savedLanguage);
             return savedLanguage;
         }
-        console.log("navigator.language:", navigator.language);
         const lang = navigator.language === "fr-CA" ? "fr" :
                      navigator.language.startsWith("fr") ? "fr" :
-                     navigator.language.startsWith("en") ? "en" : "en"; // Check for any English variations (e.g., en-US, en-GB)
-        console.log("Detected browser language:", navigator.language, "Using language:", lang);
+                     navigator.language.startsWith("en") ? "en" : "fr"; // Check for any English variations (e.g., en-US, en-GB)
         return lang;
     };
 
   const [language, setLanguage] = useState<Language>(getBrowserLanguage());
 
   const updateLanguage = (lang: Language) => {
-    console.log("Updating language to:", lang);
     setLanguage(lang);
   };
 
   useEffect(() => {
-    console.log("Setting language in localStorage:", language);
     localStorage.setItem("language", language); // Save preference
   }, [language]);
 

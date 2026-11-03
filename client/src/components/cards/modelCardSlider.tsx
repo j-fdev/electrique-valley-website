@@ -9,7 +9,8 @@ import homeSliderStyles from '../../styles/slider.style';
 // Interfaces
 import { i_modelCardProps } from '../../interfaces/interfaces';
 
-const ModelCard: React.FC<i_modelCardProps> = ({ image, title, link, ...customStyle }) => {
+// Pick<...> = only these three fields of i_modelCardProps (the card shows no specs)
+const ModelCard: React.FC<Pick<i_modelCardProps, 'image' | 'title' | 'link'>> = ({ image, title, link, ...customStyle }) => {
     const [isHovered, setIsHovered] = useState(false);
 
     const cardStyles = {...homeSliderStyles, ...customStyle};

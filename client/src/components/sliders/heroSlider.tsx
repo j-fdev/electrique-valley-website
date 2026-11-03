@@ -12,7 +12,7 @@ import homeSliderStyles from '../../styles/slider.style';
 // Interfaces
 import { i_hero_slider_props } from '../../interfaces/interfaces';
 
-const HeroSlider: React.FC<i_hero_slider_props> = ({ images }) => {
+const HeroSlider: React.FC<i_hero_slider_props & { alts?: string[] }> = ({ images, alts }) => {
     const [activeSlide, setActiveSlide] = useState(0);
 
     const settings = {
@@ -38,7 +38,7 @@ const HeroSlider: React.FC<i_hero_slider_props> = ({ images }) => {
                     <div key={index}>
                         <img 
                             src={image} 
-                            alt="slider slide" 
+                            alt={alts?.[index] ?? ''} 
                             style={{ 
                                 ...homeSliderStyles.heroSliderImg, 
                                 transition: 'transform 3s ease-out', 

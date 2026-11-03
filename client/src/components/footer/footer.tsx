@@ -5,6 +5,7 @@ import version from './../../config/version';
 
 // Translations
 import { translations } from '../../translations/trans.footer';
+import { legal } from '../../translations/trans.legal';
 import { LanguageContext } from '../../translations/languageSelection';
 
 const Footer: React.FC = () => {
@@ -62,7 +63,8 @@ const Footer: React.FC = () => {
                             <li><Link to="/videoShowcase">{F.link_video_showcase[L]}</Link></li>
                             <li><Link to="/contact">{F.link_contact_us[L]}</Link></li>
                             <li><Link to="/contact?source=becomeDealer">{L === 'en' ? 'Become a dealer' : 'Devenir revendeur'}</Link></li>
-                            <li><Link to="/termsAndConditions">{F.link_terms[L]}</Link></li>
+                            <li><Link to="/privacy">{legal.links.privacy[L]}</Link></li>
+                            <li><Link to="/termsAndConditions">{legal.links.terms[L]}</Link></li>
                         </ul>
                     </div>
 
@@ -76,7 +78,7 @@ const Footer: React.FC = () => {
                             </li>
                             <li>
                                 <svg viewBox="0 0 512 512"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>
-                                <a href="mailto:info@electriquevalley.com">info@electriquevalley.com</a>
+                                <a href={`mailto:${legal.contactEmail}`}>{legal.contactEmail}</a>
                             </li>
                             <li>
                                 <svg viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
@@ -88,7 +90,12 @@ const Footer: React.FC = () => {
 
                 <div className="ev-footer__bottom">
                     <p style={{ margin: 0 }}>{copyright}</p>
-                    <button className="ev-footer__lang" onClick={toggleLanguage}>{L === 'en' ? 'Français' : 'English'}</button>
+                    <div className="ev-footer__legal">
+                        <Link to="/privacy">{legal.links.privacy[L]}</Link>
+                        <Link to="/termsAndConditions">{legal.links.terms[L]}</Link>
+                        <a href="https://tyrem.ca" target="_blank" rel="noopener">{legal.links.credit[L]}</a>
+                        <button className="ev-footer__lang" onClick={toggleLanguage}>{L === 'en' ? 'Français' : 'English'}</button>
+                    </div>
                 </div>
             </div>
         </footer>

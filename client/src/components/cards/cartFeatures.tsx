@@ -14,7 +14,7 @@ const CartFeatures: React.FC<i_cart_features_props> = ({ image, title, descripti
     return (
         <div style={{}}>
             <div style={ cardStyles.imageDivStyle }>
-                <img style={ cardStyles.imageStyle} src={image} alt="" />
+                <img style={ cardStyles.imageStyle} src={image} alt={title} loading="lazy" />
             </div>
             <h3 style={{ margin: '10px 0' }}>{title}</h3>
             <p>{description}</p>

@@ -7,6 +7,7 @@ import Navbar from './components/navigation/navbar';
 import ScrollToTop from './components/utilities/scrollToTop';
 import FloatingCta from './components/utilities/floatingCta';
 import { useScrollReveal } from './hooks/useScrollReveal';
+import { useRouteMeta } from './hooks/useRouteMeta';
 
 // Translations
 import { LanguageProvider } from './translations/languageSelection';
@@ -22,6 +23,7 @@ import ThorSeries from './pages/thorSeries';
 // import ToraSeries from './pages/toraSeries'; 
 import Contact from './pages/contact';
 import TermsAndConditions from './pages/termsAndConditions';
+import Privacy from './pages/privacy';
 import VideoShowcase from './pages/videoShowcase';
 import Footer from './components/footer/footer';
 
@@ -45,6 +47,7 @@ const App = () => {
 
 const AppRoutes = () => {
   useScrollReveal();
+  useRouteMeta();
   return (
     <>
     <FloatingCta />
@@ -60,6 +63,7 @@ const AppRoutes = () => {
       <Route path="/contact" element={<><Contact /><Footer /></>} />
       <Route path="/videoShowcase" element={<><VideoShowcase /><Footer /></>} />
       <Route path="/termsAndConditions" element={<><TermsAndConditions /><Footer /></>} />
+      <Route path="/privacy" element={<><Privacy /><Footer /></>} />
     </Routes>
     </>
   )
