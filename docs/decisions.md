@@ -35,3 +35,10 @@
 - **Decision:** signed links (HMAC of the email with `UNSUBSCRIBE_SECRET`) open `/unsubscribe`, where one button deletes the address. Without a link, the visitor types the address and receives a confirmation link.
 - **Why:** no login needed; nobody can unsubscribe someone else; mail scanners that open links cannot unsubscribe by accident (a button click is required).
 - **Consequences:** a new `.env` variable; the server refuses to create links if it is missing.
+
+## 2026-11-03: Scroll to top with ScrollToTop, not ScrollRestoration
+
+- **Context:** after scrolling down, changing pages showed the new page scrolling back up.
+- **Decision:** `ScrollToTop` uses `useLayoutEffect` with an instant `window.scrollTo`, and the global `scroll-behavior: smooth` was removed.
+- **Why:** React Router's `<ScrollRestoration />` only works with a data router (`createBrowserRouter`); this site uses `<BrowserRouter>` (react-router-dom 6), so it would have needed a router migration.
+- **Consequences:** Back/Forward opens pages at the top instead of the previous position. Switch to `<ScrollRestoration />` if the router is ever migrated (for example with the Vite migration).
