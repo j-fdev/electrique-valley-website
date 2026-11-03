@@ -166,7 +166,7 @@ const EliteSeries = () => {
             <CartModels 
                 headerBgImage="/img/elite/Elite_main/vineyard-landscape.jpg"
                 altProp="Elite Series"
-                headerCartImage="/img/elite/Elite_4/Elite_4L_black_nobg.png?v=${version}"
+                headerCartImage="/img/elite/Elite_4/Elite_4L_black_nobg.png"
                 headerIsElite={true}
                 headerTitle={T.h1_title[L]}
                 chooseModelsH2={T.h2_choose_your_model[L]}

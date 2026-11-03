@@ -166,7 +166,7 @@ const DMaxSeries = () => {
             <CartModels 
                 headerBgImage="/img/d-max/Evolution_water_Bg.png"
                 altProp="D-MAX Series"
-                headerCartImage="/img/d-max/XT4/Evolution4L-color-BLACK-SAPPHIRE.png?v=${version}"
+                headerCartImage="/img/d-max/XT4/Evolution4L-color-BLACK-SAPPHIRE.png"
                 headerTitle={T.h1_title[L]}
                 chooseModelsH2={T.h2_choose_your_model[L]}
                 modelsTitle={modelsTitle}
