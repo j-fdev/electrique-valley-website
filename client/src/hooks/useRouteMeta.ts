@@ -44,6 +44,8 @@ export const useRouteMeta = () => {
         setHeadTag('meta[property="og:description"]', metaByProperty('og:description'), 'content', description);
         setHeadTag('meta[property="og:url"]', metaByProperty('og:url'), 'content', SITE_URL + pathname);
         setHeadTag('meta[property="og:locale"]', metaByProperty('og:locale'), 'content', L === 'fr' ? 'fr_CA' : 'en_CA');
+        // Utility pages stay out of Google
+        setHeadTag('meta[name="robots"]', metaByName('robots'), 'content', pathname === '/unsubscribe' ? 'noindex' : 'index, follow');
         setHeadTag('link[rel="canonical"]', () => { const l = document.createElement('link'); l.setAttribute('rel', 'canonical'); return l; }, 'href', SITE_URL + (pathname === '/' ? '/' : pathname));
     }, [pathname, L]);
 };

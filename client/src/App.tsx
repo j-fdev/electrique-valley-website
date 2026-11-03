@@ -24,6 +24,7 @@ import ThorSeries from './pages/thorSeries';
 import Contact from './pages/contact';
 import TermsAndConditions from './pages/termsAndConditions';
 import Privacy from './pages/privacy';
+import Unsubscribe from './pages/unsubscribe';
 import VideoShowcase from './pages/videoShowcase';
 import Footer from './components/footer/footer';
 
@@ -64,6 +65,7 @@ const AppRoutes = () => {
       <Route path="/videoShowcase" element={<><VideoShowcase /><Footer /></>} />
       <Route path="/termsAndConditions" element={<><TermsAndConditions /><Footer /></>} />
       <Route path="/privacy" element={<><Privacy /><Footer /></>} />
+      <Route path="/unsubscribe" element={<><Unsubscribe /><Footer /></>} />
     </Routes>
     </>
   )

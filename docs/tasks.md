@@ -26,7 +26,10 @@
 - [x] Unchecked consent box on the contact form, separate one for the newsletter
 - [x] Footer links to the legal pages on every page
 - [ ] Sign Tyrem's client contract (Law 25 service-provider clause) with Électrique Valley
-- [ ] Newsletter emails (Canada's anti-spam law, CASL): each email must identify the sender and include a working unsubscribe link. Add an unsubscribe endpoint (the `active` column already exists)
+- [x] Newsletter unsubscribe (CASL): signed link at the bottom of every newsletter email, `/unsubscribe` page, address deleted on confirmation
+- [ ] CASL: newsletter emails must show a **mailing address** (today only the city). Get the address from the client and add it to `server/src/utilities/unsubscribe.ts` (`senderFooter`)
+- [ ] Newsletters sent by hand (Gmail): paste the footer with the generic link `https://www.electriquevalley.com/unsubscribe` at the bottom of each one
+- [ ] Production `.env`: set `UNSUBSCRIBE_SECRET` (64 random characters) on the AWS server
 - [ ] Delete contact emails older than the retention period (manual routine in the mailbox for now)
 
 ## SEO and speed
@@ -50,6 +53,11 @@
 
 ## Launch
 
+- [ ] Run the `launch-check` agent (SEO and legal) and fix its blockers; complete its off-site tasks in `docs/launch-checklist.md`
 - [ ] AWS migration: see `deploy/MIGRATION.md`
 - [ ] Test: phone, tablet, desktop; French and English; keyboard and contrast
 - [ ] Merge `redesign-home` into `main` once approved
+
+## After this project is deployed
+
+- [ ] **Reminder for J-F:** recheck the **MG Lavage à pression** site (`C:\Applications_builds\MG Lavage a pression`) for the Quebec legal pages and SEO: run the `launch-check` agent on it

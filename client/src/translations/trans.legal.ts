@@ -33,6 +33,21 @@ export const legal = {
             en: 'Please check the box to continue.',
         },
     },
+    unsubscribe: {
+        title: { fr: 'Se désabonner de l’infolettre', en: 'Unsubscribe from the newsletter' },
+        intro: {
+            fr: 'Vous ne recevrez plus nos courriels et votre adresse sera supprimée de notre liste.',
+            en: 'You will stop receiving our emails and your address will be deleted from our list.',
+        },
+        emailLabel: { fr: 'Votre adresse courriel', en: 'Your email address' },
+        confirm: { fr: 'Confirmer le désabonnement', en: 'Confirm unsubscription' },
+        sendLink: { fr: 'Recevoir un lien de confirmation', en: 'Send me a confirmation link' },
+        noLink: {
+            fr: 'Entrez l’adresse inscrite à l’infolettre : nous lui enverrons un lien pour confirmer.',
+            en: 'Enter the address subscribed to the newsletter: we will send it a link to confirm.',
+        },
+        error: { fr: 'Une erreur est survenue. Réessayez plus tard.', en: 'Something went wrong. Please try again later.' },
+    },
     privacy: {
         title: { fr: 'Politique de confidentialité', en: 'Privacy policy' },
         sections: [
@@ -134,8 +149,12 @@ export const legal = {
                 title: { fr: 'Vos droits', en: 'Your rights' },
                 paragraphs: [
                     {
-                        fr: 'Vous pouvez demander à consulter, corriger ou supprimer vos renseignements, retirer votre consentement ou vous désabonner de l’infolettre, en écrivant au responsable. Nous répondons dans un délai de 30 jours.',
-                        en: 'You can ask to see, correct or delete your information, withdraw your consent or unsubscribe from the newsletter by writing to the person in charge. We answer within 30 days.',
+                        fr: 'Vous pouvez demander à consulter, corriger ou supprimer vos renseignements, ou retirer votre consentement, en écrivant au responsable. Nous répondons dans un délai de 30 jours.',
+                        en: 'You can ask to see, correct or delete your information, or withdraw your consent, by writing to the person in charge. We answer within 30 days.',
+                    },
+                    {
+                        fr: 'Pour quitter l’infolettre, cliquez sur le lien de désabonnement au bas de nos courriels ou rendez-vous à la page electriquevalley.com/unsubscribe. Votre adresse est alors supprimée.',
+                        en: 'To leave the newsletter, click the unsubscribe link at the bottom of our emails or go to electriquevalley.com/unsubscribe. Your address is then deleted.',
                     },
                     {
                         fr: 'Si vous n’êtes pas satisfait de notre réponse, vous pouvez porter plainte auprès de la Commission d’accès à l’information du Québec.',
@@ -290,6 +309,10 @@ export const pageMeta = {
             fr: 'Comment Électrique Valley recueille, utilise et protège vos renseignements personnels (Loi 25).',
             en: 'How Électrique Valley collects, uses and protects your personal information (Quebec Law 25).',
         },
+    },
+    '/unsubscribe': {
+        title: { fr: 'Se désabonner | Électrique Valley', en: 'Unsubscribe | Électrique Valley' },
+        description: { fr: 'Se désabonner de l’infolettre d’Électrique Valley.', en: 'Unsubscribe from the Électrique Valley newsletter.' },
     },
     '/termsAndConditions': {
         title: { fr: 'Conditions d’utilisation | Électrique Valley', en: 'Terms of Use | Électrique Valley' },

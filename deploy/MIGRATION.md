@@ -145,6 +145,13 @@ DB_NAME=electriquevalley_db
 DB_USER=ev_app
 DB_PASSWORD=<the password from 2b>
 DB_LOGGING=false
+UNSUBSCRIBE_SECRET=<64 random characters, see below>
+```
+
+Generate the unsubscribe secret on the server (keep it private; it signs the newsletter unsubscribe links):
+
+```bash
+node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 ```
 
 Keep `EMAIL_USER`, `EMAIL_PASS` and `ADMIN_EMAIL` as they are. `TOKEN_KEY` is left over from the removed

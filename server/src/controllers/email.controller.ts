@@ -4,6 +4,7 @@ import nodemailer from 'nodemailer';
 import { Newsletter } from '../entities/subscriber.model';
 import { AppDataSource } from '../database/sql';
 import { translate, emailTranslations } from '../translation/validation.trans'
+import { normalizeEmail, isValidUnsubscribeToken, unsubscribeUrl, senderFooter } from '../utilities/unsubscribe';
 
 const sendEmail = async (req: Request, res: Response) => {
     try {
@@ -89,9 +90,10 @@ const subscribeEmail = async (req: Request, res: Response): Promise<void> => {
             return;
         }
 
+        const cleanEmail = normalizeEmail(email);
         const newsletterRepository = AppDataSource.getRepository(Newsletter);
         const existingEmail = await newsletterRepository.findOne({ 
-            where: { email: email.trim().toLowerCase() } 
+            where: { email: cleanEmail } 
         });
         
         if (existingEmail) {
@@ -105,7 +107,7 @@ const subscribeEmail = async (req: Request, res: Response): Promise<void> => {
             return; 
         }
 
-        const newsletter = newsletterRepository.create({ email });
+        const newsletter = newsletterRepository.create({ email: cleanEmail });
         await newsletterRepository.save(newsletter);
 
         let transporter = nodemailer.createTransport({
@@ -123,9 +125,10 @@ const subscribeEmail = async (req: Request, res: Response): Promise<void> => {
         };
         let userMailOptions = {
             from: process.env.EMAIL_USER,
-            to: email,
+            to: cleanEmail,
             subject: emailTranslations.newsletter.subject[language],
-            text: emailTranslations.newsletter.body[language]
+            // CASL: sender identification and an unsubscribe link in every newsletter email
+            text: emailTranslations.newsletter.body[language] + senderFooter(cleanEmail, language)
         };
 
         await transporter.sendMail(adminMailOptions);
@@ -171,4 +174,51 @@ const subscribeEmail = async (req: Request, res: Response): Promise<void> => {
     }
 };
 
-export { sendEmail, subscribeEmail };
+/**
+ * Unsubscribe from the newsletter.
+ * - With a valid token (link in our emails): the address is deleted right away.
+ * - Without a token (address typed on the /unsubscribe page): if it is subscribed, we email it
+ *   a confirmation link. The answer is the same either way, so nobody can find out who is subscribed.
+ */
+const unsubscribeEmail = async (req: Request, res: Response) => {
+    const { language = 'en', email, token }: { language?: t_email_sending; email?: string; token?: string } = req.body;
+    try {
+        if (!email || typeof email !== 'string' || !email.trim()) {
+            res.status(400).json({ type: 'Error', message: translate.emailRequired, data: [] });
+            return;
+        }
+        const cleanEmail = normalizeEmail(email);
+        const newsletterRepository = AppDataSource.getRepository(Newsletter);
+
+        if (token) {
+            if (!isValidUnsubscribeToken(cleanEmail, token)) {
+                res.status(400).json({ type: 'Error', message: translate.unsubscribeInvalidLink, data: [] });
+                return;
+            }
+            // Law 25: the privacy policy says the address is deleted after unsubscribing
+            await newsletterRepository.delete({ email: cleanEmail });
+            res.status(200).json({ type: 'Success', message: translate.unsubscribeDone, data: [] });
+            return;
+        }
+
+        const subscriber = await newsletterRepository.findOne({ where: { email: cleanEmail } });
+        if (subscriber) {
+            const transporter = nodemailer.createTransport({
+                service: 'gmail',
+                auth: { user: process.env.EMAIL_USER, pass: process.env.EMAIL_PASS }
+            });
+            await transporter.sendMail({
+                from: process.env.EMAIL_USER,
+                to: cleanEmail,
+                subject: emailTranslations.unsubscribe.subject[language],
+                text: emailTranslations.unsubscribe.body[language] + unsubscribeUrl(cleanEmail, language)
+            });
+        }
+        res.status(200).json({ type: 'Success', message: translate.unsubscribeCheckEmail, data: [] });
+    } catch (error) {
+        console.error('Unsubscribe error:', error);
+        res.status(500).json({ type: 'Error', message: translate.subscriptionError, data: [] });
+    }
+};
+
+export { sendEmail, subscribeEmail, unsubscribeEmail };

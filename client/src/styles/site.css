@@ -740,6 +740,17 @@ button, input, textarea, select { font-family: inherit; }
 .ev-prose__block + .ev-prose__block { margin-top: 0.5rem; }
 .ev-prose p + p { margin-top: 0.8rem; }
 
+/* ---------- Unsubscribe page ---------- */
+.ev-unsub { display: grid; gap: 12px; width: min(520px, 100%); margin: 0 auto; padding: 2rem; border-radius: var(--ev-radius); background: #fff; box-shadow: var(--ev-shadow); }
+.ev-unsub label { font-weight: 600; color: var(--ev-ink); }
+.ev-unsub input { padding: 14px 16px; border: 1px solid var(--ev-line); border-radius: 12px; font-size: 1rem; }
+.ev-unsub input:focus { outline: 2px solid var(--ev-blue); outline-offset: 1px; }
+.ev-unsub input[readonly] { background: var(--ev-bg); color: var(--ev-muted); }
+.ev-unsub .ev-btn { justify-self: start; }
+.ev-unsub__status { margin: 4px 0 0; font-weight: 600; }
+.ev-unsub__status--ok { color: #1f7a3d; }
+.ev-unsub__status--error { color: #b3261e; }
+
 /* Visible to screen readers and search engines only */
 .ev-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 

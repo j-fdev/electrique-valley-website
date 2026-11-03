@@ -1,7 +1,7 @@
 
 
 import express from 'express';
-import { sendEmail, subscribeEmail } from "../controllers/email.controller";
+import { sendEmail, subscribeEmail, unsubscribeEmail } from "../controllers/email.controller";
 import { validateContact, validateSubscribe } from "../middlewares/validation.middleware";
 import { validateLanguage } from '../middlewares/language.validation.middleware';
 import { honeypot, rateLimit } from '../middlewares/rate-limit.middleware';
@@ -30,5 +30,6 @@ const emailRouter = express.Router();
 
 emailRouter.post('/send-email', contactLimiter, honeypot, validateLanguage, validateContact, sendEmail);
 emailRouter.post('/subscribe', subscribeLimiter, honeypot, validateLanguage, validateSubscribe, subscribeEmail);
+emailRouter.post('/unsubscribe', subscribeLimiter, validateLanguage, unsubscribeEmail);
 
 export default emailRouter;
