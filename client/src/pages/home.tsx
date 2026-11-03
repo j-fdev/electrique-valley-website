@@ -55,6 +55,7 @@ const Home: React.FC = () => {
         { image: `/img/luxor/luxor_4L/LUXOR_4L-ARCTIC-GRAY-1-1.png?v=${version}`, title: T.title_luxor_card[L], link: '/luxorSeries', t1: T.t1_luxor_card[L], p1: T.p1_luxor_card[L], t2: T.t2_luxor_card[L], p2: T.p2_luxor_card[L], t3: T.t3_luxor_card[L], p3: T.p3_luxor_card[L], t4: T.t4_luxor_card[L], p4: T.p4_luxor_card[L] },
         { image: `/img/classic/classic_2+2/PLAMENCO.png?v=${version}`, title: T.title_classic_card[L], link: '/classicSeries', t1: T.t1_classic_card[L], p1: T.p1_classic_card[L], t2: T.t2_classic_card[L], p2: T.p2_classic_card[L], t3: T.t3_classic_card[L], p3: T.p3_classic_card[L], t4: T.t4_classic_card[L], p4: T.p4_classic_card[L] },
         { image: `/img/thor/Thor-GREEN.png?v=${version}`, title: T.title_thor_card[L], link: '/thorSeries', t1: T.t1_thor_card[L], p1: T.p1_thor_card[L], t2: T.t2_thor_card[L], p2: T.p2_thor_card[L], t3: T.t3_thor_card[L], p3: T.p3_thor_card[L], t4: T.t4_thor_card[L], p4: T.p4_thor_card[L] },
+        { image: `/img/elite/Elite_4/Elite_4_blue_nobg.png?v=${version}`, title: T.title_elite_card[L], link: '/eliteSeries', t1: T.t1_elite_card[L], p1: T.p1_elite_card[L], t2: T.t2_elite_card[L], p2: T.p2_elite_card[L], t3: T.t3_elite_card[L], p3: T.p3_elite_card[L], t4: T.t4_elite_card[L], p4: T.p4_elite_card[L] },
     ];
 
       
@@ -142,7 +143,7 @@ const Home: React.FC = () => {
     if (!languageContext) return null;
 
     return (
-        <div style={{ overflowX: 'hidden' }}>
+        <div style={{ overflowX: 'clip' }}>
             {/* Hero */}
             <div className="ev-hero" style={homeStyles.heroWrapper}>
                 <HeroSlider images={heroSliderImages} />
@@ -163,7 +164,7 @@ const Home: React.FC = () => {
             {/* About section */}
             <section className="ev-section" style={{ paddingTop: 0 }}>
                 <div className="ev-container ev-about">
-                    <img className="ev-about__logo ev-reveal ev-reveal--zoom" src={`/img/main/ElectriqueValley-logo-nobg.png?v=${version}`} alt="Électrique Valley" />
+                    <img className="ev-about__logo ev-reveal ev-reveal--zoom" src={`/img/main/ElectriqueValley-emblem-metal.png?v=${version}`} alt="Électrique Valley" />
                     <div className="ev-reveal ev-reveal--right">
                         <span className="ev-eyebrow">{EB.about[L]}</span>
                         <h2 className="ev-section-title ev-section-title--left">{T.about_title[L]}</h2>

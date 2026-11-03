@@ -16,110 +16,111 @@ interface i_horizontal_scroll_props {
 }
 
 const arrowPath = "M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z";
+const NAVBAR_HEIGHT = 72;
 
-/** Series cards in a swipeable carousel with arrows and dots (no GSAP). */
+/**
+ * Series cards that slide sideways while the page scrolls down (the section stays pinned
+ * until the last card is visible). Pure CSS sticky + one scroll listener, no GSAP.
+ */
 const HorizontalScroll: React.FC<i_horizontal_scroll_props> = ({ models, eyebrow, title }) => {
+    const outerRef = useRef<HTMLDivElement | null>(null);
+    const viewportRef = useRef<HTMLDivElement | null>(null);
     const trackRef = useRef<HTMLDivElement | null>(null);
+    const [distance, setDistance] = useState(0);
     const T = translations.horizontalScroll;
     const languageContext = useContext(LanguageContext);
     const L = languageContext ? languageContext.language : 'en';
 
-    const [active, setActive] = useState(0);
-    const [canPrev, setCanPrev] = useState(false);
-    const [canNext, setCanNext] = useState(true);
-
-    const update = useCallback(() => {
+    // How far the cards must travel sideways
+    const measure = useCallback(() => {
         const track = trackRef.current;
-        if (!track) return;
-        const cards = Array.from(track.children) as HTMLElement[];
-        const left = track.scrollLeft;
-        let index = 0;
-        cards.forEach((card, i) => {
-            if (card.offsetLeft - track.offsetLeft <= left + 10) index = i;
-        });
-        setActive(index);
-        setCanPrev(left > 5);
-        setCanNext(left + track.clientWidth < track.scrollWidth - 5);
+        const viewport = viewportRef.current;
+        if (!track || !viewport) return;
+        setDistance(Math.max(0, track.scrollWidth - viewport.clientWidth));
     }, []);
 
     useEffect(() => {
-        const track = trackRef.current;
-        if (!track) return;
-        update();
-        track.addEventListener('scroll', update, { passive: true });
-        window.addEventListener('resize', update);
+        measure();
+        window.addEventListener('resize', measure);
+        const imgs = trackRef.current?.querySelectorAll('img') ?? [];
+        imgs.forEach((img) => img.addEventListener('load', measure));
         return () => {
-            track.removeEventListener('scroll', update);
-            window.removeEventListener('resize', update);
+            window.removeEventListener('resize', measure);
+            imgs.forEach((img) => img.removeEventListener('load', measure));
         };
-    }, [update]);
+    }, [measure, models.length]);
 
-    const scrollToCard = (index: number) => {
-        const track = trackRef.current;
-        if (!track) return;
-        const card = track.children[index] as HTMLElement | undefined;
-        if (card) track.scrollTo({ left: card.offsetLeft - track.offsetLeft, behavior: 'smooth' });
-    };
-
-    const step = (dir: 1 | -1) => scrollToCard(Math.max(0, Math.min(models.length - 1, active + dir)));
+    // Move the cards according to the vertical scroll position
+    useEffect(() => {
+        let frame = 0;
+        const update = () => {
+            frame = 0;
+            const outer = outerRef.current;
+            const track = trackRef.current;
+            if (!outer || !track) return;
+            const scrollable = outer.offsetHeight - (window.innerHeight - NAVBAR_HEIGHT);
+            const progress = scrollable > 0 ? Math.min(1, Math.max(0, (NAVBAR_HEIGHT - outer.getBoundingClientRect().top) / scrollable)) : 0;
+            track.style.transform = `translate3d(${-progress * distance}px, 0, 0)`;
+        };
+        const onScroll = () => { if (!frame) frame = requestAnimationFrame(update); };
+        update();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll);
+        return () => {
+            window.removeEventListener('scroll', onScroll);
+            window.removeEventListener('resize', onScroll);
+            if (frame) cancelAnimationFrame(frame);
+        };
+    }, [distance]);
 
     return (
-        <div className="ev-carousel">
-            <div className="ev-carousel__head ev-reveal">
-                <div>
-                    {eyebrow && <span className="ev-eyebrow">{eyebrow}</span>}
-                    {title && <h2 className="ev-section-title ev-section-title--left" style={{ margin: 0 }}>{title}</h2>}
+        // The outer block is as tall as the sideways distance, so scrolling it drives the cards.
+        <div ref={outerRef} className="ev-carousel" style={{ height: distance > 0 ? `calc(100vh - ${NAVBAR_HEIGHT}px + ${distance}px)` : undefined }}>
+            <div className={distance > 0 ? 'ev-carousel__pin' : undefined}>
+                <div className="ev-carousel__head ev-reveal">
+                    <div>
+                        {eyebrow && <span className="ev-eyebrow">{eyebrow}</span>}
+                        {title && <h2 className="ev-section-title ev-section-title--left" style={{ margin: 0 }}>{title}</h2>}
+                    </div>
                 </div>
-                <div className="ev-carousel__arrows">
-                    <button className="ev-arrow" onClick={() => step(-1)} disabled={!canPrev} aria-label="Previous">
-                        <svg viewBox="0 0 448 512" style={{ transform: 'rotate(180deg)' }}><path d={arrowPath} /></svg>
-                    </button>
-                    <button className="ev-arrow" onClick={() => step(1)} disabled={!canNext} aria-label="Next">
-                        <svg viewBox="0 0 448 512"><path d={arrowPath} /></svg>
-                    </button>
+
+                <div ref={viewportRef} className="ev-carousel__viewport">
+                    <div ref={trackRef} className="ev-series-track ev-series-track--pinned ev-stagger">
+                        {models.map((model, index) => (
+                            <article key={index} className="ev-series-card">
+                                <div className="ev-series-card__media">
+                                    <h3 className="ev-series-card__title">{model.title}</h3>
+                                    <img className="ev-series-card__img" src={model.image} alt={model.title} />
+                                </div>
+
+                                <div className="ev-series-card__body">
+                                    <div className="ev-spec-hero">
+                                        <span className="ev-spec__label">{model.t1}</span>
+                                        <span className="ev-spec__value">{model.p1}</span>
+                                    </div>
+                                    <div className="ev-spec-grid">
+                                        <div className="ev-spec ev-spec--wide">
+                                            <span className="ev-spec__label">{model.t2}</span>
+                                            <span className="ev-spec__value">{model.p2}</span>
+                                        </div>
+                                        <div className="ev-spec">
+                                            <span className="ev-spec__label">{model.t3}</span>
+                                            <span className="ev-spec__value">{model.p3}</span>
+                                        </div>
+                                        <div className="ev-spec">
+                                            <span className="ev-spec__label">{model.t4}</span>
+                                            <span className="ev-spec__value">{model.p4}</span>
+                                        </div>
+                                    </div>
+                                    <Link to={model.link || '/'} className="ev-series-card__cta">
+                                        {T.btn_learn_more[L]}
+                                        <svg viewBox="0 0 448 512" aria-hidden="true"><path d={arrowPath} /></svg>
+                                    </Link>
+                                </div>
+                            </article>
+                        ))}
+                    </div>
                 </div>
-            </div>
-
-            <div ref={trackRef} className="ev-series-track ev-stagger">
-                {models.map((model, index) => (
-                    <article key={index} className="ev-series-card">
-                        <div className="ev-series-card__media">
-                            <h3 className="ev-series-card__title">{model.title}</h3>
-                            <img className="ev-series-card__img" src={model.image} alt={model.title} loading="lazy" />
-                        </div>
-
-                        <div className="ev-series-card__body">
-                            <div className="ev-spec-hero">
-                                <span className="ev-spec__label">{model.t1}</span>
-                                <span className="ev-spec__value">{model.p1}</span>
-                            </div>
-                            <div className="ev-spec-grid">
-                                <div className="ev-spec ev-spec--wide">
-                                    <span className="ev-spec__label">{model.t2}</span>
-                                    <span className="ev-spec__value">{model.p2}</span>
-                                </div>
-                                <div className="ev-spec">
-                                    <span className="ev-spec__label">{model.t3}</span>
-                                    <span className="ev-spec__value">{model.p3}</span>
-                                </div>
-                                <div className="ev-spec">
-                                    <span className="ev-spec__label">{model.t4}</span>
-                                    <span className="ev-spec__value">{model.p4}</span>
-                                </div>
-                            </div>
-                            <Link to={model.link || '/'} className="ev-series-card__cta">
-                                {T.btn_learn_more[L]}
-                                <svg viewBox="0 0 448 512" aria-hidden="true"><path d={arrowPath} /></svg>
-                            </Link>
-                        </div>
-                    </article>
-                ))}
-            </div>
-
-            <div className="ev-dots">
-                {models.map((m, i) => (
-                    <button key={i} className={`ev-dot${i === active ? ' is-active' : ''}`} onClick={() => scrollToCard(i)} aria-label={m.title} />
-                ))}
             </div>
         </div>
     );

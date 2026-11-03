@@ -60,6 +60,42 @@ export const translations = {
 			en: "40 Km/h",
 			fr: "40 Km/h",
 		},
+		title_elite_card: {
+			en: "ELITE SERIES",
+			fr: "SÉRIE ÉLITE",
+		},
+		t1_elite_card: {
+			en: "BATTERY LITHIUM",
+			fr: "BATTERIE LITHIUM",
+		},
+		p1_elite_card: {
+			en: "48 Volt 160 Amp",
+			fr: "48 Volt 160 Amp",
+		},
+		t2_elite_card: {
+			en: "ENGINE",
+			fr: "MOTEUR",
+		},
+		p2_elite_card: {
+			en: "6300 Watt",
+			fr: "6300 Watt",
+		},
+		t3_elite_card: {
+			en: "TOUCHSCREEN",
+			fr: "ÉCRAN TACTILE",
+		},
+		p3_elite_card: {
+			en: "Carplay/Android",
+			fr: "Carplay/Android",
+		},
+		t4_elite_card: {
+			en: "MAX SPEED",
+			fr: "VITESSE MAX",
+		},
+		p4_elite_card: {
+			en: "40 Km/h",
+			fr: "40 Km/h",
+		},
 		title_luxor_card: {
 			en: "LUXOR SERIES",
 			fr: "SÉRIE LUXOR",

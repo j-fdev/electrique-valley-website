@@ -116,7 +116,7 @@ const ThorSeries: React.FC<i_cart_models_props> = ({}) => {
             </header>
 
                 {/* Choose your model section */}
-                <section className="ev-reveal" style={{ paddingBottom: '2rem' }}>
+                <section style={{ paddingBottom: '2rem' }}>
                     <div style={{ ...mainStyles.container, textAlign: 'center' }}>
                         <h1 style={{ ...cartsModelsStyles.headerTitle, padding: '15px 0' }}>{T.h1_title[L]}</h1>
                         <hr ref={hrRef} style={{ ...mainStyles.hrStyle, width: '100%', marginInline: 'auto' }} />
@@ -175,7 +175,7 @@ const ThorSeries: React.FC<i_cart_models_props> = ({}) => {
                 {/* Features section */}
                 <section style={{ ...mainStyles.section}}>
                     <div style={{...mainStyles.container}}>
-                        <div className="ev-stagger" style={cartsModelsStyles.featuresGrid}>
+                        <div style={cartsModelsStyles.featuresGrid}>
                             {features.map((feature, index) => (
                                 <CartFeatures key={index} image={feature.image} title={feature.title} description={feature.description} />
                             ))}

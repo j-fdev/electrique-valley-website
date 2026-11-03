@@ -273,6 +273,9 @@ button, input, textarea, select { font-family: inherit; }
   scrollbar-width: none;
 }
 .ev-series-track::-webkit-scrollbar { display: none; }
+.ev-carousel__pin { position: sticky; top: 72px; height: calc(100vh - 72px); display: flex; flex-direction: column; justify-content: center; }
+.ev-carousel__viewport { position: relative; }
+.ev-series-track--pinned { overflow: visible; scroll-snap-type: none; will-change: transform; padding-top: 18px; }
 .ev-dots { display: flex; justify-content: center; gap: 8px; }
 .ev-dot { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 999px; background: #c9d3dd; cursor: pointer; transition: width 0.35s var(--ev-ease), background 0.3s ease; }
 .ev-dot.is-active { width: 28px; background: var(--ev-blue); }
@@ -305,8 +308,9 @@ button, input, textarea, select { font-family: inherit; }
   position: absolute;
   left: 50%;
   bottom: 8px;
-  width: 82%;
-  height: auto;
+  width: 86%;
+  height: 172px;
+  object-fit: contain;
   transform: translateX(-50%);
   filter: drop-shadow(0 16px 18px rgba(0, 0, 0, 0.35));
   transition: transform 0.6s var(--ev-ease);
@@ -405,11 +409,10 @@ button, input, textarea, select { font-family: inherit; }
   align-items: center;
   justify-content: center;
   gap: 4rem;
-  width: min(1200px, 92%);
-  margin: 0 auto;
-  padding: 3rem 4rem;
-  border-radius: 28px;
-  background: radial-gradient(circle at 80% 50%, rgba(223, 128, 53, 0.25) 0%, rgba(223, 128, 53, 0) 45%), #0d1117;
+  width: 100%;
+  margin: 0;
+  padding: 3.5rem max(4vw, calc((100% - 1240px) / 2));
+  background: radial-gradient(circle at 70% 50%, rgba(223, 128, 53, 0.25) 0%, rgba(223, 128, 53, 0) 45%), #0d1117;
   color: #fff;
   overflow: hidden;
 }
@@ -466,14 +469,15 @@ button, input, textarea, select { font-family: inherit; }
 /* ---------- Test ride ---------- */
 .ev-testride { display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(2rem, 6vw, 5rem); align-items: center; }
 .ev-testride p { color: var(--ev-muted); line-height: 1.75; max-width: 52ch; margin: 1.2rem 0 1.8rem; }
-.ev-testride__visual { position: relative; min-height: 480px; overflow: clip; }
-.ev-testride__photo { position: absolute; top: 0; left: 0; width: 100%; height: 330px; object-fit: cover; box-shadow: 0 12px 28px rgba(8, 28, 48, 0.14); }
-.ev-testride__cart { position: absolute; left: 50%; bottom: 0; max-width: none; height: auto; transform: translateX(-50%); filter: drop-shadow(0 30px 30px rgba(0, 0, 0, 0.35)); animation: ev-float 6s ease-in-out infinite; }
+.ev-testride__visual { position: relative; min-height: 470px; overflow: clip; }
+.ev-testride__photo { position: absolute; top: 0; left: 0; width: 100%; height: 400px; object-fit: cover; }
+.ev-testride__cart { position: absolute; left: 50%; bottom: 70px; max-width: none; height: auto; transform: translateX(-50%); filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.25)); }
 @media (max-width: 900px) {
   .ev-testride { grid-template-columns: 1fr; text-align: center; }
   .ev-testride p { margin-inline: auto; }
-  .ev-testride__visual { min-height: 340px; }
-  .ev-testride__photo { height: 230px; }
+  .ev-testride__visual { min-height: 320px; }
+  .ev-testride__photo { height: 270px; }
+  .ev-testride__cart { bottom: 50px; }
 }
 
 /* ---------- Newsletter ---------- */
@@ -664,7 +668,7 @@ button, input, textarea, select { font-family: inherit; }
 .ev-acc__inner ul { margin: 0; padding: 0 24px 22px 44px; display: grid; gap: 6px; color: var(--ev-muted); font-size: 0.95rem; }
 
 .ev-gallery { display: flex; width: 100%; height: 420px; gap: 10px; }
-.ev-gallery__item { position: relative; flex: 1; min-width: 0; border-radius: 18px; overflow: hidden; cursor: pointer; transition: flex 0.6s var(--ev-ease); }
+.ev-gallery__item { position: relative; flex: 1; min-width: 0; overflow: hidden; cursor: pointer; transition: flex 0.6s var(--ev-ease); }
 .ev-gallery__item:hover { flex: 3; }
 .ev-gallery__item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s var(--ev-ease); }
 .ev-gallery__item:hover img { transform: scale(1.05); }
