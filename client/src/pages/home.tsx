@@ -150,7 +150,7 @@ const Home: React.FC = () => {
             {/* Hero */}
             <div className="ev-hero" style={homeStyles.heroWrapper}>
                 {/* The banners have their text inside the images, so the page title is given to search engines and screen readers here */}
-                <h1 className="ev-sr-only">{L === 'fr' ? 'Électrique Valley : voiturettes de golf et véhicules utilitaires électriques à Salaberry-de-Valleyfield' : 'Électrique Valley: electric golf carts and utility vehicles in Salaberry-de-Valleyfield'}</h1>
+                <h1 className="ev-sr-only">{L === 'fr' ? 'Electrique Valley : voiturettes de golf et véhicules utilitaires électriques à Salaberry-de-Valleyfield' : 'Electrique Valley: electric golf carts and utility vehicles in Salaberry-de-Valleyfield'}</h1>
                 <HeroSlider images={heroSliderImages} alts={heroSliderAlts} language={L} />
                 <div className="ev-hero__fade" />
             </div>
@@ -169,7 +169,7 @@ const Home: React.FC = () => {
             {/* About section */}
             <section className="ev-section" style={{ paddingTop: 0 }}>
                 <div className="ev-container ev-about">
-                    <img className="ev-about__logo ev-reveal ev-reveal--zoom" src={`/img/main/ElectriqueValley-emblem-metal.png?v=${version}`} alt="Électrique Valley" />
+                    <img className="ev-about__logo ev-reveal ev-reveal--zoom" src={`/img/main/ElectriqueValley-emblem-metal.png?v=${version}`} alt="Electrique Valley" />
                     <div className="ev-reveal ev-reveal--right">
                         <span className="ev-eyebrow">{EB.about[L]}</span>
                         <h2 className="ev-section-title ev-section-title--left">{T.about_title[L]}</h2>

@@ -25,8 +25,8 @@
 ## 2026-11-02: Own terms of use instead of the manufacturer's sale terms
 
 - **Context:** the terms page was a copy of Evolution Electric Vehicles' sale terms (US clauses, the manufacturer named as "Company").
-- **Decision:** replaced by Électrique Valley's terms of use, plus a Law 25 privacy policy, drafted from the studio templates.
-- **Why:** the site sells nothing online; publishing another company's sale terms under Électrique Valley's name is misleading.
+- **Decision:** replaced by Electrique Valley's terms of use, plus a Law 25 privacy policy, drafted from the studio templates.
+- **Why:** the site sells nothing online; publishing another company's sale terms under Electrique Valley's name is misleading.
 - **Consequences:** drafts to be approved by the client and reviewed by a lawyer. The old text stays in `trans.termsAndConditions.ts` and git history.
 
 ## 2026-11-02: Newsletter unsubscribe without accounts

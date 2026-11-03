@@ -11,7 +11,7 @@
 
 ## To confirm with the client
 
-- [ ] Exact legal name and NEQ (for the terms of use)
+- [ ] Exact legal name (for the terms of use, to say who runs the site). The NEQ is optional: Law 25 does not require it
 - [ ] Contact email to publish: the contact page shows `electriquevalley@hotmail.com`, the footer and legal pages `info@electriquevalley.com`. Use one everywhere
 - [ ] Street address to publish? (helps Google Maps and local search; today only the city is shown)
 - [ ] Retention period for contact requests (draft says 12 months)
@@ -25,7 +25,7 @@
 - [x] Terms of use (replaced the manufacturer's sale terms that had been copied)
 - [x] Unchecked consent box on the contact form, separate one for the newsletter
 - [x] Footer links to the legal pages on every page
-- [ ] Sign Tyrem's client contract (Law 25 service-provider clause) with Électrique Valley
+- [ ] Sign Tyrem's client contract (Law 25 service-provider clause) with Electrique Valley
 - [x] Newsletter unsubscribe (CASL): signed link at the bottom of every newsletter email, `/unsubscribe` page, address deleted on confirmation
 - [ ] CASL: newsletter emails must show a **mailing address** (today only the city). Get the address from the client and add it to `server/src/utilities/unsubscribe.ts` (`senderFooter`)
 - [ ] Newsletters sent by hand (Gmail): paste the footer with the generic link `https://www.electriquevalley.com/unsubscribe` at the bottom of each one

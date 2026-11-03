@@ -1,10 +1,10 @@
 # Project brief
 
-> Électrique Valley became a Tyrem Technologies client in November 2026. This brief records what is known; items marked **to confirm** need an answer from the client.
+> Electrique Valley became a Tyrem Technologies client in November 2026. This brief records what is known; items marked **to confirm** need an answer from the client.
 
 ## Client
 
-- **Business name:** Électrique Valley (incorporated; exact legal name and NEQ **to confirm**)
+- **Business name:** Electrique Valley, always written without an accent on the E (the brand's own spelling). Incorporated; exact legal name **to confirm**
 - **Contact:** the owner (J-F's brother-in-law); info@electriquevalley.com; 450 747-1525
 - **Website:** www.electriquevalley.com (also electriquevalley.ca)
 - **Languages:** French and English, French first

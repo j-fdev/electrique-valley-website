@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# One-time preparation of the AWS Lightsail server (Ubuntu 24.04) for Électrique Valley.
+# One-time preparation of the AWS Lightsail server (Ubuntu 24.04) for Electrique Valley.
 # Safe to run more than once. Does not touch MySQL data, nginx sites or DNS.
 # Usage (as ubuntu):  bash deploy/setup-server.sh
 set -euo pipefail

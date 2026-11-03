@@ -60,8 +60,8 @@ export const emailTranslations = {
             fr: "Confirmez votre désabonnement"
         },
         body: {
-            en: "To stop receiving the Électrique Valley newsletter, open this link and confirm:\n",
-            fr: "Pour ne plus recevoir l'infolettre d'Électrique Valley, ouvrez ce lien et confirmez :\n"
+            en: "To stop receiving the Electrique Valley newsletter, open this link and confirm:\n",
+            fr: "Pour ne plus recevoir l'infolettre d'Electrique Valley, ouvrez ce lien et confirmez :\n"
         }
     },
     contact: {

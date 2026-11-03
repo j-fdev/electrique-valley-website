@@ -1,7 +1,7 @@
 // Legal pages (Law 25), form consent lines and page titles for search engines.
 // DRAFT prepared by Tyrem Technologies (November 2026) from the studio templates
 // (tyrem-studio/business/legal/modeles-pages-legales.md). To be approved by
-// Électrique Valley and confirmed by a lawyer. Items marked TO CONFIRM in docs/tasks.md.
+// Electrique Valley and confirmed by a lawyer. Items marked TO CONFIRM in docs/tasks.md.
 
 const CONTACT_EMAIL = 'info@electriquevalley.com';
 const CONTACT_PHONE = '450 747-1525';
@@ -20,13 +20,13 @@ export const legal = {
     },
     consent: {
         contactBefore: {
-            fr: 'J’accepte qu’Électrique Valley utilise ces renseignements pour répondre à ma demande, comme décrit dans la ',
-            en: 'I agree that Électrique Valley may use this information to answer my request, as described in the ',
+            fr: 'J’accepte qu’Electrique Valley utilise ces renseignements pour répondre à ma demande, comme décrit dans la ',
+            en: 'I agree that Electrique Valley may use this information to answer my request, as described in the ',
         },
         policyLink: { fr: 'politique de confidentialité', en: 'privacy policy' },
         newsletter: {
-            fr: 'J’accepte de recevoir l’infolettre d’Électrique Valley par courriel. Je peux me désabonner en tout temps.',
-            en: 'I agree to receive the Électrique Valley newsletter by email. I can unsubscribe at any time.',
+            fr: 'J’accepte de recevoir l’infolettre d’Electrique Valley par courriel. Je peux me désabonner en tout temps.',
+            en: 'I agree to receive the Electrique Valley newsletter by email. I can unsubscribe at any time.',
         },
         required: {
             fr: 'Veuillez cocher la case pour continuer.',
@@ -58,8 +58,8 @@ export const legal = {
                 },
                 paragraphs: [
                     {
-                        fr: 'Le propriétaire d’Électrique Valley est le responsable de la protection des renseignements personnels.',
-                        en: 'The owner of Électrique Valley is the person in charge of protecting personal information.',
+                        fr: 'Le propriétaire d’Electrique Valley est le responsable de la protection des renseignements personnels.',
+                        en: 'The owner of Electrique Valley is the person in charge of protecting personal information.',
                     },
                     {
                         fr: `Courriel : ${CONTACT_EMAIL} · Téléphone : ${CONTACT_PHONE} · Salaberry-de-Valleyfield (Québec)`,
@@ -118,8 +118,8 @@ export const legal = {
                 title: { fr: 'Qui y a accès', en: 'Who has access' },
                 paragraphs: [
                     {
-                        fr: 'Seules les personnes d’Électrique Valley qui traitent les demandes ont accès à vos renseignements.',
-                        en: 'Only the Électrique Valley staff who handle requests have access to your information.',
+                        fr: 'Seules les personnes d’Electrique Valley qui traitent les demandes ont accès à vos renseignements.',
+                        en: 'Only the Electrique Valley staff who handle requests have access to your information.',
                     },
                     {
                         fr: 'Le site et sa base de données sont hébergés au Canada par Amazon Web Services. Les courriels sont envoyés par le service Gmail de Google, dont les serveurs peuvent être situés à l’extérieur du Québec. Nous choisissons des fournisseurs qui protègent adéquatement les renseignements, comme l’exige la loi.',
@@ -171,8 +171,8 @@ export const legal = {
                 title: { fr: 'Qui exploite ce site', en: 'Who runs this site' },
                 paragraphs: [
                     {
-                        fr: `Le site electriquevalley.com est exploité par Électrique Valley, à Salaberry-de-Valleyfield (Québec). Courriel : ${CONTACT_EMAIL} · Téléphone : ${CONTACT_PHONE}.`,
-                        en: `The electriquevalley.com website is run by Électrique Valley, in Salaberry-de-Valleyfield, Quebec. Email: ${CONTACT_EMAIL} · Phone: ${CONTACT_PHONE}.`,
+                        fr: `Le site electriquevalley.com est exploité par Electrique Valley, à Salaberry-de-Valleyfield (Québec). Courriel : ${CONTACT_EMAIL} · Téléphone : ${CONTACT_PHONE}.`,
+                        en: `The electriquevalley.com website is run by Electrique Valley, in Salaberry-de-Valleyfield, Quebec. Email: ${CONTACT_EMAIL} · Phone: ${CONTACT_PHONE}.`,
                     },
                     {
                         fr: 'En utilisant ce site, vous acceptez les présentes conditions.',
@@ -184,8 +184,8 @@ export const legal = {
                 title: { fr: 'Information, prix et disponibilité', en: 'Information, prices and availability' },
                 paragraphs: [
                     {
-                        fr: 'Le contenu du site est fourni à titre informatif. Les modèles, caractéristiques, couleurs et équipements peuvent changer sans préavis et varier selon le modèle. Aucune vente ne se fait en ligne : les prix, la disponibilité et les caractéristiques finales sont confirmés en magasin ou par téléphone, et seul un contrat de vente signé engage Électrique Valley.',
-                        en: 'The site’s content is provided for information only. Models, specifications, colours and equipment may change without notice and vary by model. Nothing is sold online: prices, availability and final specifications are confirmed in store or by phone, and only a signed sales contract binds Électrique Valley.',
+                        fr: 'Le contenu du site est fourni à titre informatif. Les modèles, caractéristiques, couleurs et équipements peuvent changer sans préavis et varier selon le modèle. Aucune vente ne se fait en ligne : les prix, la disponibilité et les caractéristiques finales sont confirmés en magasin ou par téléphone, et seul un contrat de vente signé engage Electrique Valley.',
+                        en: 'The site’s content is provided for information only. Models, specifications, colours and equipment may change without notice and vary by model. Nothing is sold online: prices, availability and final specifications are confirmed in store or by phone, and only a signed sales contract binds Electrique Valley.',
                     },
                     {
                         fr: 'Les photos et les couleurs sont présentées à titre indicatif; les couleurs réelles peuvent varier selon votre écran.',
@@ -197,8 +197,8 @@ export const legal = {
                 title: { fr: 'Propriété intellectuelle et marques', en: 'Intellectual property and trademarks' },
                 paragraphs: [
                     {
-                        fr: 'Les textes, la mise en page et le logo d’Électrique Valley lui appartiennent. Les photos et les noms de modèles des fabricants sont utilisés avec leur permission et demeurent la propriété de leurs titulaires. Vous ne pouvez pas les reproduire sans permission écrite.',
-                        en: 'Électrique Valley owns the text, layout and logo of this site. Manufacturers’ photos and model names are used with their permission and remain the property of their owners. You may not reproduce them without written permission.',
+                        fr: 'Les textes, la mise en page et le logo d’Electrique Valley lui appartiennent. Les photos et les noms de modèles des fabricants sont utilisés avec leur permission et demeurent la propriété de leurs titulaires. Vous ne pouvez pas les reproduire sans permission écrite.',
+                        en: 'Electrique Valley owns the text, layout and logo of this site. Manufacturers’ photos and model names are used with their permission and remain the property of their owners. You may not reproduce them without written permission.',
                     },
                 ],
             },
@@ -206,8 +206,8 @@ export const legal = {
                 title: { fr: 'Liens vers d’autres sites', en: 'Links to other sites' },
                 paragraphs: [
                     {
-                        fr: 'Le site peut contenir des liens vers des sites externes, comme nos pages Facebook et Instagram. Électrique Valley n’est pas responsable de leur contenu ni de leurs pratiques.',
-                        en: 'The site may link to external sites, such as our Facebook and Instagram pages. Électrique Valley is not responsible for their content or practices.',
+                        fr: 'Le site peut contenir des liens vers des sites externes, comme nos pages Facebook et Instagram. Electrique Valley n’est pas responsable de leur contenu ni de leurs pratiques.',
+                        en: 'The site may link to external sites, such as our Facebook and Instagram pages. Electrique Valley is not responsible for their content or practices.',
                     },
                 ],
             },
@@ -215,8 +215,8 @@ export const legal = {
                 title: { fr: 'Responsabilité', en: 'Liability' },
                 paragraphs: [
                     {
-                        fr: 'Nous faisons de notre mieux pour que le site soit exact et accessible, mais il est offert tel quel. Dans la mesure permise par la loi, Électrique Valley n’est pas responsable des dommages indirects liés à son utilisation ou à une interruption.',
-                        en: 'We do our best to keep the site accurate and available, but it is provided as is. To the extent permitted by law, Électrique Valley is not liable for indirect damages related to its use or to an interruption.',
+                        fr: 'Nous faisons de notre mieux pour que le site soit exact et accessible, mais il est offert tel quel. Dans la mesure permise par la loi, Electrique Valley n’est pas responsable des dommages indirects liés à son utilisation ou à une interruption.',
+                        en: 'We do our best to keep the site accurate and available, but it is provided as is. To the extent permitted by law, Electrique Valley is not liable for indirect damages related to its use or to an interruption.',
                     },
                 ],
             },
@@ -246,8 +246,8 @@ export const legal = {
 export const pageMeta = {
     '/': {
         title: {
-            fr: 'Voiturettes de golf électriques à Salaberry-de-Valleyfield | Électrique Valley',
-            en: 'Electric Golf Carts in Salaberry-de-Valleyfield | Électrique Valley',
+            fr: 'Voiturettes de golf électriques à Salaberry-de-Valleyfield | Electrique Valley',
+            en: 'Electric Golf Carts in Salaberry-de-Valleyfield | Electrique Valley',
         },
         description: {
             fr: 'Voiturettes de golf et véhicules utilitaires électriques à batterie lithium : séries D-MAX, Élite, Luxor, Classic et Thor. Essai routier sur rendez-vous.',
@@ -255,67 +255,67 @@ export const pageMeta = {
         },
     },
     '/dmaxSeries': {
-        title: { fr: 'Série D-MAX : GT4, GT6, XT4 et XT6 4x4 | Électrique Valley', en: 'D-MAX Series: GT4, GT6, XT4 and XT6 4WD | Électrique Valley' },
+        title: { fr: 'Série D-MAX : GT4, GT6, XT4 et XT6 4x4 | Electrique Valley', en: 'D-MAX Series: GT4, GT6, XT4 and XT6 4WD | Electrique Valley' },
         description: {
             fr: 'Voiturettes électriques D-MAX GT4, GT6, XT4 et XT6 : batterie lithium 48 V, écran CarPlay et Android Auto, 4x4 sur les XT. Couleurs et fiches techniques.',
             en: 'D-MAX GT4, GT6, XT4 and XT6 electric carts: 48 V lithium battery, CarPlay and Android Auto screen, 4WD on the XT models. Colours and specifications.',
         },
     },
     '/eliteSeries': {
-        title: { fr: 'Série Élite | Électrique Valley', en: 'Elite Series | Électrique Valley' },
+        title: { fr: 'Série Élite | Electrique Valley', en: 'Elite Series | Electrique Valley' },
         description: {
             fr: 'Voiturettes électriques de la série Élite : modèles 4L, 2+2L, 4+2 et Mini, batterie lithium, écran tactile. Couleurs, équipements et fiches techniques.',
             en: 'Elite series electric carts: 4L, 2+2L, 4+2 and Mini models, lithium battery, touchscreen. Colours, equipment and specifications.',
         },
     },
     '/luxorSeries': {
-        title: { fr: 'Série Luxor | Électrique Valley', en: 'Luxor Series | Électrique Valley' },
+        title: { fr: 'Série Luxor | Electrique Valley', en: 'Luxor Series | Electrique Valley' },
         description: {
             fr: 'Voiturettes électriques de la série Luxor : batterie lithium, écran CarPlay et Android Auto, plusieurs modèles. Couleurs et fiches techniques.',
             en: 'Luxor series electric carts: lithium battery, CarPlay and Android Auto screen, several models. Colours and specifications.',
         },
     },
     '/classicSeries': {
-        title: { fr: 'Série Classic | Électrique Valley', en: 'Classic Series | Électrique Valley' },
+        title: { fr: 'Série Classic | Electrique Valley', en: 'Classic Series | Electrique Valley' },
         description: {
             fr: 'Voiturettes électriques de la série Classic : batterie lithium, caméra de recul, couleurs au choix. Caractéristiques et fiches techniques.',
             en: 'Classic series electric carts: lithium battery, backup camera, choice of colours. Features and specifications.',
         },
     },
     '/thorSeries': {
-        title: { fr: 'Série Thor, véhicule utilitaire électrique | Électrique Valley', en: 'Thor Series Electric Utility Vehicle | Électrique Valley' },
+        title: { fr: 'Série Thor, véhicule utilitaire électrique | Electrique Valley', en: 'Thor Series Electric Utility Vehicle | Electrique Valley' },
         description: {
             fr: 'Thor : véhicule utilitaire électrique avec boîte de chargement, batterie lithium et caméra de recul. Caractéristiques et fiche technique.',
             en: 'Thor: electric utility vehicle with cargo box, lithium battery and backup camera. Features and specifications.',
         },
     },
     '/contact': {
-        title: { fr: 'Nous joindre et essai routier | Électrique Valley', en: 'Contact Us and Test Rides | Électrique Valley' },
+        title: { fr: 'Nous joindre et essai routier | Electrique Valley', en: 'Contact Us and Test Rides | Electrique Valley' },
         description: {
             fr: 'Écrivez-nous ou appelez au 450 747-1525 pour un essai routier, de l’information sur nos voiturettes électriques ou pour devenir revendeur.',
             en: 'Write to us or call 450 747-1525 for a test ride, information about our electric carts, or to become a dealer.',
         },
     },
     '/videoShowcase': {
-        title: { fr: 'Vidéos | Électrique Valley', en: 'Videos | Électrique Valley' },
+        title: { fr: 'Vidéos | Electrique Valley', en: 'Videos | Electrique Valley' },
         description: {
             fr: 'Capsules vidéo sur nos voiturettes électriques : batterie lithium, entretien, accessoires, sécurité et conseils.',
             en: 'Video capsules about our electric carts: lithium battery, care, accessories, safety and tips.',
         },
     },
     '/privacy': {
-        title: { fr: 'Politique de confidentialité | Électrique Valley', en: 'Privacy Policy | Électrique Valley' },
+        title: { fr: 'Politique de confidentialité | Electrique Valley', en: 'Privacy Policy | Electrique Valley' },
         description: {
-            fr: 'Comment Électrique Valley recueille, utilise et protège vos renseignements personnels (Loi 25).',
-            en: 'How Électrique Valley collects, uses and protects your personal information (Quebec Law 25).',
+            fr: 'Comment Electrique Valley recueille, utilise et protège vos renseignements personnels (Loi 25).',
+            en: 'How Electrique Valley collects, uses and protects your personal information (Quebec Law 25).',
         },
     },
     '/unsubscribe': {
-        title: { fr: 'Se désabonner | Électrique Valley', en: 'Unsubscribe | Électrique Valley' },
-        description: { fr: 'Se désabonner de l’infolettre d’Électrique Valley.', en: 'Unsubscribe from the Électrique Valley newsletter.' },
+        title: { fr: 'Se désabonner | Electrique Valley', en: 'Unsubscribe | Electrique Valley' },
+        description: { fr: 'Se désabonner de l’infolettre d’Electrique Valley.', en: 'Unsubscribe from the Electrique Valley newsletter.' },
     },
     '/termsAndConditions': {
-        title: { fr: 'Conditions d’utilisation | Électrique Valley', en: 'Terms of Use | Électrique Valley' },
+        title: { fr: 'Conditions d’utilisation | Electrique Valley', en: 'Terms of Use | Electrique Valley' },
         description: {
             fr: 'Conditions d’utilisation du site electriquevalley.com.',
             en: 'Terms of use of the electriquevalley.com website.',

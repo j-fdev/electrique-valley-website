@@ -1,4 +1,4 @@
-// pm2 config for the Électrique Valley API.
+// pm2 config for the Electrique Valley API.
 // Start:  pm2 start deploy/ecosystem.config.js   (run as the ubuntu user, never with sudo)
 // Then:   pm2 save
 const path = require('path');

@@ -1,6 +1,6 @@
-# Électrique Valley — Website
+# Electrique Valley — Website
 
-Bilingual (French / English) website for **Électrique Valley**, a Quebec dealer of electric golf carts and utility vehicles. Live at [electriquevalley.com](https://www.electriquevalley.com).
+Bilingual (French / English) website for **Electrique Valley**, a Quebec dealer of electric golf carts and utility vehicles. Live at [electriquevalley.com](https://www.electriquevalley.com).
 
 ## Features
 
