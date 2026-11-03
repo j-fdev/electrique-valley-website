@@ -19,11 +19,10 @@ const Footer: React.FC = () => {
     const copyright = F.copyrights[L].replace(/\d{4}/, String(new Date().getFullYear()));
 
     const series = [
-        { to: '/evolutionSeries', label: F.link_evolution_series[L] },
+        { to: '/dmaxSeries', label: F.link_evolution_series[L] },
         { to: '/eliteSeries', label: F.link_elite_series[L] },
         { to: '/luxorSeries', label: F.link_luxor_series[L] },
         { to: '/classicSeries', label: F.link_classic_series[L] },
-        { to: '/diabloSeries', label: F.link_diablo_series[L] },
         { to: '/thorSeries', label: F.link_thor_series[L] },
     ];
 

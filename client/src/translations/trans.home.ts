@@ -25,8 +25,8 @@ export const translations = {
             fr: "EN SAVOIR PLUS",
 		},	
 		title_evolution_card: {
-			en: "EVOLUTION SERIES",
-			fr: "SÉRIE ÉVOLUTION",
+			en: "D-MAX SERIES",
+			fr: "SÉRIE D-MAX",
 		},
 		t1_evolution_card: {
 			en: "BATTERY LITHIUM",
@@ -167,43 +167,7 @@ export const translations = {
 		p4_thor_card: {
 			en: "40 Km/h",
 			fr: "40 Km/h",
-		},
-		title_diablo_card: {
-			en: "DIABLO SERIES",
-			fr: "SÉRIE DIABLO",
-		},
-		t1_diablo_card: {
-			en: "ACID BATTERY",
-			fr: "BATTERIE ACIDE",
-		},
-		p1_diablo_card: {
-			en: "(6 x 8V) 48V",
-			fr: "(6 x 8V) 48V",
-		},
-		t2_diablo_card: {
-			en: "ENGINE",
-			fr: "MOTEUR",
-		},
-		p2_diablo_card: {
-			en: "4000 Watt",
-			fr: "4000 Watt",
-		},
-		t3_diablo_card: {
-			en: "TOUCHSCREEN",
-			fr: "ÉCRAN TACTILE",
-		},
-		p3_diablo_card: {
-			en: "Back up Camera",
-			fr: "Caméra de recul",
-		},
-		t4_diablo_card: {
-			en: "MAX SPEED",
-			fr: "VITESSE MAX",
-		},
-		p4_diablo_card: {
-			en: "30 Km/h",
-			fr: "30 Km/h",
-		},
+		},
 		title_tora_card: {
 			en: "TORA SERIES",
 			fr: "SÉRIE TORA",

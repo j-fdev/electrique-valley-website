@@ -147,7 +147,8 @@ const NavbarStyles = (isMenuOpen: boolean) => {
     
     const dropdownImage: CSSProperties = {
         width: '200px',
-        height: 'auto',
+        height: '134px',
+        objectFit: 'contain',
         marginBottom: '10px',
         borderRadius: '8px',
     };

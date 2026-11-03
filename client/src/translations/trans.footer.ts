@@ -15,11 +15,7 @@ export const translations = {
         link_our_series: {
             en: "Our Series",
             fr: "Nos Séries",
-        },
-        link_diablo_series: {
-            en: "Diablo Series",
-            fr: "Série Diablo",
-        },
+        },
         link_thor_series: {
             en: "Thor Series",
             fr: "Série Thor",
@@ -33,8 +29,8 @@ export const translations = {
             fr: "Série Tora",
         },
         link_evolution_series: {
-            en: "Evolution Series",
-            fr: "Série Évolution",
+            en: "D-MAX Series",
+            fr: "Série D-MAX",
         },
         link_luxor_series: {
             en: "Luxor Series",

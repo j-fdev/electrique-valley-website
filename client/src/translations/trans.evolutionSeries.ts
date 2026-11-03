@@ -4,32 +4,32 @@ import { list } from "postcss";
 export const translations = {
 	evolutionSeries: {
 		h1_title: {
-			en: "EVOLUTION SERIES",
-			fr: "SÉRIE ÉVOLUTION",
+			en: "D-MAX SERIES",
+			fr: "SÉRIE D-MAX",
 		},
 		h2_choose_your_model: {
 			en: "Choose your model",
 			fr: "Choisissez votre modèle",
 		},
 		modelsTitle_ev4: {
-			en: "EVOLUTION 4",
-			fr: "ÉVOLUTION 4",
+			en: "D-MAX GT4",
+			fr: "D-MAX GT4",
 		},
 		modelsTitle_ev6: {
-			en: "EVOLUTION 6",
-			fr: "ÉVOLUTION 6",
+			en: "D-MAX GT6",
+			fr: "D-MAX GT6",
 		},
 		modelsTitle_ev4L: {
-			en: "EVOLUTION 4L",
-			fr: "ÉVOLUTION 4L",
+			en: "D-MAX XT4",
+			fr: "D-MAX XT4",
 		},
 		modelsTitle_ev6L: {
-			en: "EVOLUTION 6L",
-			fr: "ÉVOLUTION 6L",
+			en: "D-MAX XT6",
+			fr: "D-MAX XT6",
 		},
 		p_4wd_available: {
-			en: "4WD on Evolution 4L and 6L",
-			fr: "4x4 sur l'Évolution 4L and 6L",
+			en: "4WD on D-MAX XT4 and XT6",
+			fr: "4x4 sur les D-MAX XT4 et XT6",
 		},
 		evolution4_list: {
 			en: [
@@ -200,8 +200,8 @@ export const translations = {
 			fr: "Apple CarPlay et Android Auto sont des fonctionnalités après-vente, non incluses dans les produits installés en usine de la voiturette de golf. Les concessionnaires peuvent spécifier ou offrir ces fonctionnalités séparément. Des frais supplémentaires peuvent s'appliquer. Veuillez vérifier auprès de votre revendeur local pour plus de détails",
 		},
 		h2_span_discover: {
-			en: "EXPLORE EVOLUTION SERIES",
-			fr: "EXPLOREZ LA SÉRIE ÉVOLUTION",
+			en: "EXPLORE THE D-MAX SERIES",
+			fr: "EXPLOREZ LA SÉRIE D-MAX",
 		},
 		h2_discover: {
 			en: "Discover the comfort and innovation",
@@ -212,8 +212,8 @@ export const translations = {
 			fr: "de nos voiturettes.",
 		},
 		p_discover: {
-			en: "The Evolution Series offers a range of high-performance electric vehicles designed for both urban and off-road adventures. With cutting-edge technology and sleek designs, the Luxor Series is perfect for those who seek both style and functionality.",
-			fr: "La série Évolution propose une gamme de véhicules électriques de hautes performances conçus pour les aventures urbaines et tout-terrain. Avec une technologie de pointe et des designs élégants, la série Luxor est parfaite pour ceux qui recherchent à la fois style et fonctionnalité.",
+			en: "The D-MAX Series offers a range of high-performance electric vehicles designed for both urban and off-road adventures. With cutting-edge technology and sleek designs, the D-MAX Series is perfect for those who seek both style and functionality.",
+			fr: "La série D-MAX propose une gamme de véhicules électriques de hautes performances conçus pour les aventures urbaines et tout-terrain. Avec une technologie de pointe et des designs élégants, la série D-MAX est parfaite pour ceux qui recherchent à la fois style et fonctionnalité.",
 		},
 		t_features_screen: {
 			en: "10.1-INCH MULTI-FUNCTIONAL TOUCHSCREEN",
@@ -300,8 +300,8 @@ export const translations = {
 			fr: "MARCHEPIEDS",
 		},
 		p_features_running_boards: {
-			en: "Evolution L models features an illuminous running board, enhancing both the vehicle's functionality and its aesthetic appeal. This feature not only facilitates easier entry and exit but also adds a distinctive, glowing touch to the vehicle's profile, improving visibility and safety in low-light conditions.",
-			fr: "Les modèles Evolution L sont dotés d'un marchepied lumineux, améliorant à la fois la fonctionnalité du véhicule et son attrait esthétique. Cette caractéristique facilite non seulement l'entrée et la sortie, mais ajoute également une touche distinctive et lumineuse au profil du véhicule, améliorant la visibilité et la sécurité dans des conditions de faible luminosité.",
+			en: "D-MAX XT models features an illuminous running board, enhancing both the vehicle's functionality and its aesthetic appeal. This feature not only facilitates easier entry and exit but also adds a distinctive, glowing touch to the vehicle's profile, improving visibility and safety in low-light conditions.",
+			fr: "Les modèles D-MAX XT sont dotés d'un marchepied lumineux, améliorant à la fois la fonctionnalité du véhicule et son attrait esthétique. Cette caractéristique facilite non seulement l'entrée et la sortie, mais ajoute également une touche distinctive et lumineuse au profil du véhicule, améliorant la visibilité et la sécurité dans des conditions de faible luminosité.",
 		},
 		t_features_seats: {
 			en: "EVOLUTION ICONIC LUXURY SEATS",
@@ -340,8 +340,8 @@ export const translations = {
 			fr: "ROUES EN ALUMINIUM 16X8.5 PNEUS TOUT-TERRAIN SILENCIEUX 24X10R16",
 		},
 		p_features_bigger_wheels: {
-			en: "Evolution L models are equipped with 16x8.5-inch aluminum wheels and 24x10R16 all-terrain tires, delivering enhanced performance and superior traction on diverse surfaces. This combination provides a smooth, controlled ride while maintaining the strength and durability required for more demanding terrains.",
-			fr: "Les modèles Evolution L sont équipés de roues en aluminium de 16x8,5 pouces et de pneus tout-terrain de 24x10R16, offrant des performances améliorées et une traction supérieure sur des surfaces diverses. Cette combinaison assure une conduite fluide et contrôlée tout en maintenant la robustesse et la durabilité nécessaires pour des terrains plus exigeants.",
+			en: "D-MAX XT models are equipped with 16x8.5-inch aluminum wheels and 24x10R16 all-terrain tires, delivering enhanced performance and superior traction on diverse surfaces. This combination provides a smooth, controlled ride while maintaining the strength and durability required for more demanding terrains.",
+			fr: "Les modèles D-MAX XT sont équipés de roues en aluminium de 16x8,5 pouces et de pneus tout-terrain de 24x10R16, offrant des performances améliorées et une traction supérieure sur des surfaces diverses. Cette combinaison assure une conduite fluide et contrôlée tout en maintenant la robustesse et la durabilité nécessaires pour des terrains plus exigeants.",
 		},
 		h2_spec_title: {
 			en: "SPECIFICATIONS",
@@ -542,8 +542,8 @@ export const translations = {
 			fr: "PARE-BRISE POUR MODÈLES SURÉLEVÉS",
 		},
 		p_shrink_brushGuards: {
-			en: "The Evolution 4L and 6L models are equipped with a durable brushguard that helps protect the front end from brush and debris while navigating through tough terrains, ensuring both style and safety on adventurous drives.",
-			fr: "Les modèles Evolution 4L et 6L sont équipés d'un pare-chocs robuste qui aide à protéger l'avant du véhicule contre les broussailles et les débris lors de la navigation dans des terrains difficiles, garantissant à la fois style et sécurité lors de trajets aventureux.",
+			en: "The D-MAX XT4 and XT6 models are equipped with a durable brushguard that helps protect the front end from brush and debris while navigating through tough terrains, ensuring both style and safety on adventurous drives.",
+			fr: "Les modèles D-MAX XT4 et XT6 sont équipés d'un pare-chocs robuste qui aide à protéger l'avant du véhicule contre les broussailles et les débris lors de la navigation dans des terrains difficiles, garantissant à la fois style et sécurité lors de trajets aventureux.",
 		},
 		h2_shrink_hitch: {
 			en: "TOWING HITCH RECEIVER",

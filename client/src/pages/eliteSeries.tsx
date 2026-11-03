@@ -24,7 +24,7 @@ const EliteSeries = () => {
     
   
     const modelsImages = [
-        [`/img/elite/Elite_4/Elite_4L_black_nobg.png?v=${version}`,`/img/elite/Elite_4/Elite_4L_black_nobg.png?v=${version}`,`/img/elite/Elite_4/Elite_4_burgundy_nobg.png?v=${version}`,`/img/elite/Elite_4/Elite_4_gray_nobg.png?v=${version}`,`/img/elite/Elite_4/Elite_4_green_nobg.png?v=${version}`,`/img/elite/Elite_4/Elite_4_white_nobg.png?v=${version}`,],
+        [`/img/elite/Elite_4/Elite_4_black_nobg.png?v=${version}`,`/img/elite/Elite_4/Elite_4_blue_nobg.png?v=${version}`,`/img/elite/Elite_4/Elite_4_burgundy_nobg.png?v=${version}`,`/img/elite/Elite_4/Elite_4_gray_nobg.png?v=${version}`,`/img/elite/Elite_4/Elite_4_green_nobg.png?v=${version}`,`/img/elite/Elite_4/Elite_4_white_nobg.png?v=${version}`,],
         [`/img/elite/Elite_2+2L/Elite_2+2L_blue_nobg.png?v=${version}`,`/img/elite/Elite_2+2L/Elite_2+2L_black_nobg.png?v=${version}`,`/img/elite/Elite_2+2L/Elite_2+2L_burgundy_nobg.png?v=${version}`,`/img/elite/Elite_2+2L/Elite_2+2L_gray_nobg.png?v=${version}`,`/img/elite/Elite_2+2L/Elite_2+2L_green_nobg.png?v=${version}`,`/img/elite/Elite_2+2L/Elite_2+2L_white_nobg.png?v=${version}`,],
         [`/img/elite/Elite_4+2/Elite_4+2_blue_nobg.png?v=${version}`,`/img/elite/Elite_4+2/Elite_4+2_black_nobg.png?v=${version}`,`/img/elite/Elite_4+2/Elite_4+2_burgundy_nobg.png?v=${version}`,`/img/elite/Elite_4+2/Elite_4+2_gray_nobg.png?v=${version}`,`/img/elite/Elite_4+2/Elite_4+2_green_nobg.png?v=${version}`,`/img/elite/Elite_4+2/Elite_4+2_white_nobg.png?v=${version}`,],
         [`/img/elite/Mini_one/mini_1_nobg.png?v=${version}`,`/img/elite/Mini_one/mini_1_nobg.png?v=${version}`,`/img/elite/Mini_one/mini_1_nobg.png?v=${version}`,`/img/elite/Mini_one/mini_1_nobg.png?v=${version}`,`/img/elite/Mini_one/mini_1_nobg.png?v=${version}`,]
@@ -114,7 +114,7 @@ const EliteSeries = () => {
     ];
 
     const buttonCards = [
-        { image: `/img/elite/Elite_4/Elite_4L_black_nobg.png?v=${version}`, title: T.modelsTitle_elite4[L], index: 0 },
+        { image: `/img/elite/Elite_4/Elite_4_black_nobg.png?v=${version}`, title: T.modelsTitle_elite4[L], index: 0 },
         { image: `/img/elite/Elite_2+2L/Elite_2+2L_black_nobg.png?v=${version}`, title: T.modelsTitle_elite_2_2L[L], index: 1 },
         { image: `/img/elite/Elite_4+2/Elite_4+2_burgundy_nobg.png?v=${version}`, title: T.modelsTitle_elite_4_2[L], index: 2 },
         { image: `/img/elite/Mini_one/mini_1_nobg.png?v=${version}`, title: T.modelsTitle_elite_mini[L], index: 3 },

@@ -8,10 +8,6 @@ export const translations = {
 			en: "OUR SERIES",
 			fr: "NOS SÉRIES",
 		},
-		diablo_serie: {
-			en: "DIABLO SERIE",
-			fr: "SÉRIE DIABLO",
-		},
 		thor_serie: {
 			en: "THOR SERIE",	
 			fr: "SÉRIE THOR",
@@ -25,8 +21,8 @@ export const translations = {
 			fr: "SÉRIE TORA",
 		},
 		dMax_serie: {
-			en: "EVOLUTION SERIE",
-			fr: "SÉRIE ÉVOLUTION",
+			en: "D-MAX SERIE",
+			fr: "SÉRIE D-MAX",
 		},
 		luxor_serie: {
 			en: "LUXOR SERIE",

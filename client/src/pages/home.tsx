@@ -51,11 +51,10 @@ const Home: React.FC = () => {
     const warrantySliderImages = [`/img/home/yellowCart.jpg?v=${version}`, `/img/home/Luxor-Commercial.webp?v=${version}`, `/img/home/Luxor-4-red.webp?v=${version}`];
 
     const cartModels = [
-        { image: `/img/d-max/XT4/Evolution4L-color-BLACK-SAPPHIRE.png?v=${version}`, title: T.title_evolution_card[L], link: '/evolutionSeries', t1: T.t1_evolution_card[L], p1: T.p1_evolution_card[L], t2: T.t2_evolution_card[L], p2: T.p2_evolution_card[L], t3: T.t3_evolution_card[L], p3: T.p3_evolution_card[L], t4: T.t4_evolution_card[L], p4: T.p4_evolution_card[L] },
+        { image: `/img/d-max/XT4/Evolution4L-color-BLACK-SAPPHIRE.png?v=${version}`, title: T.title_evolution_card[L], link: '/dmaxSeries', t1: T.t1_evolution_card[L], p1: T.p1_evolution_card[L], t2: T.t2_evolution_card[L], p2: T.p2_evolution_card[L], t3: T.t3_evolution_card[L], p3: T.p3_evolution_card[L], t4: T.t4_evolution_card[L], p4: T.p4_evolution_card[L] },
         { image: `/img/luxor/luxor_4L/LUXOR_4L-ARCTIC-GRAY-1-1.png?v=${version}`, title: T.title_luxor_card[L], link: '/luxorSeries', t1: T.t1_luxor_card[L], p1: T.p1_luxor_card[L], t2: T.t2_luxor_card[L], p2: T.p2_luxor_card[L], t3: T.t3_luxor_card[L], p3: T.p3_luxor_card[L], t4: T.t4_luxor_card[L], p4: T.p4_luxor_card[L] },
         { image: `/img/classic/classic_2+2/PLAMENCO.png?v=${version}`, title: T.title_classic_card[L], link: '/classicSeries', t1: T.t1_classic_card[L], p1: T.p1_classic_card[L], t2: T.t2_classic_card[L], p2: T.p2_classic_card[L], t3: T.t3_classic_card[L], p3: T.p3_classic_card[L], t4: T.t4_classic_card[L], p4: T.p4_classic_card[L] },
         { image: `/img/thor/Thor-GREEN.png?v=${version}`, title: T.title_thor_card[L], link: '/thorSeries', t1: T.t1_thor_card[L], p1: T.p1_thor_card[L], t2: T.t2_thor_card[L], p2: T.p2_thor_card[L], t3: T.t3_thor_card[L], p3: T.p3_thor_card[L], t4: T.t4_thor_card[L], p4: T.p4_thor_card[L] },
-        { image: `/img/diablo/diablo-resized.png?v=${version}`, title: T.title_diablo_card[L], link: '/diabloSeries', t1: T.t1_diablo_card[L], p1: T.p1_diablo_card[L], t2: T.t2_diablo_card[L], p2: T.p2_diablo_card[L], t3: T.t3_diablo_card[L], p3: T.p3_diablo_card[L], t4: T.t4_diablo_card[L], p4: T.p4_diablo_card[L] },
     ];
 
       

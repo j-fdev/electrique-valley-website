@@ -212,8 +212,8 @@ export const translations = {
 			fr: "de nos voiturettes.",
 		},
 		p_discover: {
-			en: "The ELITE Series offers a range of high-performance electric vehicles designed for both urban and off-road adventures. With cutting-edge technology and sleek designs, the Luxor Series is perfect for those who seek both style and functionality.",
-			fr: "La série ÉLITE propose une gamme de véhicules électriques de hautes performances conçus pour les aventures urbaines et tout-terrain. Avec une technologie de pointe et des designs élégants, la série Luxor est parfaite pour ceux qui recherchent à la fois style et fonctionnalité.",
+			en: "The ELITE Series offers a range of high-performance electric vehicles designed for both urban and off-road adventures. With cutting-edge technology and sleek designs, the Elite Series is perfect for those who seek both style and functionality.",
+			fr: "La série ÉLITE propose une gamme de véhicules électriques de hautes performances conçus pour les aventures urbaines et tout-terrain. Avec une technologie de pointe et des designs élégants, la série Elite est parfaite pour ceux qui recherchent à la fois style et fonctionnalité.",
 		},
 		t_features_screen: {
 			en: "10.1-INCH MULTI-FUNCTIONAL TOUCHSCREEN",

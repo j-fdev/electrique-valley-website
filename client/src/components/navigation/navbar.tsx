@@ -145,8 +145,8 @@ const Navbar: React.FC = () => {
                                     <div style={{ position: 'fixed', left: 0, width: '100vw', top: '57px', height: '15px', zIndex: 1999, backgroundColor: 'transparent' }} onMouseEnter={() => setIsSeriesOpen(true)} onMouseLeave={() => setIsSeriesOpen(false)}></div>
                                     <div className="dropdown-content ev-mega" style={{ ...navStyles.dropdown_content, display: isSeriesOpen ? 'flex' : 'none', position: 'fixed', left: 0, width: '100vw', top: '57px', justifyContent: 'center' }} onMouseEnter={() => setIsSeriesOpen(true)} onMouseLeave={() => setIsSeriesOpen(false)}>
                                         <div className="ev-nav-item" style={navStyles.dropdownItem}>
-                                            <Link to="/evolutionSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
-                                                <img src="/img/d-max/XT4/Evolution4L-color-BLACK-SAPPHIRE.png" alt="Evolution Series" style={navStyles.dropdownImage} />
+                                            <Link to="/dmaxSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
+                                                <img src="/img/d-max/XT4/Evolution4L-color-BLACK-SAPPHIRE.png" alt="D-MAX Series" style={navStyles.dropdownImage} />
                                                 <p style={navStyles.dropdownText}>{T.dMax_serie[L]}</p>
                                             </Link>
                                         </div>
@@ -160,12 +160,6 @@ const Navbar: React.FC = () => {
                                             <Link to="/classicSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
                                                 <img src="/img/classic/classic_2+2/sky-BLUE.png" alt="Classic Series" style={navStyles.dropdownImage} />
                                                 <p style={navStyles.dropdownText}>{T.classic_serie[L]}</p>
-                                            </Link>
-                                        </div>
-                                        <div className="ev-nav-item" style={{...navStyles.dropdownItem, marginTop: '14px'}}>
-                                            <Link to="/diabloSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
-                                                <img src="/img/diablo/diablo_4_img_no_bg.png" alt="Diablo Series" style={{...navStyles.dropdownImage, width: '110px'}} />
-                                                <p style={navStyles.dropdownText}>{T.diablo_serie[L]}</p>
                                             </Link>
                                         </div>
                                         <div className="ev-nav-item" style={navStyles.dropdownItem}>
@@ -185,7 +179,7 @@ const Navbar: React.FC = () => {
                             )}
                             {isMobile && (
                                 <div className="dropdown-content" style={{...navStyles.dropdown_content, display: isSeriesOpen ? 'block' : 'none', position: 'relative', width: 'auto', top: 'auto' }}>
-                                    <Link to="/evolutionSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
+                                    <Link to="/dmaxSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
                                         {T.dMax_serie[L]}
                                     </Link>
                                     <Link to="/luxorSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
@@ -193,9 +187,6 @@ const Navbar: React.FC = () => {
                                     </Link>
                                     <Link to="/classicSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
                                         {T.classic_serie[L]}
-                                    </Link>
-                                    <Link to="/diabloSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
-                                        {T.diablo_serie[L]}
                                     </Link>
                                     <Link to="/thorSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
                                         {T.thor_serie[L]}

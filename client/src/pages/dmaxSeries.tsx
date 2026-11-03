@@ -120,7 +120,7 @@ const DMaxSeries = () => {
         { image: `/img/d-max/XT6/Evolution6L-4wd-color-PORTIMAO-BLUE.png?v=${version}`, title: T.modelsTitle_ev6L[L], index: 3 },
     ];
 
-    const discoverShadowTitleImg = `/img/d-max/evolution_text.png?v=${version}`;
+    const discoverShadowTitleImg = `/img/d-max/dmax_text.png?v=${version}`;
     const discoverh2Span = T.h2_span_discover[L];
     const discoverh2 = T.h2_discover[L];
     const h2_discoverNext = T.h2_discoverNext[L];
@@ -165,7 +165,7 @@ const DMaxSeries = () => {
         <div>
             <CartModels 
                 headerBgImage="/img/d-max/Evolution_water_Bg.png"
-                altProp="Evolution Series"
+                altProp="D-MAX Series"
                 headerCartImage="/img/d-max/XT4/Evolution4L-color-BLACK-SAPPHIRE.png?v=${version}"
                 headerTitle={T.h1_title[L]}
                 chooseModelsH2={T.h2_choose_your_model[L]}
