@@ -47,7 +47,7 @@ const Home: React.FC = () => {
     const [error, setError] = useState<string | null>(null);
     const [isLoading, setIsLoading] = useState(true);
 
-    const heroSliderImages = [ `/img/home/EVOLUTION.jpg?v=${version}`, `/img/home/Luxor_4+2_banner(En).jpg?v=${version}`, `/img/home/New_LUXOR_Series_banner(En).jpg?v=${version}`, `/img/home/classic_series.jpg?v=${version}`, `/img/home/thor_series.jpg?v=${version}`];
+    const heroSliderImages = [ `/img/home/dmax_banner.jpg?v=${version}`, `/img/home/Luxor_4+2_banner(En).jpg?v=${version}`, `/img/home/New_LUXOR_Series_banner(En).jpg?v=${version}`, `/img/home/classic_series.jpg?v=${version}`, `/img/home/thor_series.jpg?v=${version}`];
     const heroSliderAlts = L === 'fr'
         ? ['Voiturette D-MAX', 'Luxor 4+2', 'Nouvelle série Luxor', 'Série Classic', 'Série Thor']
         : ['D-MAX cart', 'Luxor 4+2', 'New Luxor series', 'Classic series', 'Thor series'];
@@ -151,7 +151,7 @@ const Home: React.FC = () => {
             <div className="ev-hero" style={homeStyles.heroWrapper}>
                 {/* The banners have their text inside the images, so the page title is given to search engines and screen readers here */}
                 <h1 className="ev-sr-only">{L === 'fr' ? 'Électrique Valley : voiturettes de golf et véhicules utilitaires électriques à Salaberry-de-Valleyfield' : 'Électrique Valley: electric golf carts and utility vehicles in Salaberry-de-Valleyfield'}</h1>
-                <HeroSlider images={heroSliderImages} alts={heroSliderAlts} />
+                <HeroSlider images={heroSliderImages} alts={heroSliderAlts} language={L} />
                 <div className="ev-hero__fade" />
             </div>
 
