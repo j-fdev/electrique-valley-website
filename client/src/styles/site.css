@@ -27,7 +27,6 @@
 }
 
 /* ---------- Base typography ---------- */
-html { scroll-behavior: smooth; }
 body {
   font-family: var(--ev-font-body);
   font-size: 1.0625rem;
