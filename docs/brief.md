@@ -5,7 +5,7 @@
 ## Client
 
 - **Business name:** Electrique Valley, always written without an accent on the E (the brand's own spelling). Incorporated; exact legal name **to confirm**
-- **Contact:** the owner (J-F's brother-in-law); info@electriquevalley.com; 450 747-1525
+- **Contact:** the owner (J-F's brother-in-law); electriquevalley@hotmail.com (published everywhere, Nov. 2026); 450 747-1525
 - **Website:** www.electriquevalley.com (also electriquevalley.ca)
 - **Languages:** French and English, French first
 

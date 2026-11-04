@@ -3,15 +3,15 @@
 // (tyrem-studio/business/legal/modeles-pages-legales.md). To be approved by
 // Electrique Valley and confirmed by a lawyer. Items marked TO CONFIRM in docs/tasks.md.
 
-const CONTACT_EMAIL = 'info@electriquevalley.com';
+const CONTACT_EMAIL = 'electriquevalley@hotmail.com';
 const CONTACT_PHONE = '450 747-1525';
 
 export const legal = {
     contactEmail: CONTACT_EMAIL,
     contactPhone: CONTACT_PHONE,
     updated: {
-        fr: 'Dernière mise à jour : 2 novembre 2026',
-        en: 'Last updated: November 2, 2026',
+        fr: 'Dernière mise à jour : 4 novembre 2026',
+        en: 'Last updated: November 4, 2026',
     },
     links: {
         privacy: { fr: 'Politique de confidentialité', en: 'Privacy policy' },
@@ -88,8 +88,8 @@ export const legal = {
                 title: { fr: 'Témoins (cookies)', en: 'Cookies' },
                 paragraphs: [
                     {
-                        fr: 'Ce site n’utilise aucun témoin de suivi, de mesure d’audience ou de publicité. Votre choix de langue est gardé dans votre navigateur seulement et ne nous est pas transmis.',
-                        en: 'This site uses no tracking, analytics or advertising cookies. Your language choice is kept in your browser only and is not sent to us.',
+                        fr: 'Ce site n’utilise aucun témoin de suivi, de mesure d’audience ou de publicité, et n’enregistre rien dans votre navigateur. La langue est choisie par l’adresse de la page (par exemple /en pour l’anglais).',
+                        en: 'This site uses no tracking, analytics or advertising cookies and stores nothing in your browser. The language is set by the page address (for example /en for English).',
                     },
                     {
                         fr: 'Les polices de caractères du site sont fournies par Google Fonts : votre navigateur se connecte alors aux serveurs de Google, qui reçoivent votre adresse IP.',
@@ -118,12 +118,12 @@ export const legal = {
                 title: { fr: 'Qui y a accès', en: 'Who has access' },
                 paragraphs: [
                     {
-                        fr: 'Seules les personnes d’Electrique Valley qui traitent les demandes ont accès à vos renseignements.',
-                        en: 'Only the Electrique Valley staff who handle requests have access to your information.',
+                        fr: 'Seules les personnes d’Electrique Valley qui traitent les demandes ont accès à vos renseignements. Notre fournisseur Web, qui entretient le site, peut y accéder uniquement pour ce travail, selon une entente écrite qui l’oblige à les protéger.',
+                        en: 'Only the Electrique Valley staff who handle requests have access to your information. Our web provider, who maintains the site, may access it only for that work, under a written agreement that requires it to protect the information.',
                     },
                     {
-                        fr: 'Le site et sa base de données sont hébergés au Canada par Amazon Web Services. Les courriels sont envoyés par le service Gmail de Google, dont les serveurs peuvent être situés à l’extérieur du Québec. Nous choisissons des fournisseurs qui protègent adéquatement les renseignements, comme l’exige la loi.',
-                        en: 'The site and its database are hosted in Canada by Amazon Web Services. Emails are sent through Google’s Gmail service, whose servers may be located outside Quebec. We choose providers that adequately protect information, as the law requires.',
+                        fr: 'Le site et sa base de données sont hébergés au Canada par Amazon Web Services. Les courriels sont envoyés par le service Gmail de Google, et notre boîte de réception est chez Outlook.com de Microsoft; leurs serveurs peuvent être situés à l’extérieur du Québec et du Canada. Nous choisissons des fournisseurs qui protègent adéquatement les renseignements, comme l’exige la loi.',
+                        en: 'The site and its database are hosted in Canada by Amazon Web Services. Emails are sent through Google’s Gmail service, and our inbox is at Microsoft’s Outlook.com; their servers may be located outside Quebec and Canada. We choose providers that adequately protect information, as the law requires.',
                     },
                 ],
             },
@@ -149,12 +149,12 @@ export const legal = {
                 title: { fr: 'Vos droits', en: 'Your rights' },
                 paragraphs: [
                     {
-                        fr: 'Vous pouvez demander à consulter, corriger ou supprimer vos renseignements, ou retirer votre consentement, en écrivant au responsable. Nous répondons dans un délai de 30 jours.',
-                        en: 'You can ask to see, correct or delete your information, or withdraw your consent, by writing to the person in charge. We answer within 30 days.',
+                        fr: 'Vous pouvez demander à consulter, corriger ou supprimer vos renseignements, à en recevoir une copie dans un format technologique structuré et couramment utilisé, ou retirer votre consentement, en écrivant au responsable. Nous répondons dans un délai de 30 jours.',
+                        en: 'You can ask to see, correct or delete your information, to receive a copy in a structured, commonly used technological format, or withdraw your consent, by writing to the person in charge. We answer within 30 days.',
                     },
                     {
-                        fr: 'Pour quitter l’infolettre, cliquez sur le lien de désabonnement au bas de nos courriels ou rendez-vous à la page electriquevalley.com/unsubscribe. Votre adresse est alors supprimée.',
-                        en: 'To leave the newsletter, click the unsubscribe link at the bottom of our emails or go to electriquevalley.com/unsubscribe. Your address is then deleted.',
+                        fr: 'Pour quitter l’infolettre, cliquez sur le lien de désabonnement au bas de nos courriels ou rendez-vous à la page electriquevalley.com/desabonnement. Votre adresse est alors supprimée.',
+                        en: 'To leave the newsletter, click the unsubscribe link at the bottom of our emails or go to electriquevalley.com/en/unsubscribe. Your address is then deleted.',
                     },
                     {
                         fr: 'Si vous n’êtes pas satisfait de notre réponse, vous pouvez porter plainte auprès de la Commission d’accès à l’information du Québec.',
@@ -184,8 +184,8 @@ export const legal = {
                 title: { fr: 'Information, prix et disponibilité', en: 'Information, prices and availability' },
                 paragraphs: [
                     {
-                        fr: 'Le contenu du site est fourni à titre informatif. Les modèles, caractéristiques, couleurs et équipements peuvent changer sans préavis et varier selon le modèle. Aucune vente ne se fait en ligne : les prix, la disponibilité et les caractéristiques finales sont confirmés en magasin ou par téléphone, et seul un contrat de vente signé engage Electrique Valley.',
-                        en: 'The site’s content is provided for information only. Models, specifications, colours and equipment may change without notice and vary by model. Nothing is sold online: prices, availability and final specifications are confirmed in store or by phone, and only a signed sales contract binds Electrique Valley.',
+                        fr: 'Le contenu du site est fourni à titre informatif. Les modèles, caractéristiques, couleurs et équipements peuvent changer sans préavis et varier selon le modèle. Aucune vente ne se fait en ligne : les prix, la disponibilité et les caractéristiques finales sont confirmés directement avec nous (par téléphone, par courriel ou lors d’un rendez-vous), et seul un contrat de vente signé engage Electrique Valley.',
+                        en: 'The site’s content is provided for information only. Models, specifications, colours and equipment may change without notice and vary by model. Nothing is sold online: prices, availability and final specifications are confirmed directly with us (by phone, by email or at an appointment), and only a signed sales contract binds Electrique Valley.',
                     },
                     {
                         fr: 'Les photos et les couleurs sont présentées à titre indicatif; les couleurs réelles peuvent varier selon votre écran.',
@@ -242,8 +242,8 @@ export const legal = {
     },
 } as const;
 
-// Tab title and Google description for each page (titles about 60 characters, descriptions about 155)
-// Title and description of each page, by page name (addresses are in config/routes.json)
+// Tab title and Google description for each page (titles 60 characters or fewer, descriptions about 155),
+// by page name (addresses are in config/routes.json)
 export const pageMeta = {
     home: {
         title: {

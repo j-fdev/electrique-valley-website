@@ -11,9 +11,9 @@
 
 ## To confirm with the client
 
-- [ ] Exact legal name (for the terms of use, to say who runs the site). The NEQ is optional: Law 25 does not require it
-- [ ] Contact email to publish: the contact page shows `electriquevalley@hotmail.com`, the footer and legal pages `info@electriquevalley.com`. Use one everywhere
-- [ ] Street address to publish? (helps Google Maps and local search; today only the city is shown)
+- [x] Name used on the site and legal pages: Electrique Valley (J-F, Nov 4). No mention of the US manufacturer in the legal pages; its old sale-terms copy was deleted
+- [x] Contact email: `electriquevalley@hotmail.com` everywhere (site, legal pages, Google business details, newsletter footer). Decision of J-F, Nov 4
+- [x] Address: city only (Salaberry-de-Valleyfield) for now; no opening hours for now (J-F, Nov 4)
 - [ ] Retention period for contact requests (draft says 12 months)
 - [ ] Elite: is the blue Elite 4 offered? (replaced a duplicated black swatch). Elite is commented out for now (search "Elite hidden for now" to bring it back)
 - [ ] Elite home card: top speed 40 km/h (copied from the other series)
@@ -28,6 +28,10 @@
 
 ## Legal (Law 25 and Quebec)
 
+- [x] Review (Nov 4): privacy policy names Gmail (sending) and Outlook.com (inbox) as services outside Quebec, the web provider's access under a written agreement, the right to a copy in a structured format (portability), the new unsubscribe addresses; terms no longer promise a store
+- [ ] Client to confirm: the manufacturer allows the use of its photos and model names (the terms say so)
+- [ ] Privacy policy says the site is hosted in Canada by AWS: true only after the migration (`deploy/MIGRATION.md`)
+
 - [x] Privacy policy, person in charge published (owner, generic title)
 - [x] Terms of use (replaced the manufacturer's sale terms that had been copied)
 - [x] Unchecked consent box on the contact form, separate one for the newsletter
@@ -35,7 +39,7 @@
 - [ ] Sign Tyrem's client contract (Law 25 service-provider clause) with Electrique Valley
 - [x] Newsletter unsubscribe (CASL): signed link at the bottom of every newsletter email, `/unsubscribe` page, address deleted on confirmation
 - [ ] CASL: newsletter emails must show a **mailing address** (today only the city). Get the address from the client and add it to `server/src/utilities/unsubscribe.ts` (`senderFooter`)
-- [ ] Newsletters sent by hand (Gmail): paste the footer with the generic link `https://www.electriquevalley.com/unsubscribe` at the bottom of each one
+- [ ] Newsletters sent by hand (Gmail): paste the footer with the generic link `https://www.electriquevalley.com/desabonnement` (English: `/en/unsubscribe`) at the bottom of each one
 - [ ] Production `.env`: set `UNSUBSCRIBE_SECRET` (64 random characters) on the AWS server
 - [ ] Delete contact emails older than the retention period (manual routine in the mailbox for now)
 

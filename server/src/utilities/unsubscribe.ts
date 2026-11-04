@@ -39,6 +39,6 @@ export const unsubscribeUrl = (email: string, language: 'en' | 'fr'): string => 
 export const senderFooter = (email: string, language: 'en' | 'fr'): string => {
     const link = unsubscribeUrl(email, language);
     return language === 'fr'
-        ? `\n\n--\nElectrique Valley, Salaberry-de-Valleyfield (Québec)\n450 747-1525 · info@electriquevalley.com\nPour ne plus recevoir nos courriels : ${link}`
-        : `\n\n--\nElectrique Valley, Salaberry-de-Valleyfield, Quebec\n450 747-1525 · info@electriquevalley.com\nTo stop receiving our emails: ${link}`;
+        ? `\n\n--\nElectrique Valley, Salaberry-de-Valleyfield (Québec)\n450 747-1525 · electriquevalley@hotmail.com\nPour ne plus recevoir nos courriels : ${link}`
+        : `\n\n--\nElectrique Valley, Salaberry-de-Valleyfield, Quebec\n450 747-1525 · electriquevalley@hotmail.com\nTo stop receiving our emails: ${link}`;
 };
