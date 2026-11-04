@@ -27,7 +27,7 @@ const VideoShowcasePage = () => {
     const languageContext = useContext(LanguageContext);
     const L = languageContext ? languageContext.language : 'en';
     const [videoCapsules, setVideoCapsules] = useState<i_videoCapsule[]>([]);
-    const [error, setError] = useState<string | null>(null);
+    const [error, setError] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
@@ -55,11 +55,12 @@ const VideoShowcasePage = () => {
                     }));
                     setVideoCapsules(transformed);
                 } else {
-                    setError(videoData.message || 'Failed to load videos');
+                    console.error('Video capsules:', videoData.message);
+                    setError(true);
                 }
             } catch (err) {
                 console.error('Error fetching videos:', err);
-                setError('Failed to load videos. Please try again later.');
+                setError(true);
             } finally {
                 setIsLoading(false);
             }
@@ -68,22 +69,6 @@ const VideoShowcasePage = () => {
         getVideoCapsules();
     }, []);
     
-    if (isLoading) {
-        return (
-            <div className="ev-page-hero">
-                Loading videos...
-            </div>
-        );
-    }
-
-    if (error) {
-        return (
-            <div className="ev-page-hero" style={{ color: '#ff8a8a' }}>
-                {error}
-            </div>
-        );
-    }
-
     return (
         <>
             <section className="ev-page-hero">
@@ -91,7 +76,10 @@ const VideoShowcasePage = () => {
             </section>
             <section className="ev-section" style={{ paddingTop: 'clamp(2.5rem, 6vw, 4rem)' }}>
                 <div className="ev-container">
-                    <VideoShowcase videoCapsules={videoCapsules} />
+                    {/* The title always shows (also in the pre-rendered page); only the list waits for the API */}
+                    {isLoading && <p role="status">{T.p_loading[L]}</p>}
+                    {!isLoading && error && <p role="alert">{T.p_error[L]}</p>}
+                    {!isLoading && !error && <VideoShowcase videoCapsules={videoCapsules} />}
                 </div>
             </section>
         </>

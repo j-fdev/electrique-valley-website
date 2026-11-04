@@ -42,3 +42,10 @@
 - **Decision:** `ScrollToTop` uses `useLayoutEffect` with an instant `window.scrollTo`, and the global `scroll-behavior: smooth` was removed.
 - **Why:** React Router's `<ScrollRestoration />` only works with a data router (`createBrowserRouter`); this site uses `<BrowserRouter>` (react-router-dom 6), so it would have needed a router migration.
 - **Consequences:** Back/Forward opens pages at the top instead of the previous position. Switch to `<ScrollRestoration />` if the router is ever migrated (for example with the Vite migration).
+
+## 2026-11-04: Separate French and English addresses, pre-rendered pages
+
+- **Context:** both languages shared one address and the language followed the browser. Google browses in English, so the French pages were hard for it to see, and every page reached it as an empty shell filled by JavaScript.
+- **Decision:** French at the root (`/serie-dmax`), English under `/en/` (`/en/dmax-series`). The address decides the language; the FR/EN button opens the same page in the other language. No automatic redirect by browser language (Google advises against it). `hreflang` tags and the sitemap link each page to its other version. After `react-scripts build`, `client/scripts/prerender.mjs` (Puppeteer, dev dependency) saves each page's finished HTML.
+- **Why:** both languages indexed; text, titles and sharing tags visible without JavaScript. French first, as the Charter expects. Kept Create React App: a Vite migration (with its own pre-rendering) is a bigger job, listed under Later.
+- **Consequences:** page addresses live in `client/src/config/routes.json` (also the list of old addresses). Old addresses get 301 redirects in nginx (same list, update both together). The unsubscribe email links now point to `/desabonnement` or `/en/unsubscribe`. `npm run build` takes about a minute longer and needs Puppeteer's Chrome (downloaded by `npm ci`); `npm run build:no-prerender` skips it. React redraws each page on load (`createRoot`), so visitors see no difference.

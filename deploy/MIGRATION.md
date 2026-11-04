@@ -177,6 +177,8 @@ pm2 startup        # prints one "sudo env PATH=... pm2 startup ..." line: copy-p
 On Windows (production build uses `client/.env.production` → `https://api.electriquevalley.com`):
 
 ```powershell
+# npm run build also pre-renders every page (headless Chrome, about 1 minute) and must end with
+# "Pre-rendered 20 pages into build/." If it lists problems (a missing image...), fix them first.
 cd client; npm ci; npm run build; cd ..
 tar -cf "$env:TEMP\ev-client.tar" -C client\build .
 scp -i $KEY "$env:TEMP\ev-client.tar" "${SRV}:~/upload/"
@@ -186,7 +188,7 @@ On the server:
 
 ```bash
 tar -xf ~/upload/ev-client.tar -C /var/www/electriquevalley && rm ~/upload/ev-client.tar
-ls /var/www/electriquevalley       # index.html, static/, img/ ...
+ls /var/www/electriquevalley       # index.html, app.html, en/, serie-dmax/, static/, img/ ...
 ```
 
 The old copy in `/home/ubuntu/electriquevalley.com` is no longer used; delete it only once everything works.

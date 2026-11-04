@@ -12,3 +12,11 @@
 ## Design inspiration, consulted 2026-11-02
 
 - Evolution Electric Vehicles (manufacturer): https://evolutionelectricvehicle.com/
+
+## Multilingual SEO and pre-rendering, consulted 2026-11-04
+
+- Google, localized versions of your pages (hreflang, x-default): https://developers.google.com/search/docs/specialty/international/localized-versions
+- Google, managing multi-regional and multilingual sites (separate URLs per language, no automatic redirects): https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites
+- Google, JavaScript SEO basics: https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics
+- Puppeteer documentation: https://pptr.dev/
+- Google, favicon in search results (multiple of 48 px): https://developers.google.com/search/docs/appearance/favicon-in-search

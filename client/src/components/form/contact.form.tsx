@@ -15,6 +15,7 @@ import { i_contact_form_props } from '../../interfaces/interfaces';
 import { translations } from '../../translations/trans.contact';
 import { legal } from '../../translations/trans.legal';
 import { LanguageContext } from '../../translations/languageSelection';
+import { pathFor } from '../../config/routes';
 import { ClipLoader } from 'react-spinners';
 
 const ContactForm = (props: i_contact_form_props ) => {
@@ -159,7 +160,7 @@ const ContactForm = (props: i_contact_form_props ) => {
                     <input type="checkbox" checked={consent} onChange={(e) => { setConsent(e.target.checked); setConsentError(false); }} />
                     <span>
                         {legal.consent.contactBefore[language]}
-                        <Link to="/privacy">{legal.consent.policyLink[language]}</Link>.
+                        <Link to={pathFor('privacy', language)}>{legal.consent.policyLink[language]}</Link>.
                     </span>
                 </label>
                 {consentError && <p className="ev-consent__error" role="alert">{legal.consent.required[language]}</p>}

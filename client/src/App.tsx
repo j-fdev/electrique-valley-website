@@ -1,6 +1,9 @@
 //Modules
 import React from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
+
+// Page addresses in French and English
+import { LIVE_PAGES, PageKey, ROUTES } from './config/routes';
 
 //Components
 import Navbar from './components/navigation/navbar';
@@ -33,8 +36,9 @@ import Footer from './components/footer/footer';
 
 const App = () => {
   return (
-    <LanguageProvider>
-      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+    <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      {/* Inside the router: the language is read from the address */}
+      <LanguageProvider>
       <ScrollToTop />
         <div>
           <Navbar/>  
@@ -42,9 +46,30 @@ const App = () => {
             <AppRoutes />
           </main>
         </div>
-      </BrowserRouter>
-    </LanguageProvider>
+      </LanguageProvider>
+    </BrowserRouter>
   )
+};
+
+// Elite hidden for now: also set "live" to true for elite in config/routes.json
+const PAGES: Record<PageKey, React.ReactNode> = {
+  home: <Home />,
+  dmax: <DMaxSeries />,
+  elite: null, // <EliteSeries />
+  luxor: <LuxorSeries />,
+  classic: <ClassicSeries />,
+  thor: <ThorSeries />,
+  videos: <VideoShowcase />,
+  contact: <Contact />,
+  privacy: <Privacy />,
+  terms: <TermsAndConditions />,
+  unsubscribe: <Unsubscribe />,
+};
+
+/** Sends an old address to its new one, keeping the ?query (unsubscribe links in sent emails need it) */
+const LegacyRedirect = ({ to }: { to: string }) => {
+  const { search, hash } = useLocation();
+  return <Navigate to={to + search + hash} replace />;
 };
 
 const AppRoutes = () => {
@@ -54,20 +79,16 @@ const AppRoutes = () => {
     <>
     <FloatingCta />
     <Routes>
-      <Route path="/" element={<><Home /><Footer /></>} />
+      {/* Each page twice: its French address and its English address (see config/routes.json) */}
+      {LIVE_PAGES.flatMap((page) => (['fr', 'en'] as const).map((lang) => (
+        <Route key={page + lang} path={ROUTES[page][lang]} element={<>{PAGES[page]}<Footer /></>} />
+      )))}
+      {/* Old addresses (before Nov. 2026) go to the French page; nginx does the same on the live server */}
+      {LIVE_PAGES.flatMap((page) => ROUTES[page].legacy.map((oldPath) => (
+        <Route key={oldPath} path={oldPath} element={<LegacyRedirect to={ROUTES[page].fr} />} />
+      )))}
       {/* <Route path="/login" element={<Login />} /> */}
-      <Route path="/dmaxSeries" element={<><DMaxSeries /><Footer /></>} />
-      {/* Elite hidden for now */}
-      {/* <Route path="/eliteSeries" element={<><EliteSeries /><Footer /></>} /> */}
-      <Route path="/luxorSeries" element={<><LuxorSeries /><Footer /></>} />
-      <Route path="/classicSeries" element={<><ClassicSeries /><Footer /></>} />
-      <Route path="/thorSeries" element={<><ThorSeries /><Footer /></>} />
       {/* <Route path="/toraSeries" element={<><ToraSeries /><Footer /></>} /> */}
-      <Route path="/contact" element={<><Contact /><Footer /></>} />
-      <Route path="/videoShowcase" element={<><VideoShowcase /><Footer /></>} />
-      <Route path="/termsAndConditions" element={<><TermsAndConditions /><Footer /></>} />
-      <Route path="/privacy" element={<><Privacy /><Footer /></>} />
-      <Route path="/unsubscribe" element={<><Unsubscribe /><Footer /></>} />
     </Routes>
     </>
   )

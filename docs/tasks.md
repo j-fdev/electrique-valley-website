@@ -48,7 +48,9 @@
 - [x] Quick fixes (Nov 4): titles under 60 characters, X/Twitter tags and a sharing image per page, alt text in both languages, lazy-loaded images with the first banner first, `.psd` files moved out of `public/` to `design-sources/`
 - [ ] Google Business Profile: create or claim it (biggest gain for local search)
 - [ ] Submit `sitemap.xml` in Google Search Console after launch
-- [ ] Separate French and English URLs (e.g. `/fr/serie-dmax`, `/en/dmax-series`) so Google indexes both languages
+- [x] Separate French and English addresses (`/serie-dmax`, `/en/dmax-series`), `hreflang`, sitemap in both languages, pre-rendered pages (`npm run build`), old addresses redirected (Nov 4)
+- [x] Tab icon (favicon) and home-screen icons from the EV mark; app name in `manifest.json`
+- [ ] After launch: install the new `deploy/nginx/electriquevalley.conf` (redirects, pre-rendered pages) and check that an old address such as `/dmaxSeries` redirects
 - [ ] Convert large JPG/PNG to WebP and resize them; check PageSpeed (target 90+)
 - [ ] Self-host the fonts instead of Google Fonts (faster, no data sent to Google); needs `@fontsource` packages, ask J-F first
 - [ ] Add a branded image for social sharing (1200 × 630); today each page shares an existing banner

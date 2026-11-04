@@ -33,53 +33,53 @@ const LuxorSeries = () => {
 
     const features = [
         {
-            image: `img/luxor/luxorFeatures/Features-touchScreen.jpg?v=${version}`,
+            image: `/img/luxor/luxorFeatures/Features-touchScreen.jpg?v=${version}`,
             title: T.t_features_screen[L],
             description: T.p_features_screen[L]
         },
          ...(currentModelIndex === 0 || currentModelIndex === 2 ? [
-                { image: `img/luxor/luxorFeatures/Features-LUXOR4-TIRES.jpg?v=${version}`, title: T.t_features_tires[L], description: T.p_features_tires[L]},
+                { image: `/img/luxor/luxorFeatures/Features-LUXOR4-TIRES.jpg?v=${version}`, title: T.t_features_tires[L], description: T.p_features_tires[L]},
             ] : [
-                { image: `img/luxor/luxorFeatures/Features-luxor-SILENT-TIRES-WITH-OFFROAD-THREAD.jpg?v=${version}`, title: T.t_features_offRoad_tires[L], description: T.p_features_offRoad_tires[L]},
+                { image: `/img/luxor/luxorFeatures/Features-luxor-SILENT-TIRES-WITH-OFFROAD-THREAD.jpg?v=${version}`, title: T.t_features_offRoad_tires[L], description: T.p_features_offRoad_tires[L]},
             ]),
             ...(currentModelIndex === 0 || currentModelIndex === 1 ? [
-                { image: `img/luxor/luxorFeatures/Features-LUXOR4-SEATS.jpg?v=${version}`, title: T.t_features_seats[L], description: T.p_features_seats[L]},
+                { image: `/img/luxor/luxorFeatures/Features-LUXOR4-SEATS.jpg?v=${version}`, title: T.t_features_seats[L], description: T.p_features_seats[L]},
             ] : [
-                { image: `img/luxor/luxorFeatures/Features-LUXOR-2+2-Safety-Belts.jpg?v=${version}`, title: T.t_features_safetyBelts[L], description: T.p_features_safetyBelts[L]},
+                { image: `/img/luxor/luxorFeatures/Features-LUXOR-2+2-Safety-Belts.jpg?v=${version}`, title: T.t_features_safetyBelts[L], description: T.p_features_safetyBelts[L]},
             ]),
         {
-            image: `img/luxor/luxorFeatures/Features-lights.jpg?v=${version}`,
+            image: `/img/luxor/luxorFeatures/Features-lights.jpg?v=${version}`,
             title: T.t_features_lighting[L],
             description: T.p_features_lighting[L]
         },
         {
-            image: `img/luxor/luxorFeatures/Features-ADJUSTABLE-STEERING-COLUMN.jpg?v=${version}`,
+            image: `/img/luxor/luxorFeatures/Features-ADJUSTABLE-STEERING-COLUMN.jpg?v=${version}`,
             title: T.t_features_steering[L],
             description: T.p_features_steering[L]
         },
          ...(currentModelIndex === 0 || currentModelIndex === 1 ? [
-                { image: `img/luxor/luxorFeatures/Features-LUXOR4-STORAGE-TRUNK.jpg?v=${version}`, title: T.t_features_storage[L], description: T.p_features_storage[L]},
+                { image: `/img/luxor/luxorFeatures/Features-LUXOR4-STORAGE-TRUNK.jpg?v=${version}`, title: T.t_features_storage[L], description: T.p_features_storage[L]},
             ] : [
-                { image: `img/luxor/luxorFeatures/Features-LUXOR-2+2-Storage-Compartment.jpg?v=${version}`, title: T.t_features_2_2_storage[L], description: T.p_features_2_2_storage[L]},
+                { image: `/img/luxor/luxorFeatures/Features-LUXOR-2+2-Storage-Compartment.jpg?v=${version}`, title: T.t_features_2_2_storage[L], description: T.p_features_2_2_storage[L]},
             ]),
         {
-            image: `img/luxor/luxorFeatures/Features-SOUND-BAR.jpg?v=${version}`,
+            image: `/img/luxor/luxorFeatures/Features-SOUND-BAR.jpg?v=${version}`,
             title: T.t_features_soundBar[L],
             description: T.p_features_soundBar[L]
         },
         {
-            image: `img/luxor/luxorFeatures/Features-Optional-All-Weather-Enclosure.jpg?v=${version}`,
+            image: `/img/luxor/luxorFeatures/Features-Optional-All-Weather-Enclosure.jpg?v=${version}`,
             title: T.t_features_enclosure[L],
             description: T.p_features_enclosure[L]
         },
          ...(currentModelIndex === 2 || currentModelIndex === 3 ? [
             {
-                image: `img/luxor/luxorFeatures/Features-Rear-Armrest.jpg?v=${version}`,
+                image: `/img/luxor/luxorFeatures/Features-Rear-Armrest.jpg?v=${version}`,
                 title: T.t_features_rearArmrest[L],
                 description: T.p_features_rearArmrest[L]
             },
             {
-                image: `img/luxor/luxorFeatures/Features-LUXOR-2+2-FLIP-FLOP-REAR-SEAT.jpg?v=${version}`,
+                image: `/img/luxor/luxorFeatures/Features-LUXOR-2+2-FLIP-FLOP-REAR-SEAT.jpg?v=${version}`,
                 title: T.t_features_flipRearSeats[L],
                 description: T.p_features_flipRearSeats[L]
             }
@@ -109,18 +109,18 @@ const LuxorSeries = () => {
 
     const shrinkGrowItems = [
         [
-            { image: `img/main/accessories/RoofHandles.jpg?v=${version}`, title: T.h2_shrink_handles[L], paragraph: T.p_shrink_handles[L] },
-            { image: `img/main/accessories/CupHolders.jpg?v=${version}`, title: T.h2_shrink_cupHolders[L], paragraph: T.p_shrink_cupHolders[L] },
-            { image: `img/main/accessories/DashStorage.jpg?v=${version}`, title: T.h2_shrink_dashStorage[L], paragraph: T.p_shrink_dashStorage[L] },
-            { image: `img/main/accessories/Storage.jpg?v=${version}`, title: T.h2_shrink_storage[L], paragraph: T.p_shrink_storage[L] },
-            { image: `img/main/accessories/UsbPorts.jpg?v=${version}`, title: T.h2_shrink_usbPorts[L], paragraph: T.p_shrink_usbPorts[L] }
+            { image: `/img/main/accessories/RoofHandles.jpg?v=${version}`, title: T.h2_shrink_handles[L], paragraph: T.p_shrink_handles[L] },
+            { image: `/img/main/accessories/CupHolders.jpg?v=${version}`, title: T.h2_shrink_cupHolders[L], paragraph: T.p_shrink_cupHolders[L] },
+            { image: `/img/main/accessories/DashStorage.jpg?v=${version}`, title: T.h2_shrink_dashStorage[L], paragraph: T.p_shrink_dashStorage[L] },
+            { image: `/img/main/accessories/Storage.jpg?v=${version}`, title: T.h2_shrink_storage[L], paragraph: T.p_shrink_storage[L] },
+            { image: `/img/main/accessories/UsbPorts.jpg?v=${version}`, title: T.h2_shrink_usbPorts[L], paragraph: T.p_shrink_usbPorts[L] }
         ],
         [
-            { image: `img/main/accessories/BallsCompartiment.jpg?v=${version}`, title: T.h2_shrink_golfCompartment[L], paragraph: T.p_shrink_golfCompartment[L] },
-            { image: `img/main/accessories/MirrorFlashers.jpg?v=${version}`, title: T.h2_shrink_mirrorFlashers[L], paragraph: T.p_shrink_mirrorFlashers[L] },
-            { image: `img/main/accessories/ChargerPlug.jpg?v=${version}`, title: T.h2_shrink_chargerPlug[L], paragraph: T.p_shrink_chargerPlug[L] },
-            { image: `img/luxor/luxorFeatures/Features-SOUND-BAR.jpg?v=${version}`, title: T.h2_shrink_soundBar[L], paragraph: T.p_shrink_soundBar[L] },
-            { image: `img/main/accessories/GolfBags.jpg?v=${version}`, title: T.h2_shrink_golfBags[L], paragraph: T.p_shrink_golfBags[L] }
+            { image: `/img/main/accessories/BallsCompartiment.jpg?v=${version}`, title: T.h2_shrink_golfCompartment[L], paragraph: T.p_shrink_golfCompartment[L] },
+            { image: `/img/main/accessories/MirrorFlashers.jpg?v=${version}`, title: T.h2_shrink_mirrorFlashers[L], paragraph: T.p_shrink_mirrorFlashers[L] },
+            { image: `/img/main/accessories/ChargerPlug.jpg?v=${version}`, title: T.h2_shrink_chargerPlug[L], paragraph: T.p_shrink_chargerPlug[L] },
+            { image: `/img/luxor/luxorFeatures/Features-SOUND-BAR.jpg?v=${version}`, title: T.h2_shrink_soundBar[L], paragraph: T.p_shrink_soundBar[L] },
+            { image: `/img/main/accessories/GolfBags.jpg?v=${version}`, title: T.h2_shrink_golfBags[L], paragraph: T.p_shrink_golfBags[L] }
         ]
 
     ];

@@ -243,8 +243,9 @@ export const legal = {
 } as const;
 
 // Tab title and Google description for each page (titles about 60 characters, descriptions about 155)
+// Title and description of each page, by page name (addresses are in config/routes.json)
 export const pageMeta = {
-    '/': {
+    home: {
         title: {
             fr: 'Voiturettes de golf à Valleyfield | Electrique Valley',
             en: 'Electric Golf Carts in Valleyfield | Electrique Valley',
@@ -257,67 +258,67 @@ export const pageMeta = {
             en: 'Lithium-powered electric golf carts and utility vehicles: D-MAX, Luxor, Classic and Thor series. Test rides by appointment.',
         },
     },
-    '/dmaxSeries': {
+    dmax: {
         title: { fr: 'Série D-MAX : GT4, GT6, XT4 et XT6 4x4 | Electrique Valley', en: 'D-MAX Series: GT4, GT6, XT4 and XT6 4WD | Electrique Valley' },
         description: {
             fr: 'Voiturettes électriques D-MAX GT4, GT6, XT4 et XT6 : batterie lithium 48 V, écran CarPlay et Android Auto, 4x4 sur les XT. Couleurs et fiches techniques.',
             en: 'D-MAX GT4, GT6, XT4 and XT6 electric carts: 48 V lithium battery, CarPlay and Android Auto screen, 4WD on the XT models. Colours and specifications.',
         },
     },
-    '/eliteSeries': {
+    elite: {
         title: { fr: 'Série Élite | Electrique Valley', en: 'Elite Series | Electrique Valley' },
         description: {
             fr: 'Voiturettes électriques de la série Élite : modèles 4L, 2+2L, 4+2 et Mini, batterie lithium, écran tactile. Couleurs, équipements et fiches techniques.',
             en: 'Elite series electric carts: 4L, 2+2L, 4+2 and Mini models, lithium battery, touchscreen. Colours, equipment and specifications.',
         },
     },
-    '/luxorSeries': {
+    luxor: {
         title: { fr: 'Série Luxor | Electrique Valley', en: 'Luxor Series | Electrique Valley' },
         description: {
             fr: 'Voiturettes électriques de la série Luxor : batterie lithium, écran CarPlay et Android Auto, plusieurs modèles. Couleurs et fiches techniques.',
             en: 'Luxor series electric carts: lithium battery, CarPlay and Android Auto screen, several models. Colours and specifications.',
         },
     },
-    '/classicSeries': {
+    classic: {
         title: { fr: 'Série Classic | Electrique Valley', en: 'Classic Series | Electrique Valley' },
         description: {
             fr: 'Voiturettes électriques de la série Classic : batterie lithium, caméra de recul, couleurs au choix. Caractéristiques et fiches techniques.',
             en: 'Classic series electric carts: lithium battery, backup camera, choice of colours. Features and specifications.',
         },
     },
-    '/thorSeries': {
+    thor: {
         title: { fr: 'Thor, véhicule utilitaire électrique | Electrique Valley', en: 'Thor Series Electric Utility Vehicle | Electrique Valley' },
         description: {
             fr: 'Thor : véhicule utilitaire électrique avec boîte de chargement, batterie lithium et caméra de recul. Caractéristiques et fiche technique.',
             en: 'Thor: electric utility vehicle with cargo box, lithium battery and backup camera. Features and specifications.',
         },
     },
-    '/contact': {
+    contact: {
         title: { fr: 'Nous joindre et essai routier | Electrique Valley', en: 'Contact Us and Test Rides | Electrique Valley' },
         description: {
             fr: 'Écrivez-nous ou appelez au 450 747-1525 pour un essai routier, de l’information sur nos voiturettes électriques ou pour devenir revendeur.',
             en: 'Write to us or call 450 747-1525 for a test ride, information about our electric carts, or to become a dealer.',
         },
     },
-    '/videoShowcase': {
+    videos: {
         title: { fr: 'Vidéos | Electrique Valley', en: 'Videos | Electrique Valley' },
         description: {
             fr: 'Capsules vidéo sur nos voiturettes électriques : batterie lithium, entretien, accessoires, sécurité et conseils.',
             en: 'Video capsules about our electric carts: lithium battery, care, accessories, safety and tips.',
         },
     },
-    '/privacy': {
+    privacy: {
         title: { fr: 'Politique de confidentialité | Electrique Valley', en: 'Privacy Policy | Electrique Valley' },
         description: {
             fr: 'Comment Electrique Valley recueille, utilise et protège vos renseignements personnels (Loi 25).',
             en: 'How Electrique Valley collects, uses and protects your personal information (Quebec Law 25).',
         },
     },
-    '/unsubscribe': {
+    unsubscribe: {
         title: { fr: 'Se désabonner | Electrique Valley', en: 'Unsubscribe | Electrique Valley' },
         description: { fr: 'Se désabonner de l’infolettre d’Electrique Valley.', en: 'Unsubscribe from the Electrique Valley newsletter.' },
     },
-    '/termsAndConditions': {
+    terms: {
         title: { fr: 'Conditions d’utilisation | Electrique Valley', en: 'Terms of Use | Electrique Valley' },
         description: {
             fr: 'Conditions d’utilisation du site electriquevalley.com.',

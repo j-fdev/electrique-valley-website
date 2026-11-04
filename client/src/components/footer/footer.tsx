@@ -7,6 +7,7 @@ import version from './../../config/version';
 import { translations } from '../../translations/trans.footer';
 import { legal } from '../../translations/trans.legal';
 import { LanguageContext } from '../../translations/languageSelection';
+import { pathFor } from '../../config/routes';
 
 const Footer: React.FC = () => {
     const languageContext = React.useContext(LanguageContext);
@@ -20,12 +21,12 @@ const Footer: React.FC = () => {
     const copyright = F.copyrights[L].replace(/\d{4}/, String(new Date().getFullYear()));
 
     const series = [
-        { to: '/dmaxSeries', label: F.link_evolution_series[L] },
+        { to: pathFor('dmax', L), label: F.link_evolution_series[L] },
         // Elite hidden for now
-        // { to: '/eliteSeries', label: F.link_elite_series[L] },
-        { to: '/luxorSeries', label: F.link_luxor_series[L] },
-        { to: '/classicSeries', label: F.link_classic_series[L] },
-        { to: '/thorSeries', label: F.link_thor_series[L] },
+        // { to: pathFor('elite', L), label: F.link_elite_series[L] },
+        { to: pathFor('luxor', L), label: F.link_luxor_series[L] },
+        { to: pathFor('classic', L), label: F.link_classic_series[L] },
+        { to: pathFor('thor', L), label: F.link_thor_series[L] },
     ];
 
     return (
@@ -60,12 +61,12 @@ const Footer: React.FC = () => {
                     <div>
                         <h3>{F.link_quick_links[L]}</h3>
                         <ul>
-                            <li><Link to="/">{F.link_home[L]}</Link></li>
-                            <li><Link to="/videoShowcase">{F.link_video_showcase[L]}</Link></li>
-                            <li><Link to="/contact">{F.link_contact_us[L]}</Link></li>
-                            <li><Link to="/contact?source=becomeDealer">{L === 'en' ? 'Become a dealer' : 'Devenir revendeur'}</Link></li>
-                            <li><Link to="/privacy">{legal.links.privacy[L]}</Link></li>
-                            <li><Link to="/termsAndConditions">{legal.links.terms[L]}</Link></li>
+                            <li><Link to={pathFor('home', L)}>{F.link_home[L]}</Link></li>
+                            <li><Link to={pathFor('videos', L)}>{F.link_video_showcase[L]}</Link></li>
+                            <li><Link to={pathFor('contact', L)}>{F.link_contact_us[L]}</Link></li>
+                            <li><Link to={`${pathFor('contact', L)}?source=becomeDealer`}>{L === 'en' ? 'Become a dealer' : 'Devenir revendeur'}</Link></li>
+                            <li><Link to={pathFor('privacy', L)}>{legal.links.privacy[L]}</Link></li>
+                            <li><Link to={pathFor('terms', L)}>{legal.links.terms[L]}</Link></li>
                         </ul>
                     </div>
 
@@ -92,8 +93,8 @@ const Footer: React.FC = () => {
                 <div className="ev-footer__bottom">
                     <p style={{ margin: 0 }}>{copyright}</p>
                     <div className="ev-footer__legal">
-                        <Link to="/privacy">{legal.links.privacy[L]}</Link>
-                        <Link to="/termsAndConditions">{legal.links.terms[L]}</Link>
+                        <Link to={pathFor('privacy', L)}>{legal.links.privacy[L]}</Link>
+                        <Link to={pathFor('terms', L)}>{legal.links.terms[L]}</Link>
                         <a href="https://tyrem.ca" target="_blank" rel="noopener">{legal.links.credit[L]}</a>
                         <button className="ev-footer__lang" onClick={toggleLanguage}>{L === 'en' ? 'Français' : 'English'}</button>
                     </div>

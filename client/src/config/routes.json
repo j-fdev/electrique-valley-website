@@ -1,0 +1,16 @@
+{
+  "_comment": "One line per page: its French and English address, and the old address it replaces. Used by the app (routes.ts), the pre-render script (scripts/prerender.mjs) and the nginx redirects. live=false hides a page (Elite, not online yet).",
+  "pages": {
+    "home": { "fr": "/", "en": "/en", "legacy": [], "live": true },
+    "dmax": { "fr": "/serie-dmax", "en": "/en/dmax-series", "legacy": ["/dmaxSeries"], "live": true },
+    "elite": { "fr": "/serie-elite", "en": "/en/elite-series", "legacy": ["/eliteSeries"], "live": false },
+    "luxor": { "fr": "/serie-luxor", "en": "/en/luxor-series", "legacy": ["/luxorSeries"], "live": true },
+    "classic": { "fr": "/serie-classic", "en": "/en/classic-series", "legacy": ["/classicSeries"], "live": true },
+    "thor": { "fr": "/serie-thor", "en": "/en/thor-series", "legacy": ["/thorSeries"], "live": true },
+    "videos": { "fr": "/videos", "en": "/en/videos", "legacy": ["/videoShowcase"], "live": true },
+    "contact": { "fr": "/nous-joindre", "en": "/en/contact", "legacy": ["/contact"], "live": true },
+    "privacy": { "fr": "/confidentialite", "en": "/en/privacy", "legacy": ["/privacy"], "live": true },
+    "terms": { "fr": "/conditions-utilisation", "en": "/en/terms-of-use", "legacy": ["/termsAndConditions"], "live": true },
+    "unsubscribe": { "fr": "/desabonnement", "en": "/en/unsubscribe", "legacy": ["/unsubscribe"], "live": true }
+  }
+}

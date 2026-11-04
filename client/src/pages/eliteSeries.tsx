@@ -79,35 +79,35 @@ const EliteSeries = () => {
             description: T.p_features_bag_holders[L]
         },
         // ...(currentModelIndex === 2 || currentModelIndex === 3 ? [{
-        //     image: `img/d-max/D_MaxFeatures/Features-ALL-LUMINOUS-SIDE-STEPS-4.jpg?v=${version}`,
+        //     image: `/img/d-max/D_MaxFeatures/Features-ALL-LUMINOUS-SIDE-STEPS-4.jpg?v=${version}`,
         //     title: T.t_features_running_boards[L],
         //     description: T.p_features_running_boards[L]
         // }] : [{
-        //     image: `img/d-max/D_MaxFeatures/Features-ALL-d6-Advanced-Dash-Panel.jpg?v=${version}`,
+        //     image: `/img/d-max/D_MaxFeatures/Features-ALL-d6-Advanced-Dash-Panel.jpg?v=${version}`,
         //     title: T.t_features_dash[L],
         //     description: T.p_features_dash[L]
         // }]),
         // {
-        //     image: `img/d-max/D_MaxFeatures/Features-ALL-d6-SAFETY-BELT.jpg?v=${version}`,
+        //     image: `/img/d-max/D_MaxFeatures/Features-ALL-d6-SAFETY-BELT.jpg?v=${version}`,
         //     title: T.t_features_seats[L],
         //     description: T.p_features_seats[L]
         // },
         // {
-        //     image: `img/d-max/D_MaxFeatures/Features-ALL-d6-SEAT-BACKCOVER-ASSEMBLY.jpg?v=${version}`,
+        //     image: `/img/d-max/D_MaxFeatures/Features-ALL-d6-SEAT-BACKCOVER-ASSEMBLY.jpg?v=${version}`,
         //     title: T.t_features_seat_acc[L],
         //     description: T.p_features_seat_acc[L]
         // },
         // {
-        //     image: `img/d-max/D_MaxFeatures/Features-ALL-d6-led-LIGHTING.jpg?v=${version}`,
+        //     image: `/img/d-max/D_MaxFeatures/Features-ALL-d6-led-LIGHTING.jpg?v=${version}`,
         //     title: T.t_features_leds[L],
         //     description: T.p_features_leds[L]
         // },
         // ...(currentModelIndex === 2 || currentModelIndex === 3 ? [{
-        //     image: `img/d-max/D_MaxFeatures/Features-ALL-16-SILENT-TIRE-WITH-OFF-ROAD-THREAD.jpg?v=${version}`,
+        //     image: `/img/d-max/D_MaxFeatures/Features-ALL-16-SILENT-TIRE-WITH-OFF-ROAD-THREAD.jpg?v=${version}`,
         //     title: T.t_features_bigger_wheels[L],
         //     description: T.p_features_bigger_wheels[L]
         // }] : [{
-        //     image: `img/d-max/D_MaxFeatures/Features-ALL-d6-16-RADIAL-TIRE.jpg?v=${version}`,
+        //     image: `/img/d-max/D_MaxFeatures/Features-ALL-d6-16-RADIAL-TIRE.jpg?v=${version}`,
         //     title: T.t_features_wheels[L],
         //     description: T.p_features_wheels[L]
         // }])
@@ -143,20 +143,20 @@ const EliteSeries = () => {
 
     const shrinkGrowItems = [
         [
-            { image: `img/d-max/D_MaxFeatures/Feature-other-ADJUSTABLE-STEERING-COLUMN.jpg?v=${version}`, title: T.h2_shrink_microphone[L], paragraph: T.p_shrink_microphone[L] },
-            { image: `img/d-max/D_MaxFeatures/Feature-other-CUP-HOLDERS.jpg?v=${version}`, title: T.h2_shrink_cupHolders[L], paragraph: T.p_shrink_cupHolders[L] },
-            { image: `img/d-max/D_MaxFeatures/Sliding Windshield Vents.png?v=${version}`, title: T.h2_shrink_airVent[L], paragraph: T.p_shrink_airVent[L] },
-            { image: `img/d-max/D_MaxFeatures/Feature-other-STORAGE-COMPARTMENT.jpg?v=${version}`, title: T.h2_shrink_storage[L], paragraph: T.p_shrink_storage[L] },
-            { image: `img/d-max/D_MaxFeatures/Feature-other-ADJUSTABLE-STEERING-COLUMN.jpg?v=${version}`, title: T.h2_shrink_ajustable_steering[L], paragraph: T.p_shrink_ajustable_steering[L] },
-            { image: `img/d-max/D_MaxFeatures/Feature-other-LED-LOGO-LIGHT.jpg?v=${version}`, title: T.h2_shrink_tailLight[L], paragraph: T.p_shrink_tailLight[L] }
+            { image: `/img/d-max/D_MaxFeatures/Feature-other-ADJUSTABLE-STEERING-COLUMN.jpg?v=${version}`, title: T.h2_shrink_microphone[L], paragraph: T.p_shrink_microphone[L] },
+            { image: `/img/d-max/D_MaxFeatures/Feature-other-CUP-HOLDERS.jpg?v=${version}`, title: T.h2_shrink_cupHolders[L], paragraph: T.p_shrink_cupHolders[L] },
+            { image: `/img/d-max/D_MaxFeatures/Sliding Windshield Vents.png?v=${version}`, title: T.h2_shrink_airVent[L], paragraph: T.p_shrink_airVent[L] },
+            { image: `/img/d-max/D_MaxFeatures/Feature-other-STORAGE-COMPARTMENT.jpg?v=${version}`, title: T.h2_shrink_storage[L], paragraph: T.p_shrink_storage[L] },
+            { image: `/img/d-max/D_MaxFeatures/Feature-other-ADJUSTABLE-STEERING-COLUMN.jpg?v=${version}`, title: T.h2_shrink_ajustable_steering[L], paragraph: T.p_shrink_ajustable_steering[L] },
+            { image: `/img/d-max/D_MaxFeatures/Feature-other-LED-LOGO-LIGHT.jpg?v=${version}`, title: T.h2_shrink_tailLight[L], paragraph: T.p_shrink_tailLight[L] }
         ],
         [
-            { image: `img/d-max/D_MaxFeatures/Panoramic Rear View Mirror.png?v=${version}`, title: T.h2_shrink_mirror[L], paragraph: T.p_shrink_mirror[L] },
-            { image: `img/d-max/D_MaxFeatures/Side Mirrors with Turning Signals.png?v=${version}`, title: T.h2_shrink_sideMirror[L], paragraph: T.p_shrink_sideMirror[L] },
-            { image: `img/d-max/D_MaxFeatures/Side Grab Handles.png?v=${version}`, title: T.h2_shrink_sideGrabHandles[L], paragraph: T.p_shrink_sideGrabHandles[L] },
-            { image: `img/d-max/D_MaxFeatures/Feature-other-BRUSH-GUARD-FOR-LIFTED-MODELS.jpg?v=${version}`, title: T.h2_shrink_brushGuards[L], paragraph: T.p_shrink_brushGuards[L] },
-            { image: `img/d-max/D_MaxFeatures/Towing Hitch Receiver.png?v=${version}`, title: T.h2_shrink_hitch[L], paragraph: T.p_shrink_hitch[L] },
-            { image: `img/d-max/D_MaxFeatures/Accelerator & Brake Pedal.png?v=${version}`, title: T.h2_shrink_pedals[L], paragraph: T.p_shrink_pedals[L] }
+            { image: `/img/d-max/D_MaxFeatures/Panoramic Rear View Mirror.png?v=${version}`, title: T.h2_shrink_mirror[L], paragraph: T.p_shrink_mirror[L] },
+            { image: `/img/d-max/D_MaxFeatures/Side Mirrors with Turning Signals.png?v=${version}`, title: T.h2_shrink_sideMirror[L], paragraph: T.p_shrink_sideMirror[L] },
+            { image: `/img/d-max/D_MaxFeatures/Side Grab Handles.png?v=${version}`, title: T.h2_shrink_sideGrabHandles[L], paragraph: T.p_shrink_sideGrabHandles[L] },
+            { image: `/img/d-max/D_MaxFeatures/Feature-other-BRUSH-GUARD-FOR-LIFTED-MODELS.jpg?v=${version}`, title: T.h2_shrink_brushGuards[L], paragraph: T.p_shrink_brushGuards[L] },
+            { image: `/img/d-max/D_MaxFeatures/Towing Hitch Receiver.png?v=${version}`, title: T.h2_shrink_hitch[L], paragraph: T.p_shrink_hitch[L] },
+            { image: `/img/d-max/D_MaxFeatures/Accelerator & Brake Pedal.png?v=${version}`, title: T.h2_shrink_pedals[L], paragraph: T.p_shrink_pedals[L] }
         ]
 
     ];

@@ -1,14 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.electriquevalley.com/</loc><lastmod>2026-11-02</lastmod></url>
-  <url><loc>https://www.electriquevalley.com/dmaxSeries</loc><lastmod>2026-11-02</lastmod></url>
-  <!-- Elite hidden for now -->
-  <!-- <url><loc>https://www.electriquevalley.com/eliteSeries</loc><lastmod>2026-11-02</lastmod></url> -->
-  <url><loc>https://www.electriquevalley.com/luxorSeries</loc><lastmod>2026-11-02</lastmod></url>
-  <url><loc>https://www.electriquevalley.com/classicSeries</loc><lastmod>2026-11-02</lastmod></url>
-  <url><loc>https://www.electriquevalley.com/thorSeries</loc><lastmod>2026-11-02</lastmod></url>
-  <url><loc>https://www.electriquevalley.com/videoShowcase</loc><lastmod>2026-11-02</lastmod></url>
-  <url><loc>https://www.electriquevalley.com/contact</loc><lastmod>2026-11-02</lastmod></url>
-  <url><loc>https://www.electriquevalley.com/privacy</loc><lastmod>2026-11-02</lastmod></url>
-  <url><loc>https://www.electriquevalley.com/termsAndConditions</loc><lastmod>2026-11-02</lastmod></url>
+<!-- Every page in French and English, each pointing to its other-language version.
+     Built from src/config/routes.json; Elite stays out until it is online (live: true). -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.electriquevalley.com/</loc>
+    <lastmod>2026-11-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.electriquevalley.com/" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.electriquevalley.com/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.electriquevalley.com/" />
+  </url>
+  <url>
+    <loc>https://www.electriquevalley.com/en</loc>
+    <lastmod>2026-11-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.electriquevalley.com/" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.electriquevalley.com/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.electriquevalley.com/" />
+  </url>
+  <url>
+    <loc>https://www.electriquevalley.com/serie-dmax</loc>
+    <lastmod>2026-11-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.electriquevalley.com/serie-dmax" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.electriquevalley.com/en/dmax-series" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.electriquevalley.com/serie-dmax" />
+  </url>
+  <url>
+    <loc>https://www.electriquevalley.com/en/dmax-series</loc>
+    <lastmod>2026-11-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.electriquevalley.com/serie-dmax" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.electriquevalley.com/en/dmax-series" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.electriquevalley.com/serie-dmax" />
+  </url>
+  <url>
+    <loc>https://www.electriquevalley.com/serie-luxor</loc>
+    <lastmod>2026-11-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.electriquevalley.com/serie-luxor" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.electriquevalley.com/en/luxor-series" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.electriquevalley.com/serie-luxor" />
+  </url>
+  <url>
+    <loc>https://www.electriquevalley.com/en/luxor-series</loc>
+    <lastmod>2026-11-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.electriquevalley.com/serie-luxor" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.electriquevalley.com/en/luxor-series" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.electriquevalley.com/serie-luxor" />
+  </url>
+  <url>
+    <loc>https://www.electriquevalley.com/serie-classic</loc>
+    <lastmod>2026-11-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.electriquevalley.com/serie-classic" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.electriquevalley.com/en/classic-series" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.electriquevalley.com/serie-classic" />
+  </url>
+  <url>
+    <loc>https://www.electriquevalley.com/en/classic-series</loc>
+    <lastmod>2026-11-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.electriquevalley.com/serie-classic" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.electriquevalley.com/en/classic-series" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.electriquevalley.com/serie-classic" />
+  </url>
+  <url>
+    <loc>https://www.electriquevalley.com/serie-thor</loc>
+    <lastmod>2026-11-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.electriquevalley.com/serie-thor" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.electriquevalley.com/en/thor-series" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.electriquevalley.com/serie-thor" />
+  </url>
+  <url>
+    <loc>https://www.electriquevalley.com/en/thor-series</loc>
+    <lastmod>2026-11-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.electriquevalley.com/serie-thor" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.electriquevalley.com/en/thor-series" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.electriquevalley.com/serie-thor" />
+  </url>
+  <url>
+    <loc>https://www.electriquevalley.com/videos</loc>
+    <lastmod>2026-11-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.electriquevalley.com/videos" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.electriquevalley.com/en/videos" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.electriquevalley.com/videos" />
+  </url>
+  <url>
+    <loc>https://www.electriquevalley.com/en/videos</loc>
+    <lastmod>2026-11-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.electriquevalley.com/videos" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.electriquevalley.com/en/videos" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.electriquevalley.com/videos" />
+  </url>
+  <url>
+    <loc>https://www.electriquevalley.com/nous-joindre</loc>
+    <lastmod>2026-11-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.electriquevalley.com/nous-joindre" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.electriquevalley.com/en/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.electriquevalley.com/nous-joindre" />
+  </url>
+  <url>
+    <loc>https://www.electriquevalley.com/en/contact</loc>
+    <lastmod>2026-11-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.electriquevalley.com/nous-joindre" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.electriquevalley.com/en/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.electriquevalley.com/nous-joindre" />
+  </url>
+  <url>
+    <loc>https://www.electriquevalley.com/confidentialite</loc>
+    <lastmod>2026-11-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.electriquevalley.com/confidentialite" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.electriquevalley.com/en/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.electriquevalley.com/confidentialite" />
+  </url>
+  <url>
+    <loc>https://www.electriquevalley.com/en/privacy</loc>
+    <lastmod>2026-11-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.electriquevalley.com/confidentialite" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.electriquevalley.com/en/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.electriquevalley.com/confidentialite" />
+  </url>
+  <url>
+    <loc>https://www.electriquevalley.com/conditions-utilisation</loc>
+    <lastmod>2026-11-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.electriquevalley.com/conditions-utilisation" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.electriquevalley.com/en/terms-of-use" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.electriquevalley.com/conditions-utilisation" />
+  </url>
+  <url>
+    <loc>https://www.electriquevalley.com/en/terms-of-use</loc>
+    <lastmod>2026-11-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.electriquevalley.com/conditions-utilisation" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.electriquevalley.com/en/terms-of-use" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.electriquevalley.com/conditions-utilisation" />
+  </url>
 </urlset>

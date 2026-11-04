@@ -33,6 +33,7 @@ import MainStyle from '../styles/main.styles';
 // Translations
 import { translations } from '../translations/trans.home';
 import { LanguageContext } from '../translations/languageSelection';
+import { pathFor } from '../config/routes';
 import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
@@ -54,12 +55,12 @@ const Home: React.FC = () => {
     const warrantySliderImages = [`/img/home/yellowCart.jpg?v=${version}`, `/img/home/Luxor-Commercial.webp?v=${version}`, `/img/home/Luxor-4-red.webp?v=${version}`];
 
     const cartModels = [
-        { image: `/img/d-max/XT4/Evolution4L-color-BLACK-SAPPHIRE.png?v=${version}`, title: T.title_evolution_card[L], link: '/dmaxSeries', t1: T.t1_evolution_card[L], p1: T.p1_evolution_card[L], t2: T.t2_evolution_card[L], p2: T.p2_evolution_card[L], t3: T.t3_evolution_card[L], p3: T.p3_evolution_card[L], t4: T.t4_evolution_card[L], p4: T.p4_evolution_card[L] },
-        { image: `/img/luxor/luxor_4L/LUXOR_4L-ARCTIC-GRAY-1-1.png?v=${version}`, title: T.title_luxor_card[L], link: '/luxorSeries', t1: T.t1_luxor_card[L], p1: T.p1_luxor_card[L], t2: T.t2_luxor_card[L], p2: T.p2_luxor_card[L], t3: T.t3_luxor_card[L], p3: T.p3_luxor_card[L], t4: T.t4_luxor_card[L], p4: T.p4_luxor_card[L] },
-        { image: `/img/classic/classic_2+2/PLAMENCO.png?v=${version}`, title: T.title_classic_card[L], link: '/classicSeries', t1: T.t1_classic_card[L], p1: T.p1_classic_card[L], t2: T.t2_classic_card[L], p2: T.p2_classic_card[L], t3: T.t3_classic_card[L], p3: T.p3_classic_card[L], t4: T.t4_classic_card[L], p4: T.p4_classic_card[L] },
-        { image: `/img/thor/Thor-GREEN-shadow.png?v=${version}`, title: T.title_thor_card[L], link: '/thorSeries', t1: T.t1_thor_card[L], p1: T.p1_thor_card[L], t2: T.t2_thor_card[L], p2: T.p2_thor_card[L], t3: T.t3_thor_card[L], p3: T.p3_thor_card[L], t4: T.t4_thor_card[L], p4: T.p4_thor_card[L] },
+        { image: `/img/d-max/XT4/Evolution4L-color-BLACK-SAPPHIRE.png?v=${version}`, title: T.title_evolution_card[L], link: pathFor('dmax', L), t1: T.t1_evolution_card[L], p1: T.p1_evolution_card[L], t2: T.t2_evolution_card[L], p2: T.p2_evolution_card[L], t3: T.t3_evolution_card[L], p3: T.p3_evolution_card[L], t4: T.t4_evolution_card[L], p4: T.p4_evolution_card[L] },
+        { image: `/img/luxor/luxor_4L/LUXOR_4L-ARCTIC-GRAY-1-1.png?v=${version}`, title: T.title_luxor_card[L], link: pathFor('luxor', L), t1: T.t1_luxor_card[L], p1: T.p1_luxor_card[L], t2: T.t2_luxor_card[L], p2: T.p2_luxor_card[L], t3: T.t3_luxor_card[L], p3: T.p3_luxor_card[L], t4: T.t4_luxor_card[L], p4: T.p4_luxor_card[L] },
+        { image: `/img/classic/classic_2+2/PLAMENCO.png?v=${version}`, title: T.title_classic_card[L], link: pathFor('classic', L), t1: T.t1_classic_card[L], p1: T.p1_classic_card[L], t2: T.t2_classic_card[L], p2: T.p2_classic_card[L], t3: T.t3_classic_card[L], p3: T.p3_classic_card[L], t4: T.t4_classic_card[L], p4: T.p4_classic_card[L] },
+        { image: `/img/thor/Thor-GREEN-shadow.png?v=${version}`, title: T.title_thor_card[L], link: pathFor('thor', L), t1: T.t1_thor_card[L], p1: T.p1_thor_card[L], t2: T.t2_thor_card[L], p2: T.p2_thor_card[L], t3: T.t3_thor_card[L], p3: T.p3_thor_card[L], t4: T.t4_thor_card[L], p4: T.p4_thor_card[L] },
         // Elite hidden for now
-        // { image: `/img/elite/Elite_4/Elite_4_blue_nobg.png?v=${version}`, title: T.title_elite_card[L], link: '/eliteSeries', t1: T.t1_elite_card[L], p1: T.p1_elite_card[L], t2: T.t2_elite_card[L], p2: T.p2_elite_card[L], t3: T.t3_elite_card[L], p3: T.p3_elite_card[L], t4: T.t4_elite_card[L], p4: T.p4_elite_card[L] },
+        // { image: `/img/elite/Elite_4/Elite_4_blue_nobg.png?v=${version}`, title: T.title_elite_card[L], link: pathFor('elite', L), t1: T.t1_elite_card[L], p1: T.p1_elite_card[L], t2: T.t2_elite_card[L], p2: T.p2_elite_card[L], t3: T.t3_elite_card[L], p3: T.p3_elite_card[L], t4: T.t4_elite_card[L], p4: T.p4_elite_card[L] },
     ];
 
       
@@ -269,7 +270,7 @@ const Home: React.FC = () => {
                             </div>
                         ))}
                     </div>
-                    <Link to="/videoShowcase" className="ev-btn">
+                    <Link to={pathFor('videos', L)} className="ev-btn">
                         {T.btn_videoShowcase[L]}
                         <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
                     </Link>

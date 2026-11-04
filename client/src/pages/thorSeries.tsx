@@ -61,32 +61,32 @@ const ThorSeries: React.FC<i_cart_models_props> = ({}) => {
 
     const features = [
         {
-            image: `img/thor/thorFeatures/GOFT-CART-THOR-EGRAN.jpg?v=${version}`,
+            image: `/img/thor/thorFeatures/GOFT-CART-THOR-EGRAN.jpg?v=${version}`,
             title: T.t_features_screen[L],
             description: T.p_features_screen[L]
         },
         {
-            image: `img/thor/thorFeatures/PNEU-ROUE-ROUGE-GORT-CART-THOR-2024-300x190.webp?v=${version}`,
+            image: `/img/thor/thorFeatures/PNEU-ROUE-ROUGE-GORT-CART-THOR-2024-300x190.webp?v=${version}`,
             title: T.t_features_tires[L],
             description: T.p_features_tires[L]
         },
         {
-            image: `img/thor/thorFeatures/GOFT-CART-THOR-ROUE-BLEU.jpg?v=${version}`,
+            image: `/img/thor/thorFeatures/GOFT-CART-THOR-ROUE-BLEU.jpg?v=${version}`,
             title: T.t_features_wheels[L],
             description: T.p_features_wheels[L]
         },
         {
-            image: `img/thor/thorFeatures/GOFT-CART-THOR-BOX-CARGO.jpg?v=${version}`,
+            image: `/img/thor/thorFeatures/GOFT-CART-THOR-BOX-CARGO.jpg?v=${version}`,
             title: T.t_features_cargoBox[L],
             description: T.p_features_cargoBox[L]
         },
         {
-            image: `img/thor/thorFeatures/GOFT-CART-THOR-ATTACHE-REMORQUE-300x140.jpg?v=${version}`,
+            image: `/img/thor/thorFeatures/GOFT-CART-THOR-ATTACHE-REMORQUE-300x140.jpg?v=${version}`,
             title: T.t_features_hitch[L],
             description: T.p_features_hitch[L]
         },
         {
-            image: `img/thor/thorFeatures/BUMPER-AVANT-GORT-CART-THOR.jpg?v=${version}`,
+            image: `/img/thor/thorFeatures/BUMPER-AVANT-GORT-CART-THOR.jpg?v=${version}`,
             title: T.t_features_bumper[L],
             description: T.p_features_bumper[L]
         },
@@ -94,9 +94,9 @@ const ThorSeries: React.FC<i_cart_models_props> = ({}) => {
 
     const shrinkGrowItems = [
         [
-            { image: `img/thor/thorFeatures/CUP-HOLDER.jpg?v=${version}`, title: T.h2_shrink_cupHolders[L], paragraph: T.p_shrink_cupHolders[L] },
-            { image: `img/thor/thorFeatures/Cargo-bucket.jpg?v=${version}`, title: T.h2_shrink_storage[L], paragraph: T.p_shrink_storage[L] },
-            { image: `img/thor/thorFeatures/USB-CONNECTIONS.jpg?v=${version}`, title: T.h2_shrink_usbPorts[L], paragraph: T.p_shrink_usbPorts[L] }
+            { image: `/img/thor/thorFeatures/CUP-HOLDER.jpg?v=${version}`, title: T.h2_shrink_cupHolders[L], paragraph: T.p_shrink_cupHolders[L] },
+            { image: `/img/thor/thorFeatures/Cargo-bucket.jpg?v=${version}`, title: T.h2_shrink_storage[L], paragraph: T.p_shrink_storage[L] },
+            { image: `/img/thor/thorFeatures/USB-CONNECTIONS.jpg?v=${version}`, title: T.h2_shrink_usbPorts[L], paragraph: T.p_shrink_usbPorts[L] }
         ]
     ];
 

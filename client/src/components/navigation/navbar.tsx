@@ -2,6 +2,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import version from './../../config/version';
+import { findPage, pathFor, SERIES_PAGES } from './../../config/routes';
 
 // Hooks
 import { useWindowSize } from './../../hooks/useWindowSize';
@@ -24,6 +25,7 @@ interface i_navbar_props {
 const Navbar: React.FC = () => {
     const [isScrolled, setIsScrolled] = useState(window.scrollY > 50);
     const { pathname } = useLocation();
+    const currentPage = findPage(pathname)?.page;
     const [isSeriesOpen, setIsSeriesOpen] = useState(false);
     const [isResourcesOpen, setIsResourcesOpen] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -106,7 +108,7 @@ const Navbar: React.FC = () => {
         }}>
             {/* Logo Section - Left Side */}
             <div style={navStyles.navLogo}>
-                <Link to="/" onClick={handleLinkClick}>
+                <Link to={pathFor('home', L)} onClick={handleLinkClick}>
                     <img src={`/img/main/navBrandLogo.png?v=${version}`} alt="Electrique Valley" style={navStyles.logoImg} />
                 </Link>
             </div>
@@ -122,18 +124,18 @@ const Navbar: React.FC = () => {
             <div style={isMenuOpen ? navStyles.navMenu : navStyles.navLinks}>
                 {isMobile && isMenuOpen && (
                     <div style={navStyles.navMenuLogo}>
-                        <Link to="/" onClick={handleLinkClick}>
+                        <Link to={pathFor('home', L)} onClick={handleLinkClick}>
                             <img src={`/img/main/navBrandLogo.png?v=${version}`} alt="Electrique Valley" style={navStyles.menuLogoImg} />
                         </Link>
                     </div>
                 )}
                 {(isMobile && isMenuOpen) || !isMobile ? (
                     <>
-                        <Link to="/" className={`ev-nav-link${pathname === '/' ? ' is-active' : ''}`} style={navStyles.linkStyle} onClick={handleLinkClick}>
+                        <Link to={pathFor('home', L)} className={`ev-nav-link${currentPage === 'home' ? ' is-active' : ''}`} style={navStyles.linkStyle} onClick={handleLinkClick}>
                             {T.home[L]}
                         </Link>
                         <div className="dropdown" style={navStyles.dropdownMenu} onMouseEnter={() => { setIsSeriesOpen(true); setIsResourcesOpen(false); }} onMouseLeave={() => setIsSeriesOpen(false)}>
-                            <div className={`dropbtn ev-nav-link${pathname.includes('Series') ? ' is-active' : ''}`} style={navStyles.dropbtn} onClick={() => { setIsSeriesOpen(!isSeriesOpen); setIsResourcesOpen(false); }}>
+                            <div className={`dropbtn ev-nav-link${currentPage && SERIES_PAGES.includes(currentPage) ? ' is-active' : ''}`} style={navStyles.dropbtn} onClick={() => { setIsSeriesOpen(!isSeriesOpen); setIsResourcesOpen(false); }}>
                                 {T.our_series[L]}&nbsp;
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="16" width="16">
                                     <path fill="white" d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
@@ -148,32 +150,32 @@ const Navbar: React.FC = () => {
                                     {isSeriesOpen && <div style={{ position: 'fixed', left: 0, width: '100vw', top: '57px', height: '15px', zIndex: 1999, backgroundColor: 'transparent' }}></div>}
                                     <div className="dropdown-content ev-mega" style={{ ...navStyles.dropdown_content, display: isSeriesOpen ? 'flex' : 'none', position: 'fixed', left: 0, width: '100vw', top: '57px', justifyContent: 'center' }}>
                                         <div className="ev-nav-item" style={navStyles.dropdownItem}>
-                                            <Link to="/dmaxSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
+                                            <Link to={pathFor('dmax', L)} style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
                                                 <img src="/img/d-max/XT4/Evolution4L-color-BLACK-SAPPHIRE.png" alt="" loading="lazy" style={navStyles.dropdownImage} />
                                                 <p style={navStyles.dropdownText}>{T.dMax_serie[L]}</p>
                                             </Link>
                                         </div>
                                         <div className="ev-nav-item" style={navStyles.dropdownItem}>
-                                            <Link to="/luxorSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
+                                            <Link to={pathFor('luxor', L)} style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
                                                 <img src="/img/luxor/luxor_2+2L/LUXOR_2+2L-MEDITERRANEAN-BLUE.png" alt="" loading="lazy" style={navStyles.dropdownImage} />
                                                 <p style={navStyles.dropdownText}>{T.luxor_serie[L]}</p>
                                             </Link>
                                         </div>
                                         <div className="ev-nav-item" style={navStyles.dropdownItem}>
-                                            <Link to="/classicSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
+                                            <Link to={pathFor('classic', L)} style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
                                                 <img src="/img/classic/classic_2+2/sky-BLUE.png" alt="" loading="lazy" style={navStyles.dropdownImage} />
                                                 <p style={navStyles.dropdownText}>{T.classic_serie[L]}</p>
                                             </Link>
                                         </div>
                                         <div className="ev-nav-item" style={navStyles.dropdownItem}>
-                                            <Link to="/thorSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
+                                            <Link to={pathFor('thor', L)} style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
                                                 <img src={`/img/thor/Thor-GREEN-shadow.png?v=${version}`} alt="" loading="lazy" style={navStyles.dropdownImage} />
                                                 <p style={navStyles.dropdownText}>{T.thor_serie[L]}</p>
                                             </Link>
                                         </div>
                                         {/* Elite hidden for now */}
                                         {/* <div className="ev-nav-item" style={navStyles.dropdownItem}>
-                                            <Link to="/eliteSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
+                                            <Link to={pathFor('elite', L)} style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
                                                 <img src="/img/elite/Elite_4/Elite_4_blue_nobg.png" alt="Elite Series" style={navStyles.dropdownImage} />
                                                 <p style={navStyles.dropdownText}>{T.elite_serie[L]}</p>
                                             </Link>
@@ -183,39 +185,39 @@ const Navbar: React.FC = () => {
                             )}
                             {isMobile && (
                                 <div className="dropdown-content" style={{...navStyles.dropdown_content, display: isSeriesOpen ? 'block' : 'none', position: 'relative', width: 'auto', top: 'auto' }}>
-                                    <Link to="/dmaxSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
+                                    <Link to={pathFor('dmax', L)} style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
                                         {T.dMax_serie[L]}
                                     </Link>
-                                    <Link to="/luxorSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
+                                    <Link to={pathFor('luxor', L)} style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
                                         {T.luxor_serie[L]}
                                     </Link>
-                                    <Link to="/classicSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
+                                    <Link to={pathFor('classic', L)} style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
                                         {T.classic_serie[L]}
                                     </Link>
-                                    <Link to="/thorSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
+                                    <Link to={pathFor('thor', L)} style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
                                         {T.thor_serie[L]}
                                     </Link>
                                     {/* Elite hidden for now */}
-                                    {/* <Link to="/eliteSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
+                                    {/* <Link to={pathFor('elite', L)} style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
                                         {T.elite_serie[L]}
                                     </Link> */}
                                 </div>
                             )}
                         </div>
                         <div className="dropdown" style={navStyles.dropdownMenu} onMouseEnter={() => { setIsResourcesOpen(true); setIsSeriesOpen(false); }} onMouseLeave={() => setIsResourcesOpen(false)}>
-                            <div className={`dropbtn ev-nav-link${pathname === '/videoShowcase' ? ' is-active' : ''}`} style={navStyles.dropbtn} onClick={() => { setIsResourcesOpen(!isResourcesOpen); setIsSeriesOpen(false); }}>
+                            <div className={`dropbtn ev-nav-link${currentPage === 'videos' ? ' is-active' : ''}`} style={navStyles.dropbtn} onClick={() => { setIsResourcesOpen(!isResourcesOpen); setIsSeriesOpen(false); }}>
                                 {T.ressources[L]}&nbsp;
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="16" width="16">
                                     <path fill="white" d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
                                 </svg>
                             </div>
                             <div className="dropdown-content ev-mega" style={{...navStyles.dropdown_content, display: isResourcesOpen ? 'block' : 'none', minWidth: '240px', padding: '30px 10px 10px', borderRadius: '0 0 18px 18px' }}>
-                                <Link to="/videoShowcase" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
+                                <Link to={pathFor('videos', L)} style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
                                     {T.video_showcase[L]}
                                 </Link>
                             </div>
                         </div>
-                        <Link to="/contact" className="ev-nav-cta" style={{ ...navStyles.linkStyle, height: 'auto' }} onClick={handleLinkClick}>
+                        <Link to={pathFor('contact', L)} className="ev-nav-cta" style={{ ...navStyles.linkStyle, height: 'auto' }} onClick={handleLinkClick}>
                             {T.contact_us[L]}
                         </Link>
                         <button className="ev-lang-btn" onClick={toggleLanguage} aria-label="Change language">

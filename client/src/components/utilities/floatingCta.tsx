@@ -5,6 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 // Translations
 import { translations } from '../../translations/trans.navbar';
 import { LanguageContext } from '../../translations/languageSelection';
+import { findPage, pathFor } from '../../config/routes';
 
 /** Small "Book a test ride" button that appears in the bottom-right corner after scrolling. */
 const FloatingCta: React.FC = () => {
@@ -21,10 +22,10 @@ const FloatingCta: React.FC = () => {
         return () => window.removeEventListener('scroll', onScroll);
     }, []);
 
-    if (pathname.startsWith('/contact')) return null;
+    if (findPage(pathname)?.page === 'contact') return null;
 
     return (
-        <Link to="/contact" className={`ev-float-cta${isShown ? ' is-shown' : ''}`} aria-hidden={!isShown} tabIndex={isShown ? 0 : -1}>
+        <Link to={pathFor('contact', L)} className={`ev-float-cta${isShown ? ' is-shown' : ''}`} aria-hidden={!isShown} tabIndex={isShown ? 0 : -1}>
             <span className="ev-float-cta__dot" />
             {T.cta_test_ride[L]}
             <span aria-hidden="true">→</span>

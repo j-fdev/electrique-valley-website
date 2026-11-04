@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 // Translations
 import { translations } from '../../translations/trans.home';
 import { LanguageContext } from '../../translations/languageSelection';
+import { pathFor } from '../../config/routes';
 
 const BecomeDealer: React.FC = () => {
     const T = translations.home;
@@ -24,7 +25,7 @@ const BecomeDealer: React.FC = () => {
                         <h2>{T.title_register_become_dealer[L]}</h2>
                         <p>{T.subtitle_register_become_dealer[L]}</p>
                     </div>
-                    <Link to="/contact?source=becomeDealer" className="ev-btn ev-btn--ghost">
+                    <Link to={`${pathFor('contact', L)}?source=becomeDealer`} className="ev-btn ev-btn--ghost">
                         {T.btn_register_dealer[L]}
                     </Link>
                 </div>

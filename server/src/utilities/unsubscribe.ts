@@ -26,11 +26,13 @@ export const isValidUnsubscribeToken = (email: string, token: string): boolean =
     return expected.length === received.length && crypto.timingSafeEqual(expected, received);
 };
 
-/** Link to the website's /unsubscribe page (first address of FRONTEND_URL) */
+/** Link to the website's unsubscribe page in the email's language (first address of FRONTEND_URL).
+ *  Same addresses as client/src/config/routes.json. Links sent before Nov. 2026 (/unsubscribe) are redirected. */
 export const unsubscribeUrl = (email: string, language: 'en' | 'fr'): string => {
     const site = (process.env.FRONTEND_URL || 'http://localhost:3000').split(',')[0].trim().replace(/\/$/, '');
     const params = new URLSearchParams({ email: normalizeEmail(email), token: unsubscribeToken(email), lang: language });
-    return `${site}/unsubscribe?${params.toString()}`;
+    const page = language === 'fr' ? '/desabonnement' : '/en/unsubscribe';
+    return `${site}${page}?${params.toString()}`;
 };
 
 /** Sender identification required by CASL at the bottom of every commercial email */

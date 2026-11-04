@@ -1,5 +1,7 @@
-import { createContext, useState, useEffect, ReactNode } from "react";
+import { createContext, ReactNode } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Language } from "./trans.login";
+import { findPage, languageOfPath, pathFor } from "../config/routes";
 
 // Define the shape of our context
 interface LanguageContextType {
@@ -10,31 +12,27 @@ interface LanguageContextType {
 // Create the context
 export const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-// Provider component
+/**
+ * The language comes from the address: English pages are under /en, French pages at the root.
+ * Each language has its own address so Google can index both (it browses in English, so the
+ * old "follow the browser language" choice hid the French pages from it).
+ * Must sit inside the router, because it reads and changes the address.
+ */
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-    const getBrowserLanguage = (): Language => {
-        const savedLanguage = localStorage.getItem("language") as Language;
-        if (savedLanguage) {
-            return savedLanguage;
-        }
-        const lang = navigator.language === "fr-CA" ? "fr" :
-                     navigator.language.startsWith("fr") ? "fr" :
-                     navigator.language.startsWith("en") ? "en" : "fr"; // Check for any English variations (e.g., en-US, en-GB)
-        return lang;
-    };
+  const { pathname, search, hash } = useLocation();
+  const navigate = useNavigate();
 
-  const [language, setLanguage] = useState<Language>(getBrowserLanguage());
+  const language = languageOfPath(pathname);
 
-  const updateLanguage = (lang: Language) => {
-    setLanguage(lang);
+  // Switching language opens the same page in the other language (same ?query, e.g. the unsubscribe link)
+  const setLanguage = (lang: Language) => {
+    const current = findPage(pathname);
+    const target = pathFor(current ? current.page : 'home', lang);
+    navigate(target + search + hash);
   };
 
-  useEffect(() => {
-    localStorage.setItem("language", language); // Save preference
-  }, [language]);
-
   return (
-    <LanguageContext.Provider value={{ language, setLanguage: updateLanguage }}>
+    <LanguageContext.Provider value={{ language, setLanguage }}>
       {children}
     </LanguageContext.Provider>
   );
