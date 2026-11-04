@@ -29,6 +29,10 @@ const HorizontalScroll: React.FC<i_horizontal_scroll_props> = ({ models, eyebrow
     const viewportRef = useRef<HTMLDivElement | null>(null);
     const trackRef = useRef<HTMLDivElement | null>(null);
     const [distance, setDistance] = useState(0);
+    // Short screens (a phone or tablet held sideways) cannot show the whole pinned block, so the
+    // cards would slide over the next section: pin only when the title and cards fit on screen.
+    const [fits, setFits] = useState(true);
+    const headRef = useRef<HTMLDivElement | null>(null);
     // Pinned sideways scrolling only on wide screens (and with motion allowed). On tablets and
     // phones the pinned block is a full screen tall, which left big empty bands around the cards:
     // there the cards are a normal row you swipe.
@@ -39,7 +43,7 @@ const HorizontalScroll: React.FC<i_horizontal_scroll_props> = ({ models, eyebrow
         media.addEventListener('change', onChange);
         return () => media.removeEventListener('change', onChange);
     }, []);
-    const pinned = canPin && distance > 0;
+    const pinned = canPin && fits && distance > 0;
     const T = translations.horizontalScroll;
     const languageContext = useContext(LanguageContext);
     const L = languageContext ? languageContext.language : 'en';
@@ -50,6 +54,8 @@ const HorizontalScroll: React.FC<i_horizontal_scroll_props> = ({ models, eyebrow
         const viewport = viewportRef.current;
         if (!track || !viewport) return;
         setDistance(Math.max(0, track.scrollWidth - viewport.clientWidth));
+        const headHeight = headRef.current?.offsetHeight ?? 0;
+        setFits(headHeight + track.offsetHeight + 24 <= window.innerHeight - NAVBAR_HEIGHT);
     }, []);
 
     useEffect(() => {
@@ -94,7 +100,7 @@ const HorizontalScroll: React.FC<i_horizontal_scroll_props> = ({ models, eyebrow
         // The outer block is as tall as the sideways distance, so scrolling it drives the cards.
         <div ref={outerRef} className="ev-carousel" style={{ height: pinned ? `calc(100vh - ${NAVBAR_HEIGHT}px + ${distance}px)` : undefined }}>
             <div className={pinned ? 'ev-carousel__pin' : undefined}>
-                <div className="ev-carousel__head ev-reveal">
+                <div ref={headRef} className="ev-carousel__head ev-reveal">
                     <div>
                         {eyebrow && <span className="ev-eyebrow">{eyebrow}</span>}
                         {title && <h2 className="ev-section-title ev-section-title--left" style={{ margin: 0 }}>{title}</h2>}
