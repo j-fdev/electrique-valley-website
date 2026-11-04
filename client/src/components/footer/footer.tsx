@@ -21,7 +21,8 @@ const Footer: React.FC = () => {
 
     const series = [
         { to: '/dmaxSeries', label: F.link_evolution_series[L] },
-        { to: '/eliteSeries', label: F.link_elite_series[L] },
+        // Elite hidden for now
+        // { to: '/eliteSeries', label: F.link_elite_series[L] },
         { to: '/luxorSeries', label: F.link_luxor_series[L] },
         { to: '/classicSeries', label: F.link_classic_series[L] },
         { to: '/thorSeries', label: F.link_thor_series[L] },

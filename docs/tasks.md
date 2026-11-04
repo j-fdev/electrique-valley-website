@@ -15,9 +15,16 @@
 - [ ] Contact email to publish: the contact page shows `electriquevalley@hotmail.com`, the footer and legal pages `info@electriquevalley.com`. Use one everywhere
 - [ ] Street address to publish? (helps Google Maps and local search; today only the city is shown)
 - [ ] Retention period for contact requests (draft says 12 months)
-- [ ] Elite: is the blue Elite 4 offered? (replaced a duplicated black swatch)
+- [ ] Elite: is the blue Elite 4 offered? (replaced a duplicated black swatch). Elite is commented out for now (search "Elite hidden for now" to bring it back)
 - [ ] Elite home card: top speed 40 km/h (copied from the other series)
 - [ ] Approve the privacy policy and terms of use drafts; have a lawyer review them when possible
+
+## Thor images
+
+- [x] Remove the duplicate title on the Thor page
+- [x] Green Thor with a ground shadow like the Luxor photos (`Thor-GREEN-shadow.png`, used site-wide)
+- [ ] Green Thor hood logo: recolour it, or use the round brand logo from the footer (J-F, in Photopea)
+- [ ] White Thor (`pikaso_edit-2.png`): remove the background, clean the grass off the wheels, then add the shadow and use it site-wide
 
 ## Legal (Law 25 and Quebec)
 

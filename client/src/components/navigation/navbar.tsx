@@ -164,16 +164,17 @@ const Navbar: React.FC = () => {
                                         </div>
                                         <div className="ev-nav-item" style={navStyles.dropdownItem}>
                                             <Link to="/thorSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
-                                                <img src="/img/thor/Thor-GREEN.png" alt="Thor Series" style={navStyles.dropdownImage} />
+                                                <img src="/img/thor/Thor-GREEN-shadow.png" alt="Thor Series" style={navStyles.dropdownImage} />
                                                 <p style={navStyles.dropdownText}>{T.thor_serie[L]}</p>
                                             </Link>
                                         </div>
-                                         <div className="ev-nav-item" style={navStyles.dropdownItem}>
+                                        {/* Elite hidden for now */}
+                                        {/* <div className="ev-nav-item" style={navStyles.dropdownItem}>
                                             <Link to="/eliteSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
                                                 <img src="/img/elite/Elite_4/Elite_4_blue_nobg.png" alt="Elite Series" style={navStyles.dropdownImage} />
                                                 <p style={navStyles.dropdownText}>{T.elite_serie[L]}</p>
                                             </Link>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </>
                             )}
@@ -191,9 +192,10 @@ const Navbar: React.FC = () => {
                                     <Link to="/thorSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
                                         {T.thor_serie[L]}
                                     </Link>
-                                    <Link to="/eliteSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
+                                    {/* Elite hidden for now */}
+                                    {/* <Link to="/eliteSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
                                         {T.elite_serie[L]}
-                                    </Link>
+                                    </Link> */}
                                 </div>
                             )}
                         </div>

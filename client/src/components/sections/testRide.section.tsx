@@ -13,10 +13,11 @@ import { LanguageContext } from '../../translations/languageSelection';
 // moves the cart down so only its wheels sit below the photo.
 const cartByPage: { page: string; src: string; width: number; drop: number; wheels: number }[] = [
     { page: 'luxorSeries', src: '/img/luxor/luxor_2+2L/LUXOR_2+2L-SKY-BLUE.png', width: 116, drop: 15, wheels: 13 },
-    { page: 'thorSeries', src: '/img/thor/Thor-GREEN.png', width: 93, drop: 15, wheels: 14 },
+    { page: 'thorSeries', src: '/img/thor/Thor-GREEN-shadow.png', width: 93, drop: 15, wheels: 14 },
     { page: 'classicSeries', src: '/img/classic/classic_2+2/sky-BLUE.png', width: 102, drop: 14, wheels: 13 },
     { page: 'dmaxSeries', src: '/img/d-max/XT4/Evolution4L-color-PORTIMAO-BLUE.png', width: 76, drop: 7, wheels: 15 },
-    { page: 'eliteSeries', src: '/img/elite/Elite_4/Elite_4L_black_nobg.png', width: 116, drop: 20, wheels: 12 },
+    // Elite hidden for now
+    // { page: 'eliteSeries', src: '/img/elite/Elite_4/Elite_4L_black_nobg.png', width: 116, drop: 20, wheels: 12 },
 ];
 
 const TestRideSection: React.FC = () => {

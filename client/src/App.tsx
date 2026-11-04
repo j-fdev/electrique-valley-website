@@ -17,7 +17,8 @@ import Home from './pages/home';
 // import Login from './pages/login';
 import LuxorSeries from './pages/luxorSeries';
 import DMaxSeries from './pages/dmaxSeries';
-import EliteSeries from './pages/eliteSeries';
+// Elite hidden for now (not online yet). Uncomment here, in the route below and in the navbar, home, test ride, footer, sitemap and route meta to bring it back.
+// import EliteSeries from './pages/eliteSeries';
 import ClassicSeries from './pages/classicSeries';  
 import ThorSeries from './pages/thorSeries';
 // import ToraSeries from './pages/toraSeries'; 
@@ -56,7 +57,8 @@ const AppRoutes = () => {
       <Route path="/" element={<><Home /><Footer /></>} />
       {/* <Route path="/login" element={<Login />} /> */}
       <Route path="/dmaxSeries" element={<><DMaxSeries /><Footer /></>} />
-      <Route path="/eliteSeries" element={<><EliteSeries /><Footer /></>} />
+      {/* Elite hidden for now */}
+      {/* <Route path="/eliteSeries" element={<><EliteSeries /><Footer /></>} /> */}
       <Route path="/luxorSeries" element={<><LuxorSeries /><Footer /></>} />
       <Route path="/classicSeries" element={<><ClassicSeries /><Footer /></>} />
       <Route path="/thorSeries" element={<><ThorSeries /><Footer /></>} />

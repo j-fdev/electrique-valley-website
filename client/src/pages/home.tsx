@@ -57,8 +57,9 @@ const Home: React.FC = () => {
         { image: `/img/d-max/XT4/Evolution4L-color-BLACK-SAPPHIRE.png?v=${version}`, title: T.title_evolution_card[L], link: '/dmaxSeries', t1: T.t1_evolution_card[L], p1: T.p1_evolution_card[L], t2: T.t2_evolution_card[L], p2: T.p2_evolution_card[L], t3: T.t3_evolution_card[L], p3: T.p3_evolution_card[L], t4: T.t4_evolution_card[L], p4: T.p4_evolution_card[L] },
         { image: `/img/luxor/luxor_4L/LUXOR_4L-ARCTIC-GRAY-1-1.png?v=${version}`, title: T.title_luxor_card[L], link: '/luxorSeries', t1: T.t1_luxor_card[L], p1: T.p1_luxor_card[L], t2: T.t2_luxor_card[L], p2: T.p2_luxor_card[L], t3: T.t3_luxor_card[L], p3: T.p3_luxor_card[L], t4: T.t4_luxor_card[L], p4: T.p4_luxor_card[L] },
         { image: `/img/classic/classic_2+2/PLAMENCO.png?v=${version}`, title: T.title_classic_card[L], link: '/classicSeries', t1: T.t1_classic_card[L], p1: T.p1_classic_card[L], t2: T.t2_classic_card[L], p2: T.p2_classic_card[L], t3: T.t3_classic_card[L], p3: T.p3_classic_card[L], t4: T.t4_classic_card[L], p4: T.p4_classic_card[L] },
-        { image: `/img/thor/Thor-GREEN.png?v=${version}`, title: T.title_thor_card[L], link: '/thorSeries', t1: T.t1_thor_card[L], p1: T.p1_thor_card[L], t2: T.t2_thor_card[L], p2: T.p2_thor_card[L], t3: T.t3_thor_card[L], p3: T.p3_thor_card[L], t4: T.t4_thor_card[L], p4: T.p4_thor_card[L] },
-        { image: `/img/elite/Elite_4/Elite_4_blue_nobg.png?v=${version}`, title: T.title_elite_card[L], link: '/eliteSeries', t1: T.t1_elite_card[L], p1: T.p1_elite_card[L], t2: T.t2_elite_card[L], p2: T.p2_elite_card[L], t3: T.t3_elite_card[L], p3: T.p3_elite_card[L], t4: T.t4_elite_card[L], p4: T.p4_elite_card[L] },
+        { image: `/img/thor/Thor-GREEN-shadow.png?v=${version}`, title: T.title_thor_card[L], link: '/thorSeries', t1: T.t1_thor_card[L], p1: T.p1_thor_card[L], t2: T.t2_thor_card[L], p2: T.p2_thor_card[L], t3: T.t3_thor_card[L], p3: T.p3_thor_card[L], t4: T.t4_thor_card[L], p4: T.p4_thor_card[L] },
+        // Elite hidden for now
+        // { image: `/img/elite/Elite_4/Elite_4_blue_nobg.png?v=${version}`, title: T.title_elite_card[L], link: '/eliteSeries', t1: T.t1_elite_card[L], p1: T.p1_elite_card[L], t2: T.t2_elite_card[L], p2: T.p2_elite_card[L], t3: T.t3_elite_card[L], p3: T.p3_elite_card[L], t4: T.t4_elite_card[L], p4: T.p4_elite_card[L] },
     ];
 
       

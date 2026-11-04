@@ -250,8 +250,11 @@ export const pageMeta = {
             en: 'Electric Golf Carts in Salaberry-de-Valleyfield | Electrique Valley',
         },
         description: {
-            fr: 'Voiturettes de golf et véhicules utilitaires électriques à batterie lithium : séries D-MAX, Élite, Luxor, Classic et Thor. Essai routier sur rendez-vous.',
-            en: 'Lithium-powered electric golf carts and utility vehicles: D-MAX, Elite, Luxor, Classic and Thor series. Test rides by appointment.',
+            // Elite hidden for now; the versions with Elite are kept below.
+            // fr: 'Voiturettes de golf et véhicules utilitaires électriques à batterie lithium : séries D-MAX, Élite, Luxor, Classic et Thor. Essai routier sur rendez-vous.',
+            // en: 'Lithium-powered electric golf carts and utility vehicles: D-MAX, Elite, Luxor, Classic and Thor series. Test rides by appointment.',
+            fr: 'Voiturettes de golf et véhicules utilitaires électriques à batterie lithium : séries D-MAX, Luxor, Classic et Thor. Essai routier sur rendez-vous.',
+            en: 'Lithium-powered electric golf carts and utility vehicles: D-MAX, Luxor, Classic and Thor series. Test rides by appointment.',
         },
     },
     '/dmaxSeries': {

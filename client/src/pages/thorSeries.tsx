@@ -31,7 +31,7 @@ import version from '../config/version';
     
     const modelsImage = `/img/thor/pikaso_edit-2.png?v=${version}`;
     const headerBgImage = `/img/thor/large-warehouse3-.jpg?v=${version}`;
-    const headerCartImage=`/img/thor/Thor-GREEN.png?v=${version}`
+    const headerCartImage=`/img/thor/Thor-GREEN-shadow.png?v=${version}`
 
 
 const ThorSeries: React.FC<i_cart_models_props> = ({}) => {
@@ -121,7 +121,8 @@ const ThorSeries: React.FC<i_cart_models_props> = ({}) => {
                         <h1 style={{ ...cartsModelsStyles.headerTitle, padding: '15px 0' }}>{T.h1_title[L]}</h1>
                         <hr ref={hrRef} style={{ ...mainStyles.hrStyle, width: '100%', marginInline: 'auto' }} />
                         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                            <h2 style={{ ...mainStyles.title, fontSize: 'clamp(1.75rem, 1.3099rem + 1.8779vw, 3rem)', textShadow: '1px 1px 2px rgba(128, 138, 255, 0.7)' }}>{T.h1_title[L]}</h2>
+                            {/* Duplicate of the h1 just above; hidden so the title shows once. */}
+                            {/* <h2 style={{ ...mainStyles.title, fontSize: 'clamp(1.75rem, 1.3099rem + 1.8779vw, 3rem)', textShadow: '1px 1px 2px rgba(128, 138, 255, 0.7)' }}>{T.h1_title[L]}</h2> */}
                             <div style={{ ...mainStyles.sectionImageLeft, marginTop: '2rem'}}>
                             <div style={ cardStyles.chooseContainer }>
                                 <div>
