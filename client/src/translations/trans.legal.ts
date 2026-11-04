@@ -197,8 +197,8 @@ export const legal = {
                 title: { fr: 'Propriété intellectuelle et marques', en: 'Intellectual property and trademarks' },
                 paragraphs: [
                     {
-                        fr: 'Les textes, la mise en page et le logo d’Electrique Valley lui appartiennent. Les photos et les noms de modèles des fabricants sont utilisés avec leur permission et demeurent la propriété de leurs titulaires. Vous ne pouvez pas les reproduire sans permission écrite.',
-                        en: 'Electrique Valley owns the text, layout and logo of this site. Manufacturers’ photos and model names are used with their permission and remain the property of their owners. You may not reproduce them without written permission.',
+                        fr: 'Les textes, la mise en page et le logo d’Electrique Valley lui appartiennent. Les photos des véhicules et les noms de modèles sont fournis par nos fournisseurs et demeurent la propriété de leurs titulaires respectifs. Vous ne pouvez pas reproduire le contenu du site sans permission écrite.',
+                        en: 'Electrique Valley owns the text, layout and logo of this site. Vehicle photos and model names are provided by our suppliers and remain the property of their respective owners. You may not reproduce the site’s content without written permission.',
                     },
                 ],
             },

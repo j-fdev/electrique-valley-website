@@ -29,7 +29,7 @@
 ## Legal (Law 25 and Quebec)
 
 - [x] Review (Nov 4): privacy policy names Gmail (sending) and Outlook.com (inbox) as services outside Quebec, the web provider's access under a written agreement, the right to a copy in a structured format (portability), the new unsubscribe addresses; terms no longer promise a store
-- [ ] Client to confirm: the manufacturer allows the use of its photos and model names (the terms say so)
+- [ ] Client to confirm: the vehicle photos come from his supplier (sent or from a dealer portal), not copied from another dealer's site. The terms now say "provided by our suppliers" (softened Nov 4, no permission claimed)
 - [ ] Privacy policy says the site is hosted in Canada by AWS: true only after the migration (`deploy/MIGRATION.md`)
 
 - [x] Privacy policy, person in charge published (owner, generic title)
