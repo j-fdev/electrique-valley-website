@@ -102,8 +102,9 @@ const CartModels: React.FC<i_cart_models_props> = ({
         <>
             {/* Hero */}
             <header className="ev-model-hero">
-                <img className="ev-model-hero__bg" src={`${headerBgImage}?v=${version}`} alt={altProp} />
-                <img className={`ev-model-hero__cart${headerIsElite ? ' ev-model-hero__cart--wide' : ''}`} src={`${headerCartImage}?v=${version}`} alt="" />
+                {/* The landscape is decoration; the cart carries the page name for Google and screen readers */}
+                <img className="ev-model-hero__bg" src={`${headerBgImage}?v=${version}`} alt="" />
+                <img className={`ev-model-hero__cart${headerIsElite ? ' ev-model-hero__cart--wide' : ''}`} src={`${headerCartImage}?v=${version}`} alt={headerTitle ?? altProp ?? ''} />
             </header>
 
                 {/* Choose your model section */}
@@ -122,21 +123,21 @@ const CartModels: React.FC<i_cart_models_props> = ({
                             <h2 style={{ ...mainStyles.title, fontSize: 'clamp(1.75rem, 1.3099rem + 1.8779vw, 3rem)', textShadow: '1px 1px 2px rgba(128, 138, 255, 0.7)' }}>{modelsTitle?.[selectedListIndex] ?? ''}</h2>
                             {((!isLuxorPage && currentModelIndex === 2) || (!isLuxorPage && currentModelIndex === 3)) && (
                                 <div style={{ marginTop: '2rem', textAlign: 'center' }}>
-                                    <img src={`/img/d-max/4x4-icon.png?v=${version}`} alt="4WD Icon" style={{ width: '100px', height: 'auto'}} />
+                                    <img src={`/img/d-max/4x4-icon.png?v=${version}`} alt="" loading="lazy" style={{ width: '100px', height: 'auto'}} />
                                     <p style={{ fontSize: isMobile ? '14px' : '16px', fontWeight: 'bold'}}>
                                         {p_4wd_available}
                                     </p>
                                 </div>
                             )}
                             <div style={{ ...mainStyles.sectionImageLeft, marginTop: '2rem'}}>
-                                <ChooseModelCard image={modelsImages?.[selectedListIndex]?.[selectedColorIndex] ?? ''} list={[...(lists?.[selectedListIndex] ?? [])]} />
+                                <ChooseModelCard image={modelsImages?.[selectedListIndex]?.[selectedColorIndex] ?? ''} list={[...(lists?.[selectedListIndex] ?? [])]} alt={modelsTitle?.[selectedListIndex] ?? headerTitle ?? ''} />
                             </div>
                             <h3 style={{ fontSize: '24px', marginBottom: '1.5rem'}}>{colorPickerH3}</h3>
                             <ColorPicker images={modelsImages?.[selectedListIndex] ?? []} setSelectedColorIndex={setSelectedColorIndex} />
                             <p style={{...mainStyles.paragraph, fontSize: isMobile ? '14px' : '16px'}}>{colorPickerP}</p>
                             {!isClassicPage && (
                             <div style={{ marginTop: '2rem' }}>
-                                <img style={{ ...cartsModelsStyles.touchScreenIcons, marginRight: '1rem'}} src={`img/main/Android_Auto_icon.svg.png?v=${version}`} alt="" /><img style={cartsModelsStyles.touchScreenIcons} src={`img/main/900px-Apple_CarPlay_Logo.png?v=${version}`} alt="" />
+                                <img style={{ ...cartsModelsStyles.touchScreenIcons, marginRight: '1rem'}} src={`/img/main/Android_Auto_icon.svg.png?v=${version}`} alt="Android Auto" loading="lazy" /><img style={cartsModelsStyles.touchScreenIcons} src={`/img/main/900px-Apple_CarPlay_Logo.png?v=${version}`} alt="Apple CarPlay" loading="lazy" />
                                 <p style={{ ...mainStyles.paragraph, marginInline: 'auto' }}>{T.p_touch_screen_compatible[L]}</p>
                                 <p style={{ fontSize: '14px', marginTop: '1rem', maxWidth: '110ch' }}>{T.p_touch_screen_aftermarks[L]}</p>
                             </div>
@@ -148,13 +149,13 @@ const CartModels: React.FC<i_cart_models_props> = ({
             {/* Discover */}
             <section className="ev-discover ev-section">
                 <div className="ev-container">
-                    <img className="ev-discover__word ev-reveal" src={`${discoverShadowTitleImg}?v=${version}`} alt="" />
+                    <img className="ev-discover__word ev-reveal" src={`${discoverShadowTitleImg}?v=${version}`} alt="" loading="lazy" />
                     <div className="ev-discover__grid">
                         <div className="ev-reveal ev-reveal--left">
                             <h2><span>{discoverh2Span}</span>{discoverh2}<br />{h2_discoverNext}</h2>
                             <p>{discoverP}</p>
                         </div>
-                        <img className="ev-discover__img ev-reveal ev-reveal--right" src={`${discoverMontageImage}?v=${version}`} alt="Cart Series Montage" />
+                        <img className="ev-discover__img ev-reveal ev-reveal--right" src={`${discoverMontageImage}?v=${version}`} alt={headerTitle ?? ''} loading="lazy" />
                     </div>
                 </div>
             </section>

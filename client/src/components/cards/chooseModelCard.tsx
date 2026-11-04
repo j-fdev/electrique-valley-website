@@ -22,7 +22,7 @@ import { i_choose_model_card_props } from '../../interfaces/interfaces';
 //     '/img/luxor/LUXOR_2+2LARCTIC-GRAY.png',
 // ];
 
-const ChooseModelCard: React.FC<i_choose_model_card_props> = ({ image, list }) => {
+const ChooseModelCard: React.FC<i_choose_model_card_props> = ({ image, list, alt = '' }) => {
 
     const mainStyles = MainStyles();
     const cardStyles = CartStyles();
@@ -31,7 +31,7 @@ const ChooseModelCard: React.FC<i_choose_model_card_props> = ({ image, list }) =
     return (
         <div style={ cardStyles.chooseContainer }>
             <div>
-                <img src={image} alt="Luxor4" style={ cardStyles.chooseImageStyle} />
+                <img src={image} alt={alt} loading="lazy" style={ cardStyles.chooseImageStyle} />
             </div>
             <div>
                 <ul style={ cardStyles.chooseListStyle }>

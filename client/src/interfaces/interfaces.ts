@@ -174,7 +174,7 @@ export interface i_videoCapsule {
 
 // Components
 export interface i_cart_features_props { image: string; title: string; description: string; }
-export interface i_choose_model_card_props { image: string; list: string[]; }
+export interface i_choose_model_card_props { image: string; list: string[]; alt?: string; }
 export interface i_collapsing_dropdown_props { title: string[]; children: React.ReactNode; isOpen: boolean; onToggle: () => void; }
 export interface i_dropdown_props { title: string; children: React.ReactNode; isOpen: boolean; onToggle: () => void; }
 export interface i_shrinkGrow_props { image: string; title: string; paragraph?: string; }

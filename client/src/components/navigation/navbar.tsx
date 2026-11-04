@@ -107,7 +107,7 @@ const Navbar: React.FC = () => {
             {/* Logo Section - Left Side */}
             <div style={navStyles.navLogo}>
                 <Link to="/" onClick={handleLinkClick}>
-                    <img src={`/img/main/navBrandLogo.png?v=${version}`} alt="Logo" style={navStyles.logoImg} />
+                    <img src={`/img/main/navBrandLogo.png?v=${version}`} alt="Electrique Valley" style={navStyles.logoImg} />
                 </Link>
             </div>
 
@@ -123,7 +123,7 @@ const Navbar: React.FC = () => {
                 {isMobile && isMenuOpen && (
                     <div style={navStyles.navMenuLogo}>
                         <Link to="/" onClick={handleLinkClick}>
-                            <img src={`/img/main/navBrandLogo.png?v=${version}`} alt="Logo" style={navStyles.menuLogoImg} />
+                            <img src={`/img/main/navBrandLogo.png?v=${version}`} alt="Electrique Valley" style={navStyles.menuLogoImg} />
                         </Link>
                     </div>
                 )}
@@ -149,25 +149,25 @@ const Navbar: React.FC = () => {
                                     <div className="dropdown-content ev-mega" style={{ ...navStyles.dropdown_content, display: isSeriesOpen ? 'flex' : 'none', position: 'fixed', left: 0, width: '100vw', top: '57px', justifyContent: 'center' }}>
                                         <div className="ev-nav-item" style={navStyles.dropdownItem}>
                                             <Link to="/dmaxSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
-                                                <img src="/img/d-max/XT4/Evolution4L-color-BLACK-SAPPHIRE.png" alt="D-MAX Series" style={navStyles.dropdownImage} />
+                                                <img src="/img/d-max/XT4/Evolution4L-color-BLACK-SAPPHIRE.png" alt="" loading="lazy" style={navStyles.dropdownImage} />
                                                 <p style={navStyles.dropdownText}>{T.dMax_serie[L]}</p>
                                             </Link>
                                         </div>
                                         <div className="ev-nav-item" style={navStyles.dropdownItem}>
                                             <Link to="/luxorSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
-                                                <img src="/img/luxor/luxor_2+2L/LUXOR_2+2L-MEDITERRANEAN-BLUE.png" alt="Luxor Series" style={navStyles.dropdownImage} />
+                                                <img src="/img/luxor/luxor_2+2L/LUXOR_2+2L-MEDITERRANEAN-BLUE.png" alt="" loading="lazy" style={navStyles.dropdownImage} />
                                                 <p style={navStyles.dropdownText}>{T.luxor_serie[L]}</p>
                                             </Link>
                                         </div>
                                         <div className="ev-nav-item" style={navStyles.dropdownItem}>
                                             <Link to="/classicSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
-                                                <img src="/img/classic/classic_2+2/sky-BLUE.png" alt="Classic Series" style={navStyles.dropdownImage} />
+                                                <img src="/img/classic/classic_2+2/sky-BLUE.png" alt="" loading="lazy" style={navStyles.dropdownImage} />
                                                 <p style={navStyles.dropdownText}>{T.classic_serie[L]}</p>
                                             </Link>
                                         </div>
                                         <div className="ev-nav-item" style={navStyles.dropdownItem}>
                                             <Link to="/thorSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
-                                                <img src={`/img/thor/Thor-GREEN-shadow.png?v=${version}`} alt="Thor Series" style={navStyles.dropdownImage} />
+                                                <img src={`/img/thor/Thor-GREEN-shadow.png?v=${version}`} alt="" loading="lazy" style={navStyles.dropdownImage} />
                                                 <p style={navStyles.dropdownText}>{T.thor_serie[L]}</p>
                                             </Link>
                                         </div>

@@ -53,6 +53,11 @@ const HeroSlider: React.FC<i_hero_slider_props & { alts?: string[]; language?: '
                         <img
                             src={image}
                             alt={alts?.[index] ?? ''}
+                            width={1920}
+                            height={1000}
+                            // The first banner is what visitors see first: load it right away, the others later.
+                            // Lowercase fetchpriority because React 18 doesn't know the camelCase prop yet.
+                            {...(index === 0 ? { fetchpriority: 'high' } : { loading: 'lazy' as const })}
                             style={{
                                 ...homeSliderStyles.heroSliderImg,
                                 transition: 'transform 3s ease-out',

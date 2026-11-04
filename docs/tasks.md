@@ -45,12 +45,13 @@
 - [x] Social-sharing tags, business details for Google (JSON-LD), `sitemap.xml`, `robots.txt`
 - [x] Home page H1 (text was only inside the banner images); descriptive alt text on banners and feature photos
 - [x] French as the default language when the browser is neither French nor English
+- [x] Quick fixes (Nov 4): titles under 60 characters, X/Twitter tags and a sharing image per page, alt text in both languages, lazy-loaded images with the first banner first, `.psd` files moved out of `public/` to `design-sources/`
 - [ ] Google Business Profile: create or claim it (biggest gain for local search)
 - [ ] Submit `sitemap.xml` in Google Search Console after launch
 - [ ] Separate French and English URLs (e.g. `/fr/serie-dmax`, `/en/dmax-series`) so Google indexes both languages
 - [ ] Convert large JPG/PNG to WebP and resize them; check PageSpeed (target 90+)
 - [ ] Self-host the fonts instead of Google Fonts (faster, no data sent to Google); needs `@fontsource` packages, ask J-F first
-- [ ] Add a branded image for social sharing (1200 × 630)
+- [ ] Add a branded image for social sharing (1200 × 630); today each page shares an existing banner
 - [ ] Clean up the ESLint warnings (unused imports)
 
 ## Later

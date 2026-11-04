@@ -246,8 +246,8 @@ export const legal = {
 export const pageMeta = {
     '/': {
         title: {
-            fr: 'Voiturettes de golf électriques à Salaberry-de-Valleyfield | Electrique Valley',
-            en: 'Electric Golf Carts in Salaberry-de-Valleyfield | Electrique Valley',
+            fr: 'Voiturettes de golf à Valleyfield | Electrique Valley',
+            en: 'Electric Golf Carts in Valleyfield | Electrique Valley',
         },
         description: {
             // Elite hidden for now; the versions with Elite are kept below.
@@ -286,7 +286,7 @@ export const pageMeta = {
         },
     },
     '/thorSeries': {
-        title: { fr: 'Série Thor, véhicule utilitaire électrique | Electrique Valley', en: 'Thor Series Electric Utility Vehicle | Electrique Valley' },
+        title: { fr: 'Thor, véhicule utilitaire électrique | Electrique Valley', en: 'Thor Series Electric Utility Vehicle | Electrique Valley' },
         description: {
             fr: 'Thor : véhicule utilitaire électrique avec boîte de chargement, batterie lithium et caméra de recul. Caractéristiques et fiche technique.',
             en: 'Thor: electric utility vehicle with cargo box, lithium battery and backup camera. Features and specifications.',

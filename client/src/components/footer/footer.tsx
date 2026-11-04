@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
                 <div className="ev-footer__grid ev-stagger">
                     {/* Brand */}
                     <div>
-                        <img className="ev-footer__logo" src={`/img/main/electriqueValleyLogo.png?v=${version}`} alt="Electrique Valley" />
+                        <img className="ev-footer__logo" src={`/img/main/electriqueValleyLogo.png?v=${version}`} alt="Electrique Valley" loading="lazy" />
                         <p style={{ maxWidth: '40ch' }}>{F.p_thanks[L]}</p>
                         <div className="ev-footer__social">
                             <a href="https://www.facebook.com/electriquevalley" target="_blank" rel="noopener noreferrer" aria-label="Facebook">

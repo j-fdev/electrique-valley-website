@@ -170,7 +170,7 @@ const Home: React.FC = () => {
             {/* About section */}
             <section className="ev-section" style={{ paddingTop: 0 }}>
                 <div className="ev-container ev-about">
-                    <img className="ev-about__logo ev-reveal ev-reveal--zoom" src={`/img/main/ElectriqueValley-emblem-metal.png?v=${version}`} alt="Electrique Valley" />
+                    <img className="ev-about__logo ev-reveal ev-reveal--zoom" src={`/img/main/ElectriqueValley-emblem-metal.png?v=${version}`} alt="Electrique Valley" loading="lazy" />
                     <div className="ev-reveal ev-reveal--right">
                         <span className="ev-eyebrow">{EB.about[L]}</span>
                         <h2 className="ev-section-title ev-section-title--left">{T.about_title[L]}</h2>
@@ -242,7 +242,7 @@ const Home: React.FC = () => {
                             <li>{T.li2_lithium_battery[L]}</li>
                         </ul>
                     </div>
-                    <img className="ev-battery__img" src={`/img/home/lithium_battery_110ah.webp?v=${version}`} alt="Lithium Battery" loading="lazy" />
+                    <img className="ev-battery__img" src={`/img/home/lithium_battery_110ah.webp?v=${version}`} alt={T.title_lithium_battery[L]} loading="lazy" />
                 </div>
             </section>
 

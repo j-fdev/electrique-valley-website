@@ -112,8 +112,9 @@ const ThorSeries: React.FC<i_cart_models_props> = ({}) => {
         <>
             {/* Hero */}
             <header className="ev-model-hero">
-                <img className="ev-model-hero__bg" src={headerBgImage} alt="Thor Series" />
-                <img className="ev-model-hero__cart ev-model-hero__cart--thor" src={headerCartImage} alt="" />
+                {/* The warehouse is decoration; the cart carries the page name */}
+                <img className="ev-model-hero__bg" src={headerBgImage} alt="" />
+                <img className="ev-model-hero__cart ev-model-hero__cart--thor" src={headerCartImage} alt={T.h1_title[L]} />
             </header>
 
                 {/* Choose your model section */}
@@ -127,7 +128,7 @@ const ThorSeries: React.FC<i_cart_models_props> = ({}) => {
                             <div style={{ ...mainStyles.sectionImageLeft, marginTop: '2rem'}}>
                             <div style={ cardStyles.chooseContainer }>
                                 <div>
-                                    <img src={modelsImage} alt={T.h1_title[L]} style={ {...cardStyles.chooseImageStyle, width: isMobile ? '200px' : '300px', marginRight: isMobile ? '0' : '200px', marginBottom: isMobile ? '40px' : '0'}} />
+                                    <img src={modelsImage} alt={T.h1_title[L]} loading="lazy" style={ {...cardStyles.chooseImageStyle, width: isMobile ? '200px' : '300px', marginRight: isMobile ? '0' : '200px', marginBottom: isMobile ? '40px' : '0'}} />
                                 </div>
                                 <div>
                                 <ul style={ cardStyles.chooseListStyle }>
@@ -152,7 +153,7 @@ const ThorSeries: React.FC<i_cart_models_props> = ({}) => {
                             {/* <ColorPicker images={modelsImage} setSelectedColorIndex={setSelectedColorIndex} /> */}
                             <p style={{...mainStyles.paragraph, fontSize: isMobile ? '14px' : '16px'}}>{T.p_colorPicker[L]}</p>
                             {/* <div style={{ marginTop: '2rem' }}>
-                                <img style={{ ...cartsModelsStyles.touchScreenIcons, marginRight: '1rem'}} src="img/main/Android_Auto_icon.svg.png" alt="" /><img style={cartsModelsStyles.touchScreenIcons} src="img/main/900px-Apple_CarPlay_Logo.png" alt="" />
+                                <img style={{ ...cartsModelsStyles.touchScreenIcons, marginRight: '1rem'}} src="/img/main/Android_Auto_icon.svg.png" alt="Android Auto" loading="lazy" /><img style={cartsModelsStyles.touchScreenIcons} src="/img/main/900px-Apple_CarPlay_Logo.png" alt="Apple CarPlay" loading="lazy" />
                                 <p style={{ ...mainStyles.paragraph, marginInline: 'auto' }}>{T.p_touch_screen_compatible[L]}</p>
                                 <p style={{ fontSize: '14px', marginTop: '1rem', maxWidth: '110ch' }}>{T.p_touch_screen_aftermarks[L]}</p>
                             </div> */}
@@ -163,13 +164,13 @@ const ThorSeries: React.FC<i_cart_models_props> = ({}) => {
             {/* Discover */}
             <section className="ev-discover ev-section">
                 <div className="ev-container">
-                    <img className="ev-discover__word ev-reveal" src={discoverShadowTitleImg} alt="" />
+                    <img className="ev-discover__word ev-reveal" src={discoverShadowTitleImg} alt="" loading="lazy" />
                     <div className="ev-discover__grid">
                         <div className="ev-reveal ev-reveal--left">
                             <h2><span>{discoverh2Span}</span>{discoverh2}<br />{h2_discoverNext}</h2>
                             <p>{discoverP}</p>
                         </div>
-                        <img className="ev-discover__img ev-reveal ev-reveal--right" src={`/img/thor/cartMontageThor.png?v=${version}`} alt="Thor Series" />
+                        <img className="ev-discover__img ev-reveal ev-reveal--right" src={`/img/thor/cartMontageThor.png?v=${version}`} alt={T.h1_title[L]} loading="lazy" />
                     </div>
                 </div>
             </section>
