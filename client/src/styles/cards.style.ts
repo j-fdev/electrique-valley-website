@@ -58,7 +58,8 @@ const imageStyle: CSSProperties = { position: 'absolute', top: '0', left: '0', w
 
 // chooseModelCardStyles
 const chooseContainer: CSSProperties = { display: 'flex', flexDirection: isMobile ? 'column' : 'row', flexWrap: isMobile ? 'wrap' : 'nowrap', alignItems: 'center'};
-const chooseImageStyle: CSSProperties = { width: isMobile ? '350px' : '650px', height: 'auto' };
+// maxWidth: never wider than the screen (350 px overflowed 320 px phones)
+const chooseImageStyle: CSSProperties = { width: isMobile ? '350px' : '650px', maxWidth: '100%', height: 'auto' };
 const chooseListStyle: CSSProperties = { textAlign: 'left', listStyleType: 'none' };
 const chooseList: CSSProperties = { marginLeft: '5px', fontSize: isMobile ? '14px' : '16px' };
 const chooseIcon: CSSProperties = { width: '10px', height: '10px', fill: 'var(--clr-dark-blue)', marginBlock: 'auto' };

@@ -10,7 +10,11 @@ const isMobile = useWindowSize();
 const heroWrapper: CSSProperties = { 
     position: 'relative', 
     // Height follows the banner images (see heroSliderImg), on every screen size
-    overflow: 'hidden'
+    overflow: 'hidden',
+    // On phones the banner is only about 200 px tall: start it below the 72 px navbar
+    // instead of hiding its top third behind it
+    paddingTop: isMobile ? '72px' : 0,
+    backgroundColor: isMobile ? 'var(--ev-navy)' : undefined,
 };
 const homeHeroTitle: CSSProperties = { position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', textAlign: 'center', color: 'white', zIndex: 1, textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' };
 const homeH3: CSSProperties = { fontSize: 'clamp(1.25rem, 1.0299rem + 0.9390vw, 1.875rem)', whiteSpace: 'nowrap' };

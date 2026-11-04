@@ -22,11 +22,24 @@ const NAVBAR_HEIGHT = 72;
  * Series cards that slide sideways while the page scrolls down (the section stays pinned
  * until the last card is visible). Pure CSS sticky + one scroll listener, no GSAP.
  */
+const PIN_QUERY = '(min-width: 1025px) and (prefers-reduced-motion: no-preference)';
+
 const HorizontalScroll: React.FC<i_horizontal_scroll_props> = ({ models, eyebrow, title }) => {
     const outerRef = useRef<HTMLDivElement | null>(null);
     const viewportRef = useRef<HTMLDivElement | null>(null);
     const trackRef = useRef<HTMLDivElement | null>(null);
     const [distance, setDistance] = useState(0);
+    // Pinned sideways scrolling only on wide screens (and with motion allowed). On tablets and
+    // phones the pinned block is a full screen tall, which left big empty bands around the cards:
+    // there the cards are a normal row you swipe.
+    const [canPin, setCanPin] = useState(() => window.matchMedia(PIN_QUERY).matches);
+    useEffect(() => {
+        const media = window.matchMedia(PIN_QUERY);
+        const onChange = () => setCanPin(media.matches);
+        media.addEventListener('change', onChange);
+        return () => media.removeEventListener('change', onChange);
+    }, []);
+    const pinned = canPin && distance > 0;
     const T = translations.horizontalScroll;
     const languageContext = useContext(LanguageContext);
     const L = languageContext ? languageContext.language : 'en';
@@ -52,6 +65,10 @@ const HorizontalScroll: React.FC<i_horizontal_scroll_props> = ({ models, eyebrow
 
     // Move the cards according to the vertical scroll position
     useEffect(() => {
+        if (!pinned) {
+            if (trackRef.current) trackRef.current.style.transform = '';
+            return;
+        }
         let frame = 0;
         const update = () => {
             frame = 0;
@@ -71,12 +88,12 @@ const HorizontalScroll: React.FC<i_horizontal_scroll_props> = ({ models, eyebrow
             window.removeEventListener('resize', onScroll);
             if (frame) cancelAnimationFrame(frame);
         };
-    }, [distance]);
+    }, [distance, pinned]);
 
     return (
         // The outer block is as tall as the sideways distance, so scrolling it drives the cards.
-        <div ref={outerRef} className="ev-carousel" style={{ height: distance > 0 ? `calc(100vh - ${NAVBAR_HEIGHT}px + ${distance}px)` : undefined }}>
-            <div className={distance > 0 ? 'ev-carousel__pin' : undefined}>
+        <div ref={outerRef} className="ev-carousel" style={{ height: pinned ? `calc(100vh - ${NAVBAR_HEIGHT}px + ${distance}px)` : undefined }}>
+            <div className={pinned ? 'ev-carousel__pin' : undefined}>
                 <div className="ev-carousel__head ev-reveal">
                     <div>
                         {eyebrow && <span className="ev-eyebrow">{eyebrow}</span>}
@@ -85,7 +102,7 @@ const HorizontalScroll: React.FC<i_horizontal_scroll_props> = ({ models, eyebrow
                 </div>
 
                 <div ref={viewportRef} className="ev-carousel__viewport">
-                    <div ref={trackRef} className="ev-series-track ev-series-track--pinned ev-stagger">
+                    <div ref={trackRef} className={`ev-series-track${pinned ? ' ev-series-track--pinned' : ''} ev-stagger`}>
                         {models.map((model, index) => (
                             <article key={index} className="ev-series-card">
                                 <div className="ev-series-card__media">

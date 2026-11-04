@@ -4,10 +4,11 @@
 import { CSSProperties } from 'react';
 
 // Hooks
-import { useWindowSize } from './../hooks/useWindowSize';
+import { useWindowSize, NAV_BREAKPOINT } from './../hooks/useWindowSize';
 
 const NavbarStyles = (isMenuOpen: boolean) => {
-    const isMobile = useWindowSize();
+    // Hamburger layout up to NAV_BREAKPOINT (not the usual 768 px): the links need more room
+    const isMobile = useWindowSize(NAV_BREAKPOINT);
 
     const navbarStyle: CSSProperties = {
         display: 'flex',
@@ -56,8 +57,12 @@ const NavbarStyles = (isMenuOpen: boolean) => {
     };
 
     const logoImg: CSSProperties = {
-        marginLeft: isMobile ? '20px' : '60px',
-        height: isMobile ? '40px' : '56px',
+        marginLeft: isMobile ? '0' : '60px',
+        height: isMobile ? 'auto' : '56px',
+        // On phones the logo (282 px at 40 px tall) plus margins overflowed 320 px screens:
+        // it now shrinks to leave room for the hamburger button.
+        width: isMobile ? 'min(240px, calc(100vw - 110px))' : 'auto',
+        display: 'block',
         marginTop: '0'
     };
 

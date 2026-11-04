@@ -5,7 +5,7 @@ import version from './../../config/version';
 import { findPage, pathFor, SERIES_PAGES } from './../../config/routes';
 
 // Hooks
-import { useWindowSize } from './../../hooks/useWindowSize';
+import { useWindowSize, NAV_BREAKPOINT } from './../../hooks/useWindowSize';
 
 // Styles
 import NavbarStyles from './../../styles/navbar.style';
@@ -31,7 +31,8 @@ const Navbar: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const navStyles = NavbarStyles(isMenuOpen);
-    const isMobile = useWindowSize();
+    // Hamburger menu up to NAV_BREAKPOINT (not the usual 768 px): the links need more room
+    const isMobile = useWindowSize(NAV_BREAKPOINT);
 
     const languageContext = useContext(LanguageContext);
     const language = languageContext ? languageContext.language : 'en';
