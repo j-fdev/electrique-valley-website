@@ -9,8 +9,8 @@ const isMobile = useWindowSize();
 // Hero section styles
 const heroWrapper: CSSProperties = { 
     position: 'relative', 
-    height: window.innerWidth <= 1024 ? '250px' : '100vh', // Adjust height for mobile and tablets
-    overflow: 'hidden' 
+    // Height follows the banner images (see heroSliderImg), on every screen size
+    overflow: 'hidden'
 };
 const homeHeroTitle: CSSProperties = { position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', textAlign: 'center', color: 'white', zIndex: 1, textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' };
 const homeH3: CSSProperties = { fontSize: 'clamp(1.25rem, 1.0299rem + 0.9390vw, 1.875rem)', whiteSpace: 'nowrap' };

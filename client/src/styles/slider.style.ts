@@ -5,7 +5,10 @@ import { CSSProperties } from 'react';
 
 const heroSlider: CSSProperties = { width: '100%', height: '100%', position: 'relative' };
 
-const heroSliderImg: CSSProperties = { width: '100%', height: '90vh', objectFit: 'cover', objectPosition: 'center 80%' };
+// The banners are 1920 px wide and 942 to 1080 px tall, with their text inside the image.
+// A box with their own shape shows each banner whole (at most a few % trimmed), like the live site,
+// instead of a fixed 90vh height that cut off the top.
+const heroSliderImg: CSSProperties = { display: 'block', width: '100%', height: 'auto', aspectRatio: '1920 / 1000', objectFit: 'cover', objectPosition: 'center' };
 
 const cardStyle: CSSProperties = { display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px', margin: '10px', cursor: 'pointer', position: 'relative' };
 

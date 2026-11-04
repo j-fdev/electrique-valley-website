@@ -141,9 +141,12 @@ const Navbar: React.FC = () => {
                             </div>
                             {!isMobile && (
                                 <>
-                                    {/* Invisible bridge for hover continuity */}
-                                    <div style={{ position: 'fixed', left: 0, width: '100vw', top: '57px', height: '15px', zIndex: 1999, backgroundColor: 'transparent' }} onMouseEnter={() => setIsSeriesOpen(true)} onMouseLeave={() => setIsSeriesOpen(false)}></div>
-                                    <div className="dropdown-content ev-mega" style={{ ...navStyles.dropdown_content, display: isSeriesOpen ? 'flex' : 'none', position: 'fixed', left: 0, width: '100vw', top: '57px', justifyContent: 'center' }} onMouseEnter={() => setIsSeriesOpen(true)} onMouseLeave={() => setIsSeriesOpen(false)}>
+                                    {/* Invisible bridge for hover continuity. Hover is handled by the parent .dropdown only:
+                                        its mouseenter/mouseleave already cover these children, and separate handlers here
+                                        closed the menu when the pointer moved from the bridge back up to the link.
+                                        The bridge exists only while the menu is open, so crossing it from below doesn't open the menu. */}
+                                    {isSeriesOpen && <div style={{ position: 'fixed', left: 0, width: '100vw', top: '57px', height: '15px', zIndex: 1999, backgroundColor: 'transparent' }}></div>}
+                                    <div className="dropdown-content ev-mega" style={{ ...navStyles.dropdown_content, display: isSeriesOpen ? 'flex' : 'none', position: 'fixed', left: 0, width: '100vw', top: '57px', justifyContent: 'center' }}>
                                         <div className="ev-nav-item" style={navStyles.dropdownItem}>
                                             <Link to="/dmaxSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
                                                 <img src="/img/d-max/XT4/Evolution4L-color-BLACK-SAPPHIRE.png" alt="D-MAX Series" style={navStyles.dropdownImage} />
@@ -164,7 +167,7 @@ const Navbar: React.FC = () => {
                                         </div>
                                         <div className="ev-nav-item" style={navStyles.dropdownItem}>
                                             <Link to="/thorSeries" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
-                                                <img src="/img/thor/Thor-GREEN-shadow.png" alt="Thor Series" style={navStyles.dropdownImage} />
+                                                <img src={`/img/thor/Thor-GREEN-shadow.png?v=${version}`} alt="Thor Series" style={navStyles.dropdownImage} />
                                                 <p style={navStyles.dropdownText}>{T.thor_serie[L]}</p>
                                             </Link>
                                         </div>
@@ -206,7 +209,7 @@ const Navbar: React.FC = () => {
                                     <path fill="white" d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
                                 </svg>
                             </div>
-                            <div className="dropdown-content ev-mega" style={{...navStyles.dropdown_content, display: isResourcesOpen ? 'block' : 'none', minWidth: '240px', padding: '30px 10px 10px', borderRadius: '0 0 18px 18px' }} onMouseEnter={() => setIsResourcesOpen(true)} onMouseLeave={() => setIsResourcesOpen(false)}>
+                            <div className="dropdown-content ev-mega" style={{...navStyles.dropdown_content, display: isResourcesOpen ? 'block' : 'none', minWidth: '240px', padding: '30px 10px 10px', borderRadius: '0 0 18px 18px' }}>
                                 <Link to="/videoShowcase" style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
                                     {T.video_showcase[L]}
                                 </Link>
