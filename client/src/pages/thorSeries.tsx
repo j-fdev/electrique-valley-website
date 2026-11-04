@@ -29,7 +29,8 @@ import { i_cart_models_props } from '../interfaces/interfaces';
 
 import version from '../config/version';
     
-    const modelsImage = `/img/thor/pikaso_edit-2.png?v=${version}`;
+    // White Thor cut out of its grass photo (pikaso_edit-2.png), tires cleaned, ground shadow added
+    const modelsImage = `/img/thor/Thor-WHITE-shadow.png?v=${version}`;
     const headerBgImage = `/img/thor/large-warehouse3-.jpg?v=${version}`;
     const headerCartImage=`/img/thor/Thor-GREEN-shadow.png?v=${version}`
 
@@ -126,7 +127,7 @@ const ThorSeries: React.FC<i_cart_models_props> = ({}) => {
                             <div style={{ ...mainStyles.sectionImageLeft, marginTop: '2rem'}}>
                             <div style={ cardStyles.chooseContainer }>
                                 <div>
-                                    <img src={modelsImage} alt="thor" style={ {...cardStyles.chooseImageStyle, width: isMobile ? '200px' : '300px', marginRight: isMobile ? '0' : '200px', marginBottom: isMobile ? '40px' : '0'}} />
+                                    <img src={modelsImage} alt={T.h1_title[L]} style={ {...cardStyles.chooseImageStyle, width: isMobile ? '200px' : '300px', marginRight: isMobile ? '0' : '200px', marginBottom: isMobile ? '40px' : '0'}} />
                                 </div>
                                 <div>
                                 <ul style={ cardStyles.chooseListStyle }>

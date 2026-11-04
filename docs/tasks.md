@@ -24,7 +24,7 @@
 - [x] Remove the duplicate title on the Thor page
 - [x] Green Thor with a ground shadow like the Luxor photos (`Thor-GREEN-shadow.png`, used site-wide)
 - [ ] Green Thor hood logo: recolour it, or use the round brand logo from the footer (J-F, in Photopea)
-- [ ] White Thor (`pikaso_edit-2.png`): remove the background, clean the grass off the wheels, then add the shadow and use it site-wide
+- [x] White Thor cut out of `pikaso_edit-2.png`, grass cleaned off the wheels, ground shadow added (`Thor-WHITE-shadow.png`, Thor page)
 
 ## Legal (Law 25 and Quebec)
 
