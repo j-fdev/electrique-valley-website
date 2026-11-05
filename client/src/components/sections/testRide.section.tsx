@@ -17,10 +17,10 @@ const PHONE_LINK = 'tel:+14507471525';
 // width is a % of the stage; the photos have different empty margins, so each gets its own width,
 // and drop (% of the image height) moves the cart down so its wheels sit on the lit floor.
 const cartByPage: { page: PageKey; src: string; width: number; drop: number }[] = [
-    { page: 'luxor', src: '/img/luxor/luxor_2+2L/LUXOR_2+2L-SKY-BLUE.png', width: 104, drop: 14 },
-    { page: 'thor', src: '/img/thor/Thor-GREEN-shadow.png', width: 84, drop: 14 },
-    { page: 'classic', src: '/img/classic/classic_2+2/sky-BLUE.png', width: 92, drop: 13 },
-    { page: 'dmax', src: '/img/d-max/XT4/Evolution4L-color-PORTIMAO-BLUE.png', width: 70, drop: 6 },
+    { page: 'luxor', src: '/img/luxor/luxor_2+2L/LUXOR_2+2L-SKY-BLUE.png', width: 128, drop: 14 },
+    { page: 'thor', src: '/img/thor/Thor-GREEN-shadow.png', width: 104, drop: 14 },
+    { page: 'classic', src: '/img/classic/classic_2+2/sky-BLUE.png', width: 114, drop: 13 },
+    { page: 'dmax', src: '/img/d-max/XT4/Evolution4L-color-PORTIMAO-BLUE.png', width: 88, drop: 6 },
     // Elite hidden for now
     // { page: 'elite', src: '/img/elite/Elite_4/Elite_4L_black_nobg.png', width: 104, drop: 19 },
 ];
