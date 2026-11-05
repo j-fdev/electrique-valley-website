@@ -335,8 +335,8 @@ export const translations = {
 		},
 		// Only what the client’s original text states: do not add coverage details without his confirmation
 		points_warranty: {
-			en: ["Battery covered for 1 year", "Built for reliability and durability", "Your satisfaction comes first"],
-			fr: ["Batterie garantie 1 an", "Fiabilité et durabilité de votre voiturette", "Votre satisfaction avant tout"],
+			en: ["Reliable after-sales service", "Built for reliability and durability", "Your satisfaction comes first"],
+			fr: ["Service après-vente fiable", "Fiabilité et durabilité de votre voiturette", "Votre satisfaction avant tout"],
 		},
 		fine_warranty: {
 			en: "The warranty does not cover damage caused by abusive, negligent or accidental use of the cart.",
