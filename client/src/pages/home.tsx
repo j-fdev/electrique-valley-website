@@ -273,7 +273,8 @@ const Home: React.FC = () => {
                         <h2 className="ev-section-title">{T.h2_videoShowcase[L]}</h2>
                     </div>
                     <div className="ev-videos ev-stagger">
-                        {videoCapsules.slice(0, 3).map((video, index) => (
+                        {/* Two on the home page: a third one sat alone on its own row on most screens */}
+                        {videoCapsules.slice(0, 2).map((video, index) => (
                             <div key={index} className="ev-video">
                                 <div className="ev-video__frame">
                                     <video controls preload="metadata" onError={(e) => console.error('Video error:', e.currentTarget.error)}>
