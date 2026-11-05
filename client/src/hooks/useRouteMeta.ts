@@ -12,7 +12,8 @@ import { findPage, pathFor, PageKey } from '../config/routes';
 const SITE_URL = 'https://www.electriquevalley.com';
 
 // Image shown when a page is shared (Facebook, Messenger, X...). JPG, because some apps don't show WebP.
-const DEFAULT_SHARE_IMAGE = '/img/home/EVOLUTION.jpg';
+// Not EVOLUTION.jpg: it shows the US manufacturer's brand name
+const DEFAULT_SHARE_IMAGE = '/img/home/dmax_banner.jpg';
 // "Partial<Record<...>>" = an object whose keys are page names, all optional
 const SHARE_IMAGES: Partial<Record<PageKey, string>> = {
     dmax: '/img/home/dmax_banner.jpg',

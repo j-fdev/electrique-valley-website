@@ -538,13 +538,15 @@ button, input, textarea, select { font-family: inherit; }
 @media (max-width: 900px) { .ev-cta-band { grid-template-columns: 1fr; text-align: center; justify-items: center; } }
 
 /* ---------- Test ride (home and series pages) ----------
-   Full-width photo panel: text on a dark gradient on the left (bottom on phones), photo on the right. */
+   Dark panel over a night photo: text on the left, the page’s own cart on a lit floor on the right.
+   Up to 1180px the cart sits above the text. */
 .ev-testride {
   position: relative;
   isolation: isolate;
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
   align-items: center;
-  min-height: clamp(440px, 42vw, 560px);
+  min-height: clamp(440px, 40vw, 540px);
   border-radius: var(--ev-radius);
   overflow: hidden;
   background: #070f1a;
@@ -557,11 +559,10 @@ button, input, textarea, select { font-family: inherit; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 70% center;
+  opacity: 0.55;
   scale: 1;
   transition: scale 1.8s var(--ev-ease);
 }
-/* Slow zoom-out as the panel scrolls in (motion allowed only) */
 .ev-anim .ev-testride:not(.is-visible) .ev-testride__photo { scale: 1.12; }
 .ev-testride::before {
   content: '';
@@ -570,22 +571,45 @@ button, input, textarea, select { font-family: inherit; }
   z-index: -1;
   background:
     radial-gradient(380px 300px at 12% 70%, rgba(63, 208, 255, 0.16), transparent 70%),
-    linear-gradient(90deg, rgba(7, 15, 26, 0.94) 0%, rgba(7, 15, 26, 0.82) 34%, rgba(7, 15, 26, 0.25) 62%, rgba(7, 15, 26, 0) 80%);
+    linear-gradient(90deg, rgba(7, 15, 26, 0.95) 0%, rgba(7, 15, 26, 0.8) 40%, rgba(7, 15, 26, 0.35) 75%, rgba(7, 15, 26, 0.2) 100%);
 }
-.ev-testride__content { max-width: 620px; padding: clamp(2rem, 5vw, 4rem); color: rgba(255, 255, 255, 0.85); }
+.ev-testride__content { padding: clamp(2rem, 5vw, 4rem); color: rgba(255, 255, 255, 0.85); }
 .ev-testride__title { margin: 0.6rem 0 0; color: #fff; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; }
-.ev-testride__content p { margin: 1.1rem 0 1.8rem; line-height: 1.7; }
+.ev-testride__content p { margin: 1.1rem 0 1.8rem; line-height: 1.7; max-width: 52ch; }
 .ev-testride__actions { display: flex; flex-wrap: wrap; gap: 12px; }
-/* Up to 1180px the photo cannot move far enough right to clear the text: stack them instead */
+
+/* Stage: lit floor (ellipse of cyan light) with the cart standing on it */
+.ev-testride__stage { position: relative; align-self: stretch; min-height: 320px; }
+.ev-testride__stage::before {
+  content: '';
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: 12%;
+  height: 22%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(63, 208, 255, 0.42), rgba(63, 208, 255, 0.12) 55%, transparent 100%);
+  filter: blur(6px);
+}
+.ev-testride__cart {
+  position: absolute;
+  left: 50%;
+  bottom: 20%;
+  max-width: none;
+  height: auto;
+  filter: drop-shadow(0 18px 18px rgba(0, 0, 0, 0.55));
+  transition: translate 0.8s var(--ev-ease);
+}
+.ev-anim .ev-testride:not(.is-visible) .ev-testride__cart { translate: 12% 0; }
 @media (max-width: 1180px) {
-  .ev-testride { align-items: flex-end; min-height: 0; padding-top: min(64vw, 470px); }
-  .ev-testride__photo { height: min(78vw, 520px); object-position: 72% center; }
+  .ev-testride { grid-template-columns: 1fr; min-height: 0; }
+  .ev-testride__stage { order: -1; min-height: 0; aspect-ratio: 16 / 9; max-height: 420px; width: min(100%, 640px); justify-self: center; }
   .ev-testride::before {
     background:
       radial-gradient(320px 260px at 20% 85%, rgba(63, 208, 255, 0.14), transparent 70%),
-      linear-gradient(0deg, #070f1a 0%, #070f1a 36%, rgba(7, 15, 26, 0.55) 52%, rgba(7, 15, 26, 0) 70%);
+      linear-gradient(0deg, rgba(7, 15, 26, 0.96) 0%, rgba(7, 15, 26, 0.9) 45%, rgba(7, 15, 26, 0.45) 100%);
   }
-  .ev-testride__content { max-width: none; padding-top: 0; }
+  .ev-testride__content { padding-top: 0; }
 }
 @media (max-width: 480px) { .ev-testride__actions .ev-btn { flex: 1 1 100%; } }
 
