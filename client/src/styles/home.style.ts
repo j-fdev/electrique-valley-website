@@ -43,7 +43,7 @@ const paintColorImage: CSSProperties = { width: '150px', height: '100px', object
 // Features section styles
 const bgImage: CSSProperties = { 
     position: 'relative',
-    backgroundImage: 'url(/img/home/frontrackBlackandWhite.jpg)', 
+    backgroundImage: 'url(/img/home/frontrackBlackandWhite.webp)', 
     backgroundSize: 'cover', 
     backgroundPosition: 'center', 
     backgroundAttachment: isMobile ? 'scroll' : 'fixed', 

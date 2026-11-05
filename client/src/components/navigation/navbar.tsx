@@ -152,32 +152,32 @@ const Navbar: React.FC = () => {
                                     <div className="dropdown-content ev-mega" style={{ ...navStyles.dropdown_content, display: isSeriesOpen ? 'flex' : 'none', position: 'fixed', left: 0, width: '100vw', top: '57px', justifyContent: 'center' }}>
                                         <div className="ev-nav-item" style={navStyles.dropdownItem}>
                                             <Link to={pathFor('dmax', L)} style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
-                                                <img src="/img/d-max/XT4/Evolution4L-color-BLACK-SAPPHIRE.png" alt="" loading="lazy" style={navStyles.dropdownImage} />
+                                                <img src="/img/d-max/XT4/Evolution4L-color-BLACK-SAPPHIRE.webp" alt="" loading="lazy" style={navStyles.dropdownImage} />
                                                 <p style={navStyles.dropdownText}>{T.dMax_serie[L]}</p>
                                             </Link>
                                         </div>
                                         <div className="ev-nav-item" style={navStyles.dropdownItem}>
                                             <Link to={pathFor('luxor', L)} style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
-                                                <img src="/img/luxor/luxor_2+2L/LUXOR_2+2L-MEDITERRANEAN-BLUE.png" alt="" loading="lazy" style={navStyles.dropdownImage} />
+                                                <img src="/img/luxor/luxor_2+2L/LUXOR_2+2L-MEDITERRANEAN-BLUE.webp" alt="" loading="lazy" style={navStyles.dropdownImage} />
                                                 <p style={navStyles.dropdownText}>{T.luxor_serie[L]}</p>
                                             </Link>
                                         </div>
                                         <div className="ev-nav-item" style={navStyles.dropdownItem}>
                                             <Link to={pathFor('classic', L)} style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
-                                                <img src="/img/classic/classic_2+2/sky-BLUE.png" alt="" loading="lazy" style={navStyles.dropdownImage} />
+                                                <img src="/img/classic/classic_2+2/sky-BLUE.webp" alt="" loading="lazy" style={navStyles.dropdownImage} />
                                                 <p style={navStyles.dropdownText}>{T.classic_serie[L]}</p>
                                             </Link>
                                         </div>
                                         <div className="ev-nav-item" style={navStyles.dropdownItem}>
                                             <Link to={pathFor('thor', L)} style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
-                                                <img src={`/img/thor/Thor-GREEN-shadow.png?v=${version}`} alt="" loading="lazy" style={navStyles.dropdownImage} />
+                                                <img src={`/img/thor/Thor-GREEN-shadow.webp?v=${version}`} alt="" loading="lazy" style={navStyles.dropdownImage} />
                                                 <p style={navStyles.dropdownText}>{T.thor_serie[L]}</p>
                                             </Link>
                                         </div>
                                         {/* Elite hidden for now */}
                                         {/* <div className="ev-nav-item" style={navStyles.dropdownItem}>
                                             <Link to={pathFor('elite', L)} style={navStyles.dropdownLinkStyles} onClick={handleLinkClick}>
-                                                <img src="/img/elite/Elite_4/Elite_4_blue_nobg.png" alt="Elite Series" style={navStyles.dropdownImage} />
+                                                <img src="/img/elite/Elite_4/Elite_4_blue_nobg.webp" alt="Elite Series" style={navStyles.dropdownImage} />
                                                 <p style={navStyles.dropdownText}>{T.elite_serie[L]}</p>
                                             </Link>
                                         </div> */}

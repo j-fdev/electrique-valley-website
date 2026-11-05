@@ -74,12 +74,25 @@ try {
         await page.goto(ORIGIN + address, { waitUntil: 'load', timeout: 60000 });
         await new Promise((resolve) => setTimeout(resolve, 1500)); // let React, the slider and the head tags settle
 
-        const { html, title, h1, lang } = await page.evaluate(() => ({
+        const { html, title, h1, lang } = await page.evaluate(() => {
+            // The page's main image (marked fetchpriority="high", e.g. the first home banner) is preloaded
+            // from <head>, so the browser fetches it before the scripts and the images further down.
+            const hero = document.querySelector('img[fetchpriority="high"]');
+            if (hero && !document.querySelector('link[rel="preload"][as="image"]')) {
+                const link = document.createElement('link');
+                link.rel = 'preload';
+                link.as = 'image';
+                link.href = hero.getAttribute('src');
+                link.setAttribute('fetchpriority', 'high');
+                document.head.prepend(link);
+            }
+            return {
             html: '<!DOCTYPE html>\n' + document.documentElement.outerHTML,
             title: document.title,
             h1: document.querySelector('h1')?.textContent?.trim() ?? '',
             lang: document.documentElement.lang,
-        }));
+            };
+        });
         if (!h1) problems.push(`${address}: no <h1> on the page`);
 
         const outDir = path.join(BUILD_DIR, address);

@@ -44,7 +44,7 @@ const SignupSection: React.FC = () => {
     };
 
     return (
-        <section className="ev-newsletter" style={{ backgroundImage: 'url(/img/home/camping-night-scaled.jpg)' }}>
+        <section className="ev-newsletter" style={{ backgroundImage: 'url(/img/home/camping-night-scaled.webp)' }}>
             <div className="ev-newsletter__card ev-reveal ev-reveal--zoom">
                 <span className="ev-eyebrow ev-eyebrow--light">Newsletter</span>
                 <h2>{T.title_signup[L]}</h2>

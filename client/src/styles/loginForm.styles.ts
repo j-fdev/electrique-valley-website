@@ -1,6 +1,6 @@
 // Modules
 import { CSSProperties } from 'react';
-// import backgroundImage from '/img/home/home-banner-forester-4plus-c-2.jpg';
+// import backgroundImage from '/img/home/home-banner-forester-4plus-c-2.webp';
 
 const btn_form = { marginTop : '20px', padding : '10px 30px', width : '90%', backgroundColor: 'var(--clr-dark-gray)', color : 'white', border: 'none', cursor: 'pointer' };
 
@@ -12,7 +12,7 @@ const mobileCenteredForm: CSSProperties = { display: 'flex', marginInline: 'auto
 
 const leftSide: CSSProperties = { flex: '1', padding: '50px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', position: 'relative', zIndex: '1' };
 
-const rightSide: CSSProperties = { flex: '1.5', backgroundImage: `url(/img/home/home-banner-forester-4plus-c-2.jpg)`, backgroundSize: 'cover', backgroundPosition: 'center right', backgroundRepeat: 'no-repeat', clipPath: 'polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%)', backgroundColor: 'var(--clr-dark-gray)' };
+const rightSide: CSSProperties = { flex: '1.5', backgroundImage: `url(/img/home/home-banner-forester-4plus-c-2.webp)`, backgroundSize: 'cover', backgroundPosition: 'center right', backgroundRepeat: 'no-repeat', clipPath: 'polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%)', backgroundColor: 'var(--clr-dark-gray)' };
 
 const overlay: CSSProperties = { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0, 0, 0, 0.5)', zIndex: 1 };
 

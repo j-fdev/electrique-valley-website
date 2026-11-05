@@ -30,9 +30,9 @@ import { i_cart_models_props } from '../interfaces/interfaces';
 import version from '../config/version';
     
     // White Thor cut out of its grass photo (pikaso_edit-2.png), tires cleaned, ground shadow added
-    const modelsImage = `/img/thor/Thor-WHITE-shadow.png?v=${version}`;
-    const headerBgImage = `/img/thor/large-warehouse3-.jpg?v=${version}`;
-    const headerCartImage=`/img/thor/Thor-GREEN-shadow.png?v=${version}`
+    const modelsImage = `/img/thor/Thor-WHITE-shadow.webp?v=${version}`;
+    const headerBgImage = `/img/thor/large-warehouse3-.webp?v=${version}`;
+    const headerCartImage=`/img/thor/Thor-GREEN-shadow.webp?v=${version}`
 
 
 const ThorSeries: React.FC<i_cart_models_props> = ({}) => {
@@ -61,7 +61,7 @@ const ThorSeries: React.FC<i_cart_models_props> = ({}) => {
 
     const features = [
         {
-            image: `/img/thor/thorFeatures/GOFT-CART-THOR-EGRAN.jpg?v=${version}`,
+            image: `/img/thor/thorFeatures/GOFT-CART-THOR-EGRAN.webp?v=${version}`,
             title: T.t_features_screen[L],
             description: T.p_features_screen[L]
         },
@@ -71,12 +71,12 @@ const ThorSeries: React.FC<i_cart_models_props> = ({}) => {
             description: T.p_features_tires[L]
         },
         {
-            image: `/img/thor/thorFeatures/GOFT-CART-THOR-ROUE-BLEU.jpg?v=${version}`,
+            image: `/img/thor/thorFeatures/GOFT-CART-THOR-ROUE-BLEU.webp?v=${version}`,
             title: T.t_features_wheels[L],
             description: T.p_features_wheels[L]
         },
         {
-            image: `/img/thor/thorFeatures/GOFT-CART-THOR-BOX-CARGO.jpg?v=${version}`,
+            image: `/img/thor/thorFeatures/GOFT-CART-THOR-BOX-CARGO.webp?v=${version}`,
             title: T.t_features_cargoBox[L],
             description: T.p_features_cargoBox[L]
         },
@@ -86,7 +86,7 @@ const ThorSeries: React.FC<i_cart_models_props> = ({}) => {
             description: T.p_features_hitch[L]
         },
         {
-            image: `/img/thor/thorFeatures/BUMPER-AVANT-GORT-CART-THOR.jpg?v=${version}`,
+            image: `/img/thor/thorFeatures/BUMPER-AVANT-GORT-CART-THOR.webp?v=${version}`,
             title: T.t_features_bumper[L],
             description: T.p_features_bumper[L]
         },
@@ -94,7 +94,7 @@ const ThorSeries: React.FC<i_cart_models_props> = ({}) => {
 
     const shrinkGrowItems = [
         [
-            { image: `/img/thor/thorFeatures/CUP-HOLDER.jpg?v=${version}`, title: T.h2_shrink_cupHolders[L], paragraph: T.p_shrink_cupHolders[L] },
+            { image: `/img/thor/thorFeatures/CUP-HOLDER.webp?v=${version}`, title: T.h2_shrink_cupHolders[L], paragraph: T.p_shrink_cupHolders[L] },
             { image: `/img/thor/thorFeatures/Cargo-bucket.jpg?v=${version}`, title: T.h2_shrink_storage[L], paragraph: T.p_shrink_storage[L] },
             { image: `/img/thor/thorFeatures/USB-CONNECTIONS.jpg?v=${version}`, title: T.h2_shrink_usbPorts[L], paragraph: T.p_shrink_usbPorts[L] }
         ]
@@ -170,7 +170,7 @@ const ThorSeries: React.FC<i_cart_models_props> = ({}) => {
                             <h2><span>{discoverh2Span}</span>{discoverh2}<br />{h2_discoverNext}</h2>
                             <p>{discoverP}</p>
                         </div>
-                        <img className="ev-discover__img ev-reveal ev-reveal--right" src={`/img/thor/cartMontageThor.png?v=${version}`} alt={T.h1_title[L]} loading="lazy" />
+                        <img className="ev-discover__img ev-reveal ev-reveal--right" src={`/img/thor/cartMontageThor.webp?v=${version}`} alt={T.h1_title[L]} loading="lazy" />
                     </div>
                 </div>
             </section>

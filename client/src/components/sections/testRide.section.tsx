@@ -17,12 +17,12 @@ const PHONE_LINK = 'tel:+14507471525';
 // width is a % of the stage; the photos have different empty margins, so each gets its own width,
 // and drop (% of the image height) moves the cart down so its wheels sit on the lit floor.
 const cartByPage: { page: PageKey; src: string; width: number; drop: number }[] = [
-    { page: 'luxor', src: '/img/luxor/luxor_2+2L/LUXOR_2+2L-SKY-BLUE.png', width: 128, drop: 14 },
-    { page: 'thor', src: '/img/thor/Thor-GREEN-shadow.png', width: 104, drop: 14 },
-    { page: 'classic', src: '/img/classic/classic_2+2/sky-BLUE.png', width: 114, drop: 13 },
-    { page: 'dmax', src: '/img/d-max/XT4/Evolution4L-color-PORTIMAO-BLUE.png', width: 88, drop: 6 },
+    { page: 'luxor', src: '/img/luxor/luxor_2+2L/LUXOR_2+2L-SKY-BLUE.webp', width: 128, drop: 14 },
+    { page: 'thor', src: '/img/thor/Thor-GREEN-shadow.webp', width: 104, drop: 14 },
+    { page: 'classic', src: '/img/classic/classic_2+2/sky-BLUE.webp', width: 114, drop: 13 },
+    { page: 'dmax', src: '/img/d-max/XT4/Evolution4L-color-PORTIMAO-BLUE.webp', width: 88, drop: 6 },
     // Elite hidden for now
-    // { page: 'elite', src: '/img/elite/Elite_4/Elite_4L_black_nobg.png', width: 104, drop: 19 },
+    // { page: 'elite', src: '/img/elite/Elite_4/Elite_4L_black_nobg.webp', width: 104, drop: 19 },
 ];
 
 /**
@@ -42,7 +42,7 @@ const TestRideSection: React.FC = () => {
         <section className="ev-section">
             <div className="ev-container">
                 <div className="ev-testride ev-reveal ev-reveal--zoom">
-                    <img className="ev-testride__photo" src={`/img/main/camping.jpg?v=${version}`} alt="" loading="lazy" />
+                    <img className="ev-testride__photo" src={`/img/main/camping.webp?v=${version}`} alt="" loading="lazy" />
                     <div className="ev-testride__content">
                         <span className="ev-eyebrow ev-eyebrow--light">{L === 'en' ? 'Try it yourself' : 'Essayez-le'}</span>
                         <h2 className="ev-testride__title">{T.title_test_ride[L]}</h2>

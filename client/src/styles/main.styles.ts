@@ -77,7 +77,7 @@ const MainStyles = () => {
     const registerUpButton: CSSProperties = { marginTop: isMobile ? '1rem' : '1.5rem', backgroundColor: 'black', transition: 'transform 0.3s ease-in-out' };
    
     // Subscribe Newsletter section
-    const subscribeUpBgImg: CSSProperties = { backgroundImage: 'url(/img/home/camping-night-scaled.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', height: isMobile ? '500px' : '100vh', width: '100%', display: 'flex', justifyContent: 'center' };
+    const subscribeUpBgImg: CSSProperties = { backgroundImage: 'url(/img/home/camping-night-scaled.webp)', backgroundSize: 'cover', backgroundPosition: 'center', height: isMobile ? '500px' : '100vh', width: '100%', display: 'flex', justifyContent: 'center' };
     const subscribeDiv: CSSProperties = { position: 'relative', textAlign: 'center', color: 'white', padding: '2rem' };
     const subscribeButton: CSSProperties = { textAlign: 'center', backgroundColor: 'transparent', padding: '20px 25px', borderRadius: '0', border: '2px solid white'  };
 

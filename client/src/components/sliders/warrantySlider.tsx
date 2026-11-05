@@ -55,6 +55,8 @@ const WarrantySlider: React.FC<WarrantySliderProps> = ({ images, alts, slideLabe
                     src={image}
                     alt={alts[index] ?? ''}
                     aria-hidden={index !== current}
+                    // Further down the page: the browser fetches them only when the band gets close
+                    loading="lazy"
                 />
             ))}
             <div className="ev-wslider__bars">

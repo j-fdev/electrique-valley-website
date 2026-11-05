@@ -48,19 +48,19 @@ const Home: React.FC = () => {
     const [error, setError] = useState<string | null>(null);
     const [isLoading, setIsLoading] = useState(true);
 
-    const heroSliderImages = [ `/img/home/dmax_banner.jpg?v=${version}`, `/img/home/Luxor_4+2_banner(En).jpg?v=${version}`, `/img/home/New_LUXOR_Series_banner(En).jpg?v=${version}`, `/img/home/classic_series.jpg?v=${version}`, `/img/home/thor_series.jpg?v=${version}`];
+    const heroSliderImages = [ `/img/home/dmax_banner.webp?v=${version}`, `/img/home/Luxor_4+2_banner(En).webp?v=${version}`, `/img/home/New_LUXOR_Series_banner(En).webp?v=${version}`, `/img/home/classic_series.webp?v=${version}`, `/img/home/thor_series.webp?v=${version}`];
     const heroSliderAlts = L === 'fr'
         ? ['Voiturette D-MAX', 'Luxor 4+2', 'Nouvelle série Luxor', 'Série Classic', 'Série Thor']
         : ['D-MAX cart', 'Luxor 4+2', 'New Luxor series', 'Classic series', 'Thor series'];
-    const warrantySliderImages = [`/img/home/D-MAX_XT4.jpg?v=${version}`, `/img/home/Elite-Plus_2+2.jpg?v=${version}`, `/img/home/D-MAX-XT4.jpg?v=${version}`];
+    const warrantySliderImages = [`/img/home/D-MAX_XT4.jpg?v=${version}`, `/img/home/Elite-Plus_2+2.webp?v=${version}`, `/img/home/D-MAX-XT4.webp?v=${version}`];
 
     const cartModels = [
-        { image: `/img/d-max/XT4/Evolution4L-color-BLACK-SAPPHIRE.png?v=${version}`, title: T.title_evolution_card[L], link: pathFor('dmax', L), t1: T.t1_evolution_card[L], p1: T.p1_evolution_card[L], t2: T.t2_evolution_card[L], p2: T.p2_evolution_card[L], t3: T.t3_evolution_card[L], p3: T.p3_evolution_card[L], t4: T.t4_evolution_card[L], p4: T.p4_evolution_card[L] },
-        { image: `/img/luxor/luxor_4L/LUXOR_4L-ARCTIC-GRAY-1-1.png?v=${version}`, title: T.title_luxor_card[L], link: pathFor('luxor', L), t1: T.t1_luxor_card[L], p1: T.p1_luxor_card[L], t2: T.t2_luxor_card[L], p2: T.p2_luxor_card[L], t3: T.t3_luxor_card[L], p3: T.p3_luxor_card[L], t4: T.t4_luxor_card[L], p4: T.p4_luxor_card[L] },
-        { image: `/img/classic/classic_2+2/PLAMENCO.png?v=${version}`, title: T.title_classic_card[L], link: pathFor('classic', L), t1: T.t1_classic_card[L], p1: T.p1_classic_card[L], t2: T.t2_classic_card[L], p2: T.p2_classic_card[L], t3: T.t3_classic_card[L], p3: T.p3_classic_card[L], t4: T.t4_classic_card[L], p4: T.p4_classic_card[L] },
-        { image: `/img/thor/Thor-GREEN-shadow.png?v=${version}`, title: T.title_thor_card[L], link: pathFor('thor', L), t1: T.t1_thor_card[L], p1: T.p1_thor_card[L], t2: T.t2_thor_card[L], p2: T.p2_thor_card[L], t3: T.t3_thor_card[L], p3: T.p3_thor_card[L], t4: T.t4_thor_card[L], p4: T.p4_thor_card[L] },
+        { image: `/img/d-max/XT4/Evolution4L-color-BLACK-SAPPHIRE.webp?v=${version}`, title: T.title_evolution_card[L], link: pathFor('dmax', L), t1: T.t1_evolution_card[L], p1: T.p1_evolution_card[L], t2: T.t2_evolution_card[L], p2: T.p2_evolution_card[L], t3: T.t3_evolution_card[L], p3: T.p3_evolution_card[L], t4: T.t4_evolution_card[L], p4: T.p4_evolution_card[L] },
+        { image: `/img/luxor/luxor_4L/LUXOR_4L-ARCTIC-GRAY-1-1.webp?v=${version}`, title: T.title_luxor_card[L], link: pathFor('luxor', L), t1: T.t1_luxor_card[L], p1: T.p1_luxor_card[L], t2: T.t2_luxor_card[L], p2: T.p2_luxor_card[L], t3: T.t3_luxor_card[L], p3: T.p3_luxor_card[L], t4: T.t4_luxor_card[L], p4: T.p4_luxor_card[L] },
+        { image: `/img/classic/classic_2+2/PLAMENCO.webp?v=${version}`, title: T.title_classic_card[L], link: pathFor('classic', L), t1: T.t1_classic_card[L], p1: T.p1_classic_card[L], t2: T.t2_classic_card[L], p2: T.p2_classic_card[L], t3: T.t3_classic_card[L], p3: T.p3_classic_card[L], t4: T.t4_classic_card[L], p4: T.p4_classic_card[L] },
+        { image: `/img/thor/Thor-GREEN-shadow.webp?v=${version}`, title: T.title_thor_card[L], link: pathFor('thor', L), t1: T.t1_thor_card[L], p1: T.p1_thor_card[L], t2: T.t2_thor_card[L], p2: T.p2_thor_card[L], t3: T.t3_thor_card[L], p3: T.p3_thor_card[L], t4: T.t4_thor_card[L], p4: T.p4_thor_card[L] },
         // Elite hidden for now
-        // { image: `/img/elite/Elite_4/Elite_4_blue_nobg.png?v=${version}`, title: T.title_elite_card[L], link: pathFor('elite', L), t1: T.t1_elite_card[L], p1: T.p1_elite_card[L], t2: T.t2_elite_card[L], p2: T.p2_elite_card[L], t3: T.t3_elite_card[L], p3: T.p3_elite_card[L], t4: T.t4_elite_card[L], p4: T.p4_elite_card[L] },
+        // { image: `/img/elite/Elite_4/Elite_4_blue_nobg.webp?v=${version}`, title: T.title_elite_card[L], link: pathFor('elite', L), t1: T.t1_elite_card[L], p1: T.p1_elite_card[L], t2: T.t2_elite_card[L], p2: T.p2_elite_card[L], t3: T.t3_elite_card[L], p3: T.p3_elite_card[L], t4: T.t4_elite_card[L], p4: T.p4_elite_card[L] },
     ];
 
       
@@ -171,7 +171,7 @@ const Home: React.FC = () => {
             {/* About section */}
             <section className="ev-section" style={{ paddingTop: 0 }}>
                 <div className="ev-container ev-about">
-                    <img className="ev-about__logo ev-reveal ev-reveal--zoom" src={`/img/main/ElectriqueValley-emblem-metal.png?v=${version}`} alt="Electrique Valley" loading="lazy" />
+                    <img className="ev-about__logo ev-reveal ev-reveal--zoom" src={`/img/main/ElectriqueValley-emblem-metal.webp?v=${version}`} alt="Electrique Valley" loading="lazy" />
                     <div className="ev-reveal ev-reveal--right">
                         <span className="ev-eyebrow">{EB.about[L]}</span>
                         <h2 className="ev-section-title ev-section-title--left">{T.about_title[L]}</h2>
@@ -190,7 +190,7 @@ const Home: React.FC = () => {
                     </div>
                     <div className="ev-swatches ev-stagger">
                         {[1, 2, 3, 4].map((n) => (
-                            <img key={n} className="ev-swatch" src={`/img/home/color${n}.jpg?v=${version}`} alt="" loading="lazy" />
+                            <img key={n} className="ev-swatch" src={`/img/home/color${n}.webp?v=${version}`} alt="" loading="lazy" />
                         ))}
                     </div>
                 </div>

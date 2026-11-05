@@ -63,7 +63,7 @@ const Contact = () => {
     const default_error = { type : 'Success' , message: ""}
 
     const [ form , setForm ] = useState<FormData> (defaultFields);
-    const [headerImage, setHeaderImage] = useState(`/img/contact/Luxor-4-red-cart-scaled.jpg?v=${version}`);
+    const [headerImage, setHeaderImage] = useState(`/img/contact/Luxor-4-red-cart-scaled.webp?v=${version}`);
     // const [ first_name, setFirst_name ] = useState('');
     // const [ last_name, setLast_name ] = useState('');
     // const [ phone_number, setPhone_number ] = useState('');
@@ -89,10 +89,10 @@ const Contact = () => {
 
     useEffect(() => {
         if (source === 'becomeDealer') {
-            setHeaderImage(`/img/contact/two-business-men-shaking-hands.jpg?v=${version}`);
+            setHeaderImage(`/img/contact/two-business-men-shaking-hands.webp?v=${version}`);
             setEmailSubject('Become a Dealer Inquiry');
         } else if (source === 'findDealer') {
-            setHeaderImage(`/img/contact/6398897_110.jpg?v=${version}`);
+            setHeaderImage(`/img/contact/6398897_110.webp?v=${version}`);
             setEmailSubject('Find a Dealer Inquiry');
         }
     }, [source]);

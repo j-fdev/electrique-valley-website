@@ -75,7 +75,7 @@ const LoginForm = (props: i_login_form_props) => {
                 }
                 `}
             </style>
-            <img src={`/img/main/Logo3d.png?v=${version}`} alt="Logo" style={formStyles.logo} />
+            <img src={`/img/main/Logo3d.webp?v=${version}`} alt="Logo" style={formStyles.logo} />
             <p style={formStyles.headerTitle}>{T.h2_hero[language]}</p>
          
             <div style={formStyles.inputContainer}>

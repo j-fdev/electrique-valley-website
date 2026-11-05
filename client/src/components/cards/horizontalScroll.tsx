@@ -138,7 +138,7 @@ const HorizontalScroll: React.FC<i_horizontal_scroll_props> = ({ models, eyebrow
                                 <article key={index} className="ev-series-card">
                                     <div className="ev-series-card__media">
                                         <h3 className="ev-series-card__title">{model.title}</h3>
-                                        <img className="ev-series-card__img" src={model.image} alt={model.title} />
+                                        <img className="ev-series-card__img" src={model.image} alt={model.title} loading="lazy" />
                                     </div>
 
                                     <div className="ev-series-card__body">
