@@ -3,7 +3,9 @@
 The old host (104.152.168.32, cPanel) keeps serving the site until the very last step, so visitors see no gap.
 The AWS server is `ubuntu@15.156.114.235` (Ubuntu 24.04).
 
-Windows commands are **PowerShell**, run from `C:\Applications_builds\ElectriqueValley\website`.
+Windows commands are **PowerShell**, run from the project folder
+`C:\J-F Drouin\J-F Drouin Businesses\Tyrem Technologies\tyrem-studio\projects\002-electrique-valley`
+(the old copy in `C:\Applications_builds\ElectriqueValley\website` is no longer used).
 Server commands are run **in an SSH session** as `ubuntu`. Never use `sudo` with `pm2` or `npm run`.
 
 ---
