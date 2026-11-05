@@ -203,7 +203,7 @@ export const translations = {
 		p4_thor_card: {
 			en: "40 Km/h",
 			fr: "40 Km/h",
-		},
+		},
 		title_tora_card: {
 			en: "TORA SERIES",
 			fr: "SÉRIE TORA",
@@ -335,8 +335,8 @@ export const translations = {
 		},
 		// Only what the client’s original text states: do not add coverage details without his confirmation
 		points_warranty: {
-			en: ["Reliable after-sales service", "Built for reliability and durability", "Your satisfaction comes first"],
-			fr: ["Service après-vente fiable", "Fiabilité et durabilité de votre voiturette", "Votre satisfaction avant tout"],
+			en: ["Trusted after-sales service", "Built for reliability and durability", "Your satisfaction comes first"],
+			fr: ["Service après-vente de confiance", "Fiabilité et durabilité de votre voiturette", "Votre satisfaction avant tout"],
 		},
 		fine_warranty: {
 			en: "The warranty does not cover damage caused by abusive, negligent or accidental use of the cart.",
