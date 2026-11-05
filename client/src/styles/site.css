@@ -290,7 +290,8 @@ button, input, textarea, select { font-family: inherit; }
   scrollbar-width: none;
 }
 .ev-series-track::-webkit-scrollbar { display: none; }
-.ev-carousel__pin { position: sticky; top: 72px; height: calc(100vh - 72px); display: flex; flex-direction: column; justify-content: center; }
+/* top and height are set inline by horizontalScroll.tsx (centred, as tall as the content) */
+.ev-carousel__pin { position: sticky; }
 .ev-carousel__viewport { position: relative; }
 .ev-series-track--pinned { overflow: visible; scroll-snap-type: none; will-change: transform; padding-top: 18px; }
 .ev-dots { display: flex; justify-content: center; gap: 8px; }
@@ -299,7 +300,9 @@ button, input, textarea, select { font-family: inherit; }
 
 .ev-series-card {
   position: relative;
-  flex: 0 0 300px;
+  /* About 3.3 cards visible, so the fourth always has to slide in, at every width. No maximum:
+     the row is laid out wider when horizontalScroll.tsx scales it down, and the cards must grow with it. */
+  flex: 0 0 max(250px, calc((100% - 78px) / 3.3));
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
@@ -360,14 +363,32 @@ button, input, textarea, select { font-family: inherit; }
 }
 .ev-series-card__cta:hover { background: var(--ev-blue-dark); gap: 14px; }
 .ev-series-card__cta svg { width: 16px; height: 16px; fill: currentColor; }
-/* Laptop-height screens (768–860px tall): slightly shorter cards so the pinned sideways row still
-   fits on screen (horizontalScroll.tsx only pins when the title and cards fit). */
-@media (min-width: 1025px) and (max-height: 860px) {
+/* Screens 860px tall or less: shorter cards, so the pinned row needs less scaling to fit
+   (horizontalScroll.tsx scales the block down when it is still taller than the screen). */
+@media (max-height: 860px) {
   .ev-carousel .ev-series-track { padding-top: 10px; padding-bottom: 18px; }
   .ev-carousel .ev-series-card__media { height: 150px; }
   .ev-carousel .ev-series-card__title { padding-top: 14px; }
   .ev-carousel .ev-series-card__img { height: 112px; bottom: 4px; }
   .ev-carousel .ev-series-card__body { gap: 8px; padding: 14px 18px 16px; }
+}
+/* Very short screens (phone held sideways): wide cards with the photo on the left and the specs
+   on the right, about half as tall, so the pinned row stays readable. */
+@media (max-height: 500px) {
+  .ev-carousel .ev-carousel__head .ev-eyebrow { margin-bottom: 4px; }
+  .ev-carousel .ev-section-title { font-size: 1.5rem; }
+  .ev-carousel .ev-section-title::after { margin-top: 8px; }
+  .ev-carousel .ev-series-track { gap: 18px; padding-top: 8px; padding-bottom: 12px; }
+  .ev-carousel .ev-series-card { flex-direction: row; flex-basis: 64%; }
+  .ev-carousel .ev-series-card:hover { transform: none; }
+  .ev-carousel .ev-series-card__media { flex: 0 0 38%; height: auto; }
+  .ev-carousel .ev-series-card__title { padding: 12px 14px 0; font-size: 1.1rem; }
+  .ev-carousel .ev-series-card__img { width: 92%; height: 58%; bottom: 10px; }
+  .ev-carousel .ev-series-card__body { gap: 6px; padding: 12px 14px; }
+  .ev-carousel .ev-spec-hero { padding-bottom: 6px; }
+  .ev-carousel .ev-spec-grid { gap: 6px; }
+  .ev-carousel .ev-spec { padding: 6px 10px; }
+  .ev-carousel .ev-series-card__cta { padding: 9px 14px; }
 }
 
 /* ---------- About (home) ---------- */
