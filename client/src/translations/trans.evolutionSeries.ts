@@ -1,5 +1,3 @@
-import { models } from "mongoose";
-import { list } from "postcss";
 
 export const translations = {
 	evolutionSeries: {
@@ -236,8 +234,8 @@ export const translations = {
 			fr: "4X4 À LA DEMANDE",
 		},
 		p_features_4x4: {
-			en: "Elevate your driving experience with the Evolution on-demand 4-wheel drive system. Featuring dual independent electric motors and controllers, this system seamlessly switches between 2-wheel and 4-wheel drive modes to suit your preferences. Enjoy smooth, refined handling and enhanced stability on any course.",
-			fr: "Élevez votre expérience de conduite avec le système 4x4 à la demande de l'Évolution. Doté de deux moteurs électriques et contrôleurs indépendants, ce système passe facilement entre les modes 2 roues motrices et 4 roues motrices pour s'adapter à vos préférences. Profitez d'une maniabilité fluide et raffinée et d'une stabilité améliorée sur n'importe quel parcours.",			
+			en: "Elevate your driving experience with the D-MAX on-demand 4-wheel drive system. Featuring dual independent electric motors and controllers, this system seamlessly switches between 2-wheel and 4-wheel drive modes to suit your preferences. Enjoy smooth, refined handling and enhanced stability on any course.",
+			fr: "Élevez votre expérience de conduite avec le système 4x4 à la demande du D-MAX. Doté de deux moteurs électriques et contrôleurs indépendants, ce système passe facilement entre les modes 2 roues motrices et 4 roues motrices pour s'adapter à vos préférences. Profitez d'une maniabilité fluide et raffinée et d'une stabilité améliorée sur n'importe quel parcours.",			
 		},
 		t_features_power_steering: {
 			en: "Electric Power Steering",
@@ -304,8 +302,8 @@ export const translations = {
 			fr: "Les modèles D-MAX XT sont dotés d'un marchepied lumineux, améliorant à la fois la fonctionnalité du véhicule et son attrait esthétique. Cette caractéristique facilite non seulement l'entrée et la sortie, mais ajoute également une touche distinctive et lumineuse au profil du véhicule, améliorant la visibilité et la sécurité dans des conditions de faible luminosité.",
 		},
 		t_features_seats: {
-			en: "EVOLUTION ICONIC LUXURY SEATS",
-			fr: "SIÈGES DE LUXE EMBLÉMATIQUES DE L'ÉVOLUTION",
+			en: "D-MAX ICONIC LUXURY SEATS",
+			fr: "SIÈGES DE LUXE EMBLÉMATIQUES DU D-MAX",
 		},
 		p_features_seats: {
 			en: "Experience unmatched sporty comfort with the luxurious seats, expertly crafted from premium fine leather and detailed with exquisite stitching. Each seat is designed to provide a secure, enveloping feel, enhanced by soft yet resilient thigh support. Equipped with three-point seatbelts, these seats offer a perfect blend of elegance and safety, elevating every journey.",
@@ -470,72 +468,72 @@ export const translations = {
 			fr: "MICROPHONE",
 		},
 		p_shrink_microphone: {
-			en: "Evolution microphone boosts speech recognition by effectively reducing issues like background noise and distance from the speaker, enhancing communication clarity.",
-			fr: "Le microphone Evolution améliore la reconnaissance vocale en réduisant efficacement les problèmes tels que le bruit de fond et la distance par rapport au locuteur, améliorant ainsi la clarté de la communication.",
+			en: "The D-MAX microphone boosts speech recognition by effectively reducing issues like background noise and distance from the speaker, enhancing communication clarity.",
+			fr: "Le microphone du D-MAX améliore la reconnaissance vocale en réduisant efficacement les problèmes tels que le bruit de fond et la distance par rapport au locuteur, améliorant ainsi la clarté de la communication.",
 		},
 		h2_shrink_cupHolders: {
 			en: "CUP HOLDERS",
 			fr: "PORTE-GOBELETS",
 		},
 		p_shrink_cupHolders: {
-			en: "Evolution cup holders are crafted for convenience, securely holding beverages and small belongings to keep essentials close during your ride.",
-			fr: "Les porte-gobelets Evolution sont conçus pour la commodité, maintenant en toute sécurité les boissons et les petits objets pour garder les essentiels à portée de main pendant votre trajet.",
+			en: "D-MAX cup holders are crafted for convenience, securely holding beverages and small belongings to keep essentials close during your ride.",
+			fr: "Les porte-gobelets du D-MAX sont conçus pour la commodité, maintenant en toute sécurité les boissons et les petits objets pour garder les essentiels à portée de main pendant votre trajet.",
 		},
 		h2_shrink_airVent: {
 			en: "SLIDEABLE AIR VENTS",
 			fr: "AÉRATIONS COULISSANTES",
 		},
 		p_shrink_airVent: {
-			en: "Optimize airflow and comfort with adjustable sliding vents on Evolution's windshield, designed to provide customizable ventilation while you drive.",
-			fr: "Optimisez le flux d'air et le confort avec les aérations coulissantes réglables sur le pare-brise de l'Évolution, conçues pour offrir une ventilation personnalisable pendant que vous conduisez.",
+			en: "Optimize airflow and comfort with adjustable sliding vents on the D-MAX windshield, designed to provide customizable ventilation while you drive.",
+			fr: "Optimisez le flux d'air et le confort avec les aérations coulissantes réglables sur le pare-brise du D-MAX, conçues pour offrir une ventilation personnalisable pendant que vous conduisez.",
 		},
 		h2_shrink_storage: {
 			en: "STORAGE COMPARTMENT",
 			fr: "COMPARTIMENT DE RANGEMENT",
 		},
 		p_shrink_storage: {
-			en: "Evolution glove box is designed for security and accessibility, providing a convenient space to store personal items and valuables securely within reach during your ride.",
-			fr: "La boîte à gants Evolution est conçue pour la sécurité et l'accessibilité, offrant un espace pratique pour ranger des objets personnels et des valeurs en toute sécurité à portée de main pendant votre trajet.",
+			en: "The D-MAX glove box is designed for security and accessibility, providing a convenient space to store personal items and valuables securely within reach during your ride.",
+			fr: "La boîte à gants du D-MAX est conçue pour la sécurité et l'accessibilité, offrant un espace pratique pour ranger des objets personnels et des valeurs en toute sécurité à portée de main pendant votre trajet.",
 		},
 		h2_shrink_ajustable_steering: {
 			en: "ADJUSTABLE STEERING COLUMN",
 			fr: "COLONNE DE DIRECTION RÉGLABLE",
 		},
 		p_shrink_ajustable_steering: {
-			en: "Evolution adjustable steering wheel enhances driving ease and control. Designed for comfort and convenience, it adjusts up and down to optimize the driver's view and the distance to the steering wheel, while also improving grip comfort, ensuring a more personalized driving experience.",
-			fr: "La colonne de direction réglable Evolution améliore la facilité et le contrôle de conduite. Conçue pour le confort et la commodité, elle s'ajuste vers le haut et vers le bas pour optimiser la vue du conducteur et la distance par rapport au volant, tout en améliorant le confort de prise en main, garantissant une expérience de conduite plus personnalisée.",
+			en: "The D-MAX adjustable steering wheel enhances driving ease and control. Designed for comfort and convenience, it adjusts up and down to optimize the driver's view and the distance to the steering wheel, while also improving grip comfort, ensuring a more personalized driving experience.",
+			fr: "La colonne de direction réglable du D-MAX améliore la facilité et le contrôle de conduite. Conçue pour le confort et la commodité, elle s'ajuste vers le haut et vers le bas pour optimiser la vue du conducteur et la distance par rapport au volant, tout en améliorant le confort de prise en main, garantissant une expérience de conduite plus personnalisée.",
 		},
 		h2_shrink_tailLight: {
 			en: "TAIL LIGHTS",
 			fr: "FEUX ARRIÈRE",
 		},	
 		p_shrink_tailLight: {
-			en: "Evolution taillights feature LED brake lights and turning signals, offering enhanced visibility and safety with energy-efficient, long-lasting illumination.",
-			fr: "Les feux arrière Evolution sont équipés de feux de freinage et de clignotants à LED, offrant une visibilité et une sécurité accrues grâce à un éclairage économe en énergie et durable.",
+			en: "D-MAX taillights feature LED brake lights and turning signals, offering enhanced visibility and safety with energy-efficient, long-lasting illumination.",
+			fr: "Les feux arrière du D-MAX sont équipés de feux de freinage et de clignotants à LED, offrant une visibilité et une sécurité accrues grâce à un éclairage économe en énergie et durable.",
 		},
 		h2_shrink_mirror: {
 			en: "PANORAMIC REAR VIEW MIRROR",
 			fr: "MIROIR DE VUE ARRIÈRE PANORAMIQUE",
 		},
 		p_shrink_mirror: {
-			en: "The panoramic mirror in Evolution offers a 180-degree field of view, significantly enhancing visibility. This feature boosts safety and situational awareness, helping drivers navigate more confidently.",
-			fr: "Le miroir panoramique de l'Évolution offre un champ de vision de 180 degrés, améliorant considérablement la visibilité. Cette fonctionnalité renforce la sécurité et la conscience de la situation, aidant les conducteurs à naviguer plus en confiance.",
+			en: "The panoramic mirror in the D-MAX offers a 180-degree field of view, significantly enhancing visibility. This feature boosts safety and situational awareness, helping drivers navigate more confidently.",
+			fr: "Le miroir panoramique du D-MAX offre un champ de vision de 180 degrés, améliorant considérablement la visibilité. Cette fonctionnalité renforce la sécurité et la conscience de la situation, aidant les conducteurs à naviguer plus en confiance.",
 		},
 		h2_shrink_sideMirror: {
 			en: "SIDE MIRROR WITH TURNING SIGNALS",
 			fr: "MIROIR LATÉRAL AVEC CLIGNOTANTS",
 		},
 		p_shrink_sideMirror: {
-			en: "Evolution enhances driving safety with mirrors that provide a comprehensive rear view and feature integrated turn signals, facilitating smoother lane changes, parking maneuvers, and turns.",
-			fr: "L'Evolution améliore la sécurité de conduite avec des miroirs qui offrent une vue arrière complète et intègrent des clignotants, facilitant les changements de voie, les manœuvres de stationnement et les virages.",
+			en: "The D-MAX enhances driving safety with mirrors that provide a comprehensive rear view and feature integrated turn signals, facilitating smoother lane changes, parking maneuvers, and turns.",
+			fr: "Le D-MAX améliore la sécurité de conduite avec des miroirs qui offrent une vue arrière complète et intègrent des clignotants, facilitant les changements de voie, les manœuvres de stationnement et les virages.",
 		},
 		h2_shrink_sideGrabHandles: {
 			en: "SIDE GRAB HANDLES",
 			fr: "POIGNÉES LATÉRALES",
 		},
 		p_shrink_sideGrabHandles: {
-			en: "Evolution enhances accessibility and stability with grab handles on both driver and passenger sides for easy entry and exit.",
-			fr: "L'Evolution améliore l'accessibilité et la stabilité avec des poignées de maintien de chaque côté du conducteur et du passager pour faciliter l'entrée et la sortie.",
+			en: "The D-MAX enhances accessibility and stability with grab handles on both driver and passenger sides for easy entry and exit.",
+			fr: "Le D-MAX améliore l'accessibilité et la stabilité avec des poignées de maintien de chaque côté du conducteur et du passager pour faciliter l'entrée et la sortie.",
 		},
 		h2_shrink_brushGuards: {
 			en: "BRUSH GUARDS FOR LIFTED MODELS",
@@ -550,8 +548,8 @@ export const translations = {
 			fr: "RÉCEPTEUR D'ATTELAGE",
 		},
 		p_shrink_hitch: {
-			en: "Evolution is equipped with standard towing hitch receiver, designed for easy attachment of trailers and other accessories, enhancing the vehicle's utility and versatility.",
-			fr: "L'Evolution est équipée d'un récepteur d'attelage standard, conçu pour une attache facile de remorques et d'autres accessoires, améliorant l'utilité et la polyvalence du véhicule.",
+			en: "The D-MAX is equipped with a standard towing hitch receiver, designed for easy attachment of trailers and other accessories, enhancing the vehicle's utility and versatility.",
+			fr: "Le D-MAX est équipé d'un récepteur d'attelage standard, conçu pour une attache facile de remorques et d'autres accessoires, améliorant l'utilité et la polyvalence du véhicule.",
 		},
 		h2_shrink_pedals: {
 			en: "ACCELERATOR & BRAKE PEDAL",
