@@ -103,10 +103,11 @@ EXIT;
 ### 2c. Import the data
 
 Best: a **fresh export** from the old cPanel → phpMyAdmin → select the database → *Export* → *Quick*, SQL.
-Save it as `Website_Backup\db_backup\electriquevalley_db_<date>.sql`. Otherwise use the September backup.
+Save it as `C:\Applications_builds\ElectriqueValley\Website_Backup\db_backup\electriquevalley_db.sql`
+(replacing the September backup). Otherwise use the September backup already there.
 
 ```powershell
-scp -i $KEY "..\Website_Backup\db_backup\electriquevalley_db.sql" "${SRV}:~/upload/db.sql"
+scp -i $KEY "C:\Applications_builds\ElectriqueValley\Website_Backup\db_backup\electriquevalley_db.sql" "${SRV}:~/upload/db.sql"
 ```
 ```bash
 mysql -u ev_app -p electriquevalley_db < ~/upload/db.sql
