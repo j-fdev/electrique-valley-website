@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 interface WarrantySliderProps {
     images: readonly string[];
@@ -8,29 +8,40 @@ interface WarrantySliderProps {
     slideLabel: (index: number, total: number) => string;
 }
 
-const SLIDE_MS = 5000;
+const SLIDE_MS = 3500;
 
 /**
  * Cross-fading photo carousel for the warranty band. The visible photo zooms in slowly (CSS),
- * the progress bars show the timing and let visitors pick a photo. Autoplay pauses on hover and
- * keyboard focus, and is off with "reduce motion" (the bars still work).
+ * the progress bars show the timing and let visitors pick a photo. Hover or keyboard focus
+ * freezes the current photo and its bar where they are; leaving resumes from that point
+ * (it does not restart). Autoplay is off with "reduce motion" (the bars still work).
  */
 const WarrantySlider: React.FC<WarrantySliderProps> = ({ images, alts, slideLabel }) => {
     const [current, setCurrent] = useState(0);
     const [paused, setPaused] = useState(false);
     const [reduceMotion] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches);
-    const playing = !paused && !reduceMotion && images.length > 1;
+    const autoplay = !reduceMotion && images.length > 1;
+    // Time left for the current photo, and when the running timer started
+    const remaining = useRef(SLIDE_MS);
+    const startedAt = useRef(0);
+
+    // A new photo gets its full time
+    useEffect(() => { remaining.current = SLIDE_MS; }, [current]);
 
     useEffect(() => {
-        if (!playing) return;
-        // Restarted on every change of "current", so a click gives the new photo its full time
-        const timer = setTimeout(() => setCurrent((i) => (i + 1) % images.length), SLIDE_MS);
-        return () => clearTimeout(timer);
-    }, [playing, current, images.length]);
+        if (!autoplay || paused) return;
+        startedAt.current = Date.now();
+        const timer = setTimeout(() => setCurrent((i) => (i + 1) % images.length), remaining.current);
+        return () => {
+            clearTimeout(timer);
+            // Paused (or photo changed): keep what was left so the bar and timer resume together
+            remaining.current = Math.max(0, remaining.current - (Date.now() - startedAt.current));
+        };
+    }, [autoplay, paused, current, images.length]);
 
     return (
         <div
-            className={`ev-wslider${playing ? ' is-playing' : ''}`}
+            className={`ev-wslider${autoplay ? ' is-playing' : ''}${paused ? ' is-paused' : ''}`}
             onMouseEnter={() => setPaused(true)}
             onMouseLeave={() => setPaused(false)}
             onFocus={() => setPaused(true)}
@@ -44,7 +55,6 @@ const WarrantySlider: React.FC<WarrantySliderProps> = ({ images, alts, slideLabe
                     src={image}
                     alt={alts[index] ?? ''}
                     aria-hidden={index !== current}
-                    loading={index === 0 ? undefined : 'lazy'}
                 />
             ))}
             <div className="ev-wslider__bars">

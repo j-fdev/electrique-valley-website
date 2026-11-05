@@ -976,9 +976,9 @@ button, input, textarea, select { font-family: inherit; }
   object-fit: cover;
   opacity: 0;
   scale: 1;
-  transition: opacity 1.2s ease, scale 0s linear 1.2s;
+  transition: opacity 0.9s ease, scale 0s linear 0.9s;
 }
-.ev-wslider__img.is-active { opacity: 1; scale: 1.08; transition: opacity 1.2s ease, scale calc(var(--ev-slide-ms, 5000ms) + 1.2s) linear; }
+.ev-wslider__img.is-active { opacity: 1; scale: 1.06; transition: opacity 0.9s ease, scale calc(var(--ev-slide-ms, 3500ms) + 0.9s) linear; }
 /* Fades the photo into the dark background on the left, top and bottom */
 .ev-wslider::after {
   content: '';
@@ -996,7 +996,9 @@ button, input, textarea, select { font-family: inherit; }
 .ev-wslider__bar span::after { content: ''; position: absolute; inset: 0; background: var(--ev-cyan); transform-origin: left; transform: scaleX(0); }
 .ev-wslider__bar.is-done span::after,
 .ev-wslider__bar.is-active span::after { transform: scaleX(1); }
-.is-playing .ev-wslider__bar.is-active span::after { animation: ev-slide-progress var(--ev-slide-ms, 5000ms) linear both; }
+.is-playing .ev-wslider__bar.is-active span::after { animation: ev-slide-progress var(--ev-slide-ms, 3500ms) linear both; }
+/* Hover or focus freezes the bar (and the zoom) where it is, instead of restarting it */
+.is-paused .ev-wslider__bar.is-active span::after { animation-play-state: paused; }
 .ev-wslider__bar:focus-visible { outline: 2px solid var(--ev-cyan); outline-offset: 2px; border-radius: 4px; }
 @keyframes ev-slide-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 
