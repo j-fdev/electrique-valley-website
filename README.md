@@ -4,20 +4,26 @@ Bilingual (French / English) website for **Electrique Valley**, a Quebec dealer 
 
 ## Features
 
-- Model pages for each series (Evolution, Elite, Luxor, Classic, Diablo, Thor) with colour pickers, feature cards and sliders
-- Language switch (FR / EN) across the whole site
-- Contact form and "become / find a dealer" requests, sent by email
-- Newsletter sign-up stored in MySQL, with a confirmation email
+- Model pages for each series (D-MAX, Luxor, Classic, Thor) with colour pickers, feature cards and sliders
+- French and English on their own URLs (French at `/`, English under `/en`), with hreflang and canonical tags
+- Every page pre-rendered to static HTML at build time, so search engines and slow phones get content right away
+- Scroll animations: a series carousel that scrolls sideways at every screen size, reveals and a cross-fading photo carousel, all turned off with "reduce motion"
+- Contact form and "become a dealer" requests, sent by email
+- Newsletter sign-up stored in MySQL, with signed unsubscribe links (Canada's anti-spam law)
+- Privacy policy, terms of use and consent checkboxes written for Quebec's Law 25
 - Video showcase streamed from the API
-- Spam protection on the forms: per-IP rate limiting and a hidden honeypot field, plus server-side validation
+- Spam protection on the forms: per-IP rate limiting, a hidden honeypot field and server-side validation
+- Optimized images: resized WebP, lazy loading and a preloaded hero image
 
 ## Tech stack
 
 | Part | Technologies |
 |---|---|
-| Frontend (`client/`) | React 18, TypeScript, React Router, Create React App |
+| Frontend (`client/`) | React 18, TypeScript, React Router, Create React App, Puppeteer (pre-rendering) |
 | API (`server/`) | Node.js, Express, TypeScript, TypeORM, MySQL, Nodemailer |
-| Hosting | Ubuntu server with nginx (reverse proxy + HTTPS) and pm2 |
+| Hosting | AWS Lightsail (Ubuntu) with nginx (static files, reverse proxy, HTTPS) and pm2 |
+
+**Development:** built by hand in React and Node. Claude Code (AI assistant) was used later in the project for refactoring, responsive testing and image optimization.
 
 ## Project structure
 
@@ -25,6 +31,7 @@ Bilingual (French / English) website for **Electrique Valley**, a Quebec dealer 
 client/   React website (static build served by nginx)
 server/   Express API: email, newsletter and video endpoints
 deploy/   Server setup: nginx and pm2 configs, setup script, migration guide
+docs/     Project brief, decisions, task list and launch checklist
 ```
 
 ### API endpoints
@@ -33,6 +40,7 @@ deploy/   Server setup: nginx and pm2 configs, setup script, migration guide
 |---|---|---|
 | POST | `/api/email/send-email` | Contact form |
 | POST | `/api/email/subscribe` | Newsletter sign-up |
+| POST | `/api/email/unsubscribe` | Newsletter unsubscribe |
 | GET | `/api/videoCapsules` | List of showcase videos |
 | GET | `/videos/:file` | Streams a video file |
 
@@ -58,13 +66,13 @@ The website reads the API address from `REACT_APP_API_URL` (`client/.env.develop
 ## Deployment
 
 ```bash
-cd client && npm run build           # static files in client/build
+cd client && npm run build           # static files in client/build, every page pre-rendered
 cd server && npm run build && npm start   # compiled API in server/dist (run with pm2 in production)
 ```
 
 Videos are not stored in git: they are uploaded to `server/src/uploads/convertedVideos` on the server.
 
-Production runs on an Ubuntu server (nginx + pm2 + MySQL). The `deploy/` folder holds the nginx config, the pm2 config, a server setup script and the step-by-step migration guide: see [deploy/MIGRATION.md](deploy/MIGRATION.md).
+The `deploy/` folder holds the nginx config, the pm2 config, a server setup script and the step-by-step migration guide: see [deploy/MIGRATION.md](deploy/MIGRATION.md).
 
 ## Author
 
