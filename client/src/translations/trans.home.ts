@@ -398,7 +398,7 @@ export const translations = {
 		},
 		p_test_ride: {
 			en: "Contact us now to schedule a test drive or to get more information. We look forward to helping you purchase your new dream cart!",
-			fr: "Contactez-nous dès maintenant  pour  planifier un essai routier ou pour obtenir des informations supplémentaires. Nous sommes impatients de vous  accompagner dans l'achat de votre nouvelle voiturette de rêve!",	
+			fr: "Contactez-nous dès maintenant pour planifier un essai routier ou pour obtenir des informations supplémentaires. Nous sommes impatients de vous accompagner dans l'achat de votre nouvelle voiturette de rêve!",
 		},
 		btn_test_ride: {
 			en: "CONTACT US",
