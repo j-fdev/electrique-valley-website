@@ -247,9 +247,10 @@ const Home: React.FC = () => {
                 </div>
             </section>
 
-            {/* Lithium battery section */}
-            <section className="ev-section">
-                <div className="ev-battery ev-reveal ev-reveal--zoom">
+            {/* Lithium battery section: the band unrolls from the right (the section is the scroll trigger,
+                because a fully clipped element never counts as "on screen") */}
+            <section className="ev-section ev-reveal ev-reveal--unroll">
+                <div className="ev-battery">
                     <div className="ev-battery__content">
                         <h2 className="ev-battery__title">{T.title_lithium_battery[L]}</h2>
                         <span className="ev-battery__badge">{T.title_lithium_battery_span[L]}</span>
