@@ -360,6 +360,15 @@ button, input, textarea, select { font-family: inherit; }
 }
 .ev-series-card__cta:hover { background: var(--ev-blue-dark); gap: 14px; }
 .ev-series-card__cta svg { width: 16px; height: 16px; fill: currentColor; }
+/* Laptop-height screens (768–860px tall): slightly shorter cards so the pinned sideways row still
+   fits on screen (horizontalScroll.tsx only pins when the title and cards fit). */
+@media (min-width: 1025px) and (max-height: 860px) {
+  .ev-carousel .ev-series-track { padding-top: 10px; padding-bottom: 18px; }
+  .ev-carousel .ev-series-card__media { height: 150px; }
+  .ev-carousel .ev-series-card__title { padding-top: 14px; }
+  .ev-carousel .ev-series-card__img { height: 112px; bottom: 4px; }
+  .ev-carousel .ev-series-card__body { gap: 8px; padding: 14px 18px 16px; }
+}
 
 /* ---------- About (home) ---------- */
 .ev-about { display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(2rem, 6vw, 5rem); align-items: center; }
