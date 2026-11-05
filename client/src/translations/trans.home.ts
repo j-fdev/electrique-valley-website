@@ -321,12 +321,34 @@ export const translations = {
 			fr: "GARANTIE 1 AN",
 		},	
 		subtitle_warranty: {
-			en: "Our Commitment to Quality",
-			fr: "Notre Engagement envers la Qualité",
+			en: "Our commitment to quality",
+			fr: "Notre engagement envers la qualité",
 		},
-		p_warranty: {
-			en: "For us, the satisfaction of our customers is essential, we are proud to offer you a complete guarantee to ensure the reliability and durability of your cart, the battery is guaranteed for 1 year. Please note that the warranty does not cover damage caused by negligent or accidental misuse of the cart.",
-			fr: "Chez nous la satisfaction de  nos clients est primordiale nous sommes fiers de vous offrir une garantie complete pour assurer la fiabilité et la durabilité de votre voiturette les batterie garantie 1 ans . Veuillez noter que la garantie ne couvre pas les dommages causés pas une utilisation abusive négligente ou accidentelle de la voiturette",
+		// Big "1 AN" figure in the warranty band (the h2 above is read by screen readers instead)
+		unit_warranty: {
+			en: "YEAR",
+			fr: "AN",
+		},
+		word_warranty: {
+			en: "Warranty",
+			fr: "Garantie",
+		},
+		// Only what the client’s original text states: do not add coverage details without his confirmation
+		points_warranty: {
+			en: ["Battery covered for 1 year", "Built for reliability and durability", "Your satisfaction comes first"],
+			fr: ["Batterie garantie 1 an", "Fiabilité et durabilité de votre voiturette", "Votre satisfaction avant tout"],
+		},
+		fine_warranty: {
+			en: "The warranty does not cover damage caused by abusive, negligent or accidental use of the cart.",
+			fr: "La garantie ne couvre pas les dommages causés par une utilisation abusive, négligente ou accidentelle de la voiturette.",
+		},
+		slides_warranty: {
+			en: ["D-MAX XT4 cart at night", "Elite Plus 2+2 cart", "D-MAX XT4 cart"],
+			fr: ["Voiturette D-MAX XT4 de nuit", "Voiturette Elite Plus 2+2", "Voiturette D-MAX XT4"],
+		},
+		slide_label_warranty: {
+			en: "Photo {n} of {total}",
+			fr: "Photo {n} sur {total}",
 		},
 
 		title_lithium_battery: {

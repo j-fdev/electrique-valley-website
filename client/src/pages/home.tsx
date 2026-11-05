@@ -52,7 +52,7 @@ const Home: React.FC = () => {
     const heroSliderAlts = L === 'fr'
         ? ['Voiturette D-MAX', 'Luxor 4+2', 'Nouvelle série Luxor', 'Série Classic', 'Série Thor']
         : ['D-MAX cart', 'Luxor 4+2', 'New Luxor series', 'Classic series', 'Thor series'];
-    const warrantySliderImages = [`/img/home/yellowCart.jpg?v=${version}`, `/img/home/Luxor-Commercial.webp?v=${version}`, `/img/home/Luxor-4-red.webp?v=${version}`];
+    const warrantySliderImages = [`/img/home/D-MAX_XT4.jpg?v=${version}`, `/img/home/Elite-Plus_2+2.jpg?v=${version}`, `/img/home/D-MAX-XT4.jpg?v=${version}`];
 
     const cartModels = [
         { image: `/img/d-max/XT4/Evolution4L-color-BLACK-SAPPHIRE.png?v=${version}`, title: T.title_evolution_card[L], link: pathFor('dmax', L), t1: T.t1_evolution_card[L], p1: T.p1_evolution_card[L], t2: T.t2_evolution_card[L], p2: T.p2_evolution_card[L], t3: T.t3_evolution_card[L], p3: T.p3_evolution_card[L], t4: T.t4_evolution_card[L], p4: T.p4_evolution_card[L] },
@@ -217,23 +217,38 @@ const Home: React.FC = () => {
                 </div>
             </div>
 
-            {/* Warranty section */}
-            <section className="ev-section">
-                <div className="ev-container ev-split">
-                    <div className="ev-reveal ev-reveal--left">
-                        <span className="ev-eyebrow">{EB.warranty[L]}</span>
-                        <h2 className="ev-section-title ev-section-title--left">{T.title_warranty[L]}</h2>
-                        <h3 style={{ marginTop: '1.5rem', fontSize: '1.3rem', color: 'var(--ev-blue-dark)' }}>{T.subtitle_warranty[L]}</h3>
-                        <p style={{ marginTop: '1rem', lineHeight: 1.75, color: 'var(--ev-muted)', maxWidth: '60ch' }}>{T.p_warranty[L]}</p>
+            {/* Warranty section: dark band, big "1 AN" figure, photo carousel bleeding to the edge */}
+            <section className="ev-section ev-warranty">
+                <div className="ev-warranty__glow" aria-hidden="true" />
+                <div className="ev-container ev-warranty__grid">
+                    <div className="ev-warranty__text ev-reveal ev-reveal--left">
+                        <span className="ev-eyebrow ev-eyebrow--light">{EB.warranty[L]}</span>
+                        <h2 className="ev-warranty__figure">
+                            <span className="ev-sr-only">{T.title_warranty[L]}</span>
+                            <span className="ev-warranty__num" aria-hidden="true">1</span>
+                            <span className="ev-warranty__unit" aria-hidden="true">
+                                {T.unit_warranty[L]}
+                                <small>{T.word_warranty[L]}</small>
+                            </span>
+                        </h2>
+                        <p className="ev-warranty__lead">{T.subtitle_warranty[L]}</p>
+                        <ul className="ev-warranty__points">
+                            {T.points_warranty[L].map((point) => <li key={point}>{point}</li>)}
+                        </ul>
+                        <p className="ev-warranty__fine">{T.fine_warranty[L]}</p>
                     </div>
-                    <div className="ev-media-frame ev-reveal ev-reveal--right">
-                        <WarrantySlider images={warrantySliderImages} />
+                    <div className="ev-warranty__media ev-reveal ev-reveal--right">
+                        <WarrantySlider
+                            images={warrantySliderImages}
+                            alts={T.slides_warranty[L]}
+                            slideLabel={(n, total) => T.slide_label_warranty[L].replace("{n}", String(n)).replace("{total}", String(total))}
+                        />
                     </div>
                 </div>
             </section>
 
             {/* Lithium battery section */}
-            <section className="ev-section" style={{ paddingTop: 0 }}>
+            <section className="ev-section">
                 <div className="ev-battery ev-reveal ev-reveal--zoom">
                     <div className="ev-battery__content">
                         <h2 className="ev-battery__title">{T.title_lithium_battery[L]}</h2>

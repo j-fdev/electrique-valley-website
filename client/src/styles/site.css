@@ -809,3 +809,122 @@ button, input, textarea, select { font-family: inherit; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* ---------- Warranty band (home) ----------
+   Dark band so the night photos blend in: the carousel runs to the right edge and fades into the
+   background, a big "1 AN" figure fills with light as it scrolls in, glows echo the carts' lights. */
+.ev-warranty {
+  --ev-warranty-bg: #070f1a;
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  background: var(--ev-warranty-bg);
+  color: rgba(255, 255, 255, 0.86);
+}
+.ev-warranty__glow {
+  position: absolute;
+  inset: 0;
+  /* Above the photo, blended as light, so the photo edges never show a seam against the glow */
+  z-index: 1;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  background:
+    radial-gradient(420px 340px at 14% 50%, rgba(63, 208, 255, 0.13), transparent 70%),
+    radial-gradient(320px 240px at 24% 88%, rgba(70, 240, 150, 0.07), transparent 70%);
+}
+.ev-warranty__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.ev-warranty__figure { display: flex; align-items: center; gap: 0.18em; margin: 0.35em 0 0.15em; line-height: 0.8; color: #fff; }
+.ev-warranty__num {
+  font-size: clamp(7rem, 15vw, 12.5rem);
+  font-weight: 800;
+  color: transparent;
+  background: linear-gradient(180deg, #a6f3ff 0%, var(--ev-cyan) 45%, #0084b0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(0 0 26px rgba(63, 208, 255, 0.35));
+}
+/* With motion allowed: the "1" rises out of a mask from the bottom when the text scrolls in */
+.ev-anim .ev-warranty__num { clip-path: inset(100% 0 0 0); transition: clip-path 1.2s var(--ev-ease) 0.3s; }
+.ev-anim .is-visible .ev-warranty__num { clip-path: inset(-100%); }
+.ev-warranty__unit { display: flex; flex-direction: column; font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 800; letter-spacing: -0.02em; }
+.ev-warranty__unit small { margin-top: 0.45em; font-size: 0.3em; font-weight: 700; letter-spacing: 0.32em; text-transform: uppercase; color: var(--ev-cyan); }
+
+.ev-warranty__lead { margin: 1.2rem 0 0; font-family: var(--ev-font-head); font-size: clamp(1.2rem, 2vw, 1.45rem); font-weight: 600; color: #fff; }
+.ev-warranty__points { list-style: none; display: grid; gap: 10px; margin: 1.4rem 0 1.2rem; padding: 0; max-width: 460px; }
+.ev-warranty__points li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: var(--ev-radius-sm);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  font-weight: 600;
+}
+.ev-warranty__points li::before {
+  content: '';
+  flex: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid rgba(63, 208, 255, 0.45);
+  background: rgba(63, 208, 255, 0.12) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233fd0ff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center / 14px no-repeat;
+  box-shadow: 0 0 14px rgba(63, 208, 255, 0.25);
+}
+.ev-warranty__fine { margin: 0; max-width: 52ch; font-size: 0.85rem; line-height: 1.6; color: rgba(255, 255, 255, 0.6); }
+
+/* The carousel runs to the right edge of the screen */
+.ev-warranty__media { margin-right: calc((min(1240px, 90vw) - 100vw) / 2); }
+.ev-wslider { position: relative; aspect-ratio: 16 / 11; min-height: 300px; overflow: hidden; }
+.ev-wslider__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  scale: 1;
+  transition: opacity 1.2s ease, scale 0s linear 1.2s;
+}
+.ev-wslider__img.is-active { opacity: 1; scale: 1.08; transition: opacity 1.2s ease, scale calc(var(--ev-slide-ms, 5000ms) + 1.2s) linear; }
+/* Fades the photo into the dark background on the left, top and bottom */
+.ev-wslider::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, var(--ev-warranty-bg) 0%, rgba(7, 15, 26, 0) 36%),
+    linear-gradient(180deg, var(--ev-warranty-bg) 0%, rgba(7, 15, 26, 0) 20%),
+    linear-gradient(0deg, var(--ev-warranty-bg) 0%, rgba(7, 15, 26, 0) 24%);
+}
+.ev-wslider__bars { position: absolute; z-index: 1; right: clamp(16px, 5vw, 64px); bottom: clamp(18px, 3vw, 32px); display: flex; gap: 6px; }
+.ev-wslider__bar { width: 48px; height: 28px; padding: 0; border: 0; background: transparent; cursor: pointer; display: grid; align-items: center; }
+.ev-wslider__bar span { position: relative; display: block; height: 3px; border-radius: 3px; background: rgba(255, 255, 255, 0.25); overflow: hidden; }
+.ev-wslider__bar span::after { content: ''; position: absolute; inset: 0; background: var(--ev-cyan); transform-origin: left; transform: scaleX(0); }
+.ev-wslider__bar.is-done span::after,
+.ev-wslider__bar.is-active span::after { transform: scaleX(1); }
+.is-playing .ev-wslider__bar.is-active span::after { animation: ev-slide-progress var(--ev-slide-ms, 5000ms) linear both; }
+.ev-wslider__bar:focus-visible { outline: 2px solid var(--ev-cyan); outline-offset: 2px; border-radius: 4px; }
+@keyframes ev-slide-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+@media (max-width: 900px) {
+  .ev-warranty__grid { grid-template-columns: 1fr; }
+  .ev-warranty__media { margin-inline: calc((min(1240px, 90vw) - 100vw) / 2); }
+  .ev-wslider { aspect-ratio: 4 / 3; min-height: 0; }
+  .ev-wslider::after {
+    background:
+      linear-gradient(180deg, var(--ev-warranty-bg) 0%, rgba(7, 15, 26, 0) 22%),
+      linear-gradient(0deg, var(--ev-warranty-bg) 0%, rgba(7, 15, 26, 0) 18%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ev-wslider__img, .ev-wslider__img.is-active { scale: 1; transition: opacity 0.3s ease; }
+}

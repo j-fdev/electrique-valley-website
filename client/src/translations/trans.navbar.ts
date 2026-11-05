@@ -33,7 +33,7 @@ export const translations = {
 			fr: "SÉRIE ÉLITE",
 		},
 		ressources: {
-			en: "RESSOURCES",
+			en: "RESOURCES",
 			fr: "RESSOURCES",
 		},
 		video_showcase: {
